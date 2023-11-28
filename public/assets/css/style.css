@@ -407,5 +407,29 @@ Nueva seccion: administrador
     color: #1b4965;
 }
 
+/* Seccion: especialidad */
 
+.card-img-top {
+    width: 500px; /* El ancho deseado */
+    height: 300px; /* La altura deseada */
+    object-fit: cover; /* Ajusta la imagen manteniendo las proporciones y cubriendo completamente el contenedor */
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+img.img-fluid {
+    border-radius: 5px;
+}
+
+.card {
+    border: none;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
 
