@@ -363,6 +363,50 @@ Nueva seccion: administrador
     color: var(--cian-azul);
 }
 
+
+/*______________________________________________________*/
+/* Estilos Interfaz pago */
+
+.container-formulario {
+    background-image: linear-gradient(to right, #b9b9b9cd, hsla(249, 22%, 66%, 0.637)), url(../img/index/fondo-pago.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.formulario{
+    background-color: rgba(206, 206, 206, 0.5);
+    border: 1px solid #e0e0e0;
+    width: 40%;
+    padding: 2%;
+}
+
+.botones-pagar{
+    display: flex;  
+    justify-content: space-evenly; 
+}
+
+.botones-pagar button{
+    background-color: #1b4965;
+    color: white;
+}
+
+.botones-pagar button:hover {
+    background-color: #5fa8d3; /* Cambia el color del botón al pasar el mouse */
+}
+
+.titulo-formulario, .placeholder{
+    color: #1b4965;
+}
+
 /* Seccion: especialidad */
 
 .card-img-top {
@@ -388,3 +432,4 @@ img.img-fluid {
     transition: transform 0.2s;
     margin-bottom: 20px;
 }
+
