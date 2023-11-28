@@ -17,6 +17,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Estilos propios -->
     <link rel="stylesheet" href="{{ asset('/assets/css/style.css')}}">
+    <!-- CSS de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery y JS de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- iconos de Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
   </head>
   <body>
     <!-- Barra de navegacion -->
@@ -49,11 +58,16 @@
               
               @else
               <li class="nav-item">
+                <a role="button" class="btn btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
+              </li>
+              <li class="nav-item">
+              <li class="nav-item">
                 <a role="button" class="btn btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
               </li>
               <li class="nav-item">
                 <a role="button" class="btn btn-pers btn-lg" href="{{ route('adminShow') }}">ventana admin</a>
               </li>
+              
               @endguest
               
             </ul>
