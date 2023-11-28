@@ -1,0 +1,94 @@
+/*Logo pagina*/
+.logo{
+    width: 150px;
+}
+
+:root{
+    --celeste-claro: #bee9e8;
+    --celeste: #62b6cb;
+    --azul: #1b4965;
+    --celeste-blanco: #cae9ff;
+    --celeste-oscuro: #5fa8d3;
+
+}
+
+/* Barra de navegacion*/
+.navbar {
+    padding: 0.8rem;
+    background-color: #1b4965;
+}
+.navbar-collapse {
+    align-items: center;
+    justify-content: end;
+}
+.navbar-nav {
+    align-items: center;
+}
+.nav-link{
+    font-size: 18px;
+    color: white;
+}
+.nav-item{
+    padding: 1rem;
+}
+.icon-navbar{
+    font-size: 20px;
+    color: white;
+}
+.toggler-border-color{
+    border: white solid 3px;
+}
+.btn-pers{
+    background-color: #1b4965;
+    color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn-pers:hover{
+    background-color: #5fa8d3;
+    color: black;
+}
+.btn-pers.green{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #1b4965;
+}
+.btn-pers.green:active{
+    background-color: #1b4965;
+    color: white;
+}
+.btn-pers.green:hover{
+    background-color: #5fa8d3;
+}
+
+/*general*/
+.container{
+    width: 65%;
+    padding-top: 100px;
+}
+
+/* Misión y Visión - Historia */
+.bg-seccion{
+    height: 500px;
+}
+
+.bg-seccion2{
+    height: 800px;
+}
+
+/* Bienvenida */
+
+.parallax {
+    background: linear-gradient(to right, #b9b9b9cd, hsla(249, 85%, 79%, 0.637)), url(../img/index/clinica.jpg);
+    height: 800px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo{
+    color: #1b4965;
+}
+
+.subtitulo{
+    color: #62b6cb;
+}

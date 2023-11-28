@@ -1,0 +1,111 @@
+/*Logo pagina*/
+.logo{
+    width: 150px;
+}
+
+
+:root{
+    --celeste-claro: #bee9e8;
+    --celeste: #62b6cb;
+    --azul: #1b4965;
+    --celeste-blanco: #cae9ff;
+    --celeste-oscuro: #5fa8d3;
+
+}
+
+/* Barra de navegacion*/
+.navbar {
+    padding: 0.8rem;
+    background-color: #1b4965;
+}
+.navbar-collapse {
+    align-items: center;
+    justify-content: end;
+}
+.navbar-nav {
+    align-items: center;
+}
+.nav-link{
+    font-size: 18px;
+    color: white;
+}
+.nav-item{
+    padding: 1rem;
+}
+.icon-navbar{
+    font-size: 20px;
+    color: white;
+}
+.toggler-border-color{
+    border: white solid 3px;
+}
+.btn-pers{
+    background-color: rgb(0, 153, 255);
+    color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn-pers:hover{
+    background-color: rgb(36, 40, 255);
+    color: white;
+}
+.btn-pers.green{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgb(47, 179, 47);
+}
+.btn-pers.green:active{
+    background-color: rgb(47, 179, 47);
+    color: white;
+}
+.btn-pers.green:hover{
+    background-color: rgb(0, 78, 21);
+}
+
+/*general*/
+.container{
+    width: 65%;
+    padding-top: 100px;
+}
+
+/* Misión y Visión - Historia */
+.bg-seccion{
+    height: 500px;
+}
+
+.bg-seccion2{
+    height: 800px;
+
+}
+
+/* Bienvenida */
+
+.credit-card-div {border: 1px solid #ccc; border-radius: 10px; padding: 20px; background-color: rgb(231, 229, 229)}
+.credit-card-div  span { padding-top:15px; }
+.credit-card-div img { padding-top:10px; }
+.credit-card-div .small-font { font-size:9px; }
+.credit-card-div .pad-adjust { padding-top:10px; }
+
+.img-rounded{
+    width: 60px;
+    height: 65px;
+}
+
+.main_pago {
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
+    padding-bottom: 15rem;
+    padding-left: 45rem;
+    padding-right: 45rem;
+}
+
+.main_pago-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--azul);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.row-booton{
+    align-items: center;
+}

@@ -1,0 +1,348 @@
+/*
+
+Seccion: pagina raiz-base
+
+*/
+
+:root{
+    --azul-grad-celeste: linear-gradient(45deg, rgb(21, 7, 223),rgb(0, 140, 255));
+    --celeste:  rgb(0, 153, 255);
+    --azul: rgb(36, 40, 255);
+    --verde-claro: rgb(47, 179, 47);
+    --verde-oscuro: rgb(0, 78, 21);
+    --gris-transparente: rgba(125, 129, 131, 0.589);
+    --fondo-rosado-claro: #ffdddd;
+    --gris-claro: #bbbbbb;
+    --verde-grad-azul: linear-gradient(45deg, rgb(7, 223, 115),rgb(0, 140, 255));
+
+    /* nuevo root */
+    --verde-agua: #2ec4b6;
+
+    
+    --celeste-claro: #bee9e8;
+    --celeste: #62b6cb;
+    --azul: #1b4965;
+    --celeste-blanco: #cae9ff;
+    --celeste-oscuro: #5fa8d3;
+
+}
+
+
+
+/*Logo pagina*/
+.logo{
+    width: 150px;
+}
+/*general*/
+a {
+    text-decoration: none;
+}
+
+
+/*
+
+Nueva seccion: index
+
+*/
+
+/* Barra de navegacion*/
+.navbar.principal {
+    padding: 0.8rem;
+    background: var(--celeste-oscuro);
+}
+.navbar-collapse.principal {
+    align-items: center;
+    justify-content: end;
+}
+.navbar-nav.principal {
+    align-items: center;
+}
+.nav-link.principal{
+    font-size: 18px;
+    color: white;
+}
+.nav-item.principal{
+    padding: 1rem;
+}
+.icon-navbar.principal{
+    font-size: 20px;
+    color: white;
+}
+.toggler-border-color.principal{
+    border: white solid 3px;
+}
+.btn-pers{
+    background-color: var(--azul);
+    color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn-pers:hover{
+    background-color: var(--celeste-claro);
+    color: black;
+}
+.btn-pers.green{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--azul);
+}
+.btn-pers.green:active{
+    background-color: rgb(47, 179, 47);
+    color: white;
+}
+.btn-pers.green:hover{
+    background-color: var(--celeste-claro);
+    color: black;
+}
+@media screen and (max-width: 991px){
+    .nav-item{
+        padding: 0.3rem;
+    }
+}
+
+/* barra navegacion inicio de sesion*/
+.usuario-icono{
+    width: 50px;
+}
+
+.navbar.principal.usuario{
+    padding: 0.1rem;
+}
+
+
+/* Carrusel */
+.img-carr{
+    height: 650px;
+    object-fit: cover;
+}
+.sobreponer-carr{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ajusta el z-index para que este componente esté sobre el componente base */
+    align-items: center;
+    justify-content: center;
+}
+.sobreponer-carr.izquierda{
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.texto-sobrepuesto{
+    text-align: center;
+    color: white;
+}
+.img-z-carr{
+    width: 250px;
+    margin: 20px;
+}
+
+
+/* boton agendar y video */
+.sobreponer {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+}
+.btn-pers.cita{
+    background-color: var(--celeste-claro);
+    font-size: 30px;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    color: black;
+}
+.btn-pers.cita:hover{
+    background-color: var(--celeste-oscuro);
+}
+.btn-pers.cita:active{
+    background-color: var(--azul);
+    color: white;
+}
+
+.btn-pers.green.video{
+    font-size: 18px;
+    width: 150px;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 751px) {
+    .btn-pers.cita{
+        font-size: 20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    .btn-pers.green.video{
+        font-size: 14px;
+        width: 120px;
+    }
+}
+
+
+/* especialidades */
+.bg-seccion{
+    background-color: rgb(230, 230, 230);
+}
+.icon-especializacion{
+    margin-top: 2rem;
+    height: 50px;
+}
+.card.especialidades{
+    background-color: rgb(242, 246, 248);
+}
+.card.especialidades:hover{
+    background-color: rgba(125, 129, 131, 0.589);
+}
+.titulo-especialidad{
+    background-color: aqua;
+    
+}
+
+
+/* comentarios */
+.parallax {
+    background-image: url("../img/index/comentarios-bg.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.user-icon{
+    width: 50px;
+}
+
+.bg-user{
+    background: var(--celeste);
+}
+
+
+/*
+
+Nueva seccion: Login 
+
+*/
+
+.login,
+.image-login {
+  min-height: 100vh;
+}
+
+.bg-login-image {
+  background-image: url('../img/login/bg-login.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+.sobreponer.esquinaIzquierda{
+    top: 3%;
+    left: 5%;
+    transform: translate(-10%, -10%);
+}
+
+
+/*
+
+Nueva seccion: registro
+
+*/
+
+/* Style the form */
+#regForm {
+    margin: 100px auto;
+    padding: 40px;
+    width: 100%;
+    min-width: 300px;
+  }
+
+/*
+
+Pasos con javascript ¡IGNORAR!(inicio)
+
+*/
+  
+/* Style the input fields */
+.input-register {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+.input-register.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+
+/*
+
+Pasos con javascript ¡IGNORAR!(fin)
+
+*/
+
+.contenedor-100hv{
+    min-height: 90vh;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*
+
+Nueva seccion: administrador
+
+*/
+
+.nav-item.admin{
+    background-color: rgb(212, 231, 236);
+    padding: 0;
+}
+.nav-link.admin{
+    color: black;
+}
+
+.card.admin{
+    border: 1px solid black;
+}
+
+.imagen.user-admin{
+    height: 80px;
+}
+
+.col-2.admin{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
