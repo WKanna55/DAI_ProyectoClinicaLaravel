@@ -7,7 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PerfilPacienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,9 +35,14 @@ Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
 
+Route::get('/especialidades', [HomeController::class, 'especialidades'])->name('especialidades');
+
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
 Route::get('/admin', [AdminController::class, 'adminShow'])->name('adminShow');
 
+Route::get('/perfilPaciente', [PerfilPacienteController::class, 'show'])->name('perfilPaciente');
+
 Route::get('/doctor',[DoctorController::class, 'citas'])->name('citas');
+
 
