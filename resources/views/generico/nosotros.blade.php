@@ -67,7 +67,7 @@
       <!-- Visión y Misión -->
       <section class="bg-seccion">
         <div class="container-fluid"></div>
-        <div class="container align-items-center d-flex">
+        <div class="container-nosotros align-items-center d-flex">
           <div>
             <h2 class="titulo" style="font-size: 3em; margin-bottom: 50px">
               Somos la primera clínica...
@@ -111,7 +111,7 @@
       <!-- Historia -->
       <section class="bg-seccion2">
         <div class="container-fluid"></div>
-        <div class="container align-items-center d-flex">
+        <div class="container-nosotros align-items-center d-flex">
           <div>
             <img
               src="assets/img/index/comentarios-bg.jpg"

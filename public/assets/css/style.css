@@ -389,7 +389,7 @@ Nueva seccion: administrador
     background-color: #5fa8d3; /* Cambia el color del botón al pasar el mouse */
 }
 
-.titulo-formulario, .placeholder{
+.titulo-formulario{
     color: #1b4965;
 }
 
@@ -631,7 +631,7 @@ Seccion de estilos de la interfaz de Nosotros
 /* Bienvenida */
 
 .parallax-nosotros {
-    background: linear-gradient(to right, #b9b9b9cd, hsla(249, 85%, 79%, 0.637)), url(../img/index/clinica.jpg);
+    background: linear-gradient(to right, #b9b9b9cd, hsla(249, 85%, 79%, 0.637)), url(..assets/img/index/clinica.jpg);
     height: 800px;
     background-attachment: fixed;
     background-position: center;
@@ -642,3 +642,4 @@ Seccion de estilos de la interfaz de Nosotros
 .titulo-nosotros{
     color: #1b4965;
 }
+/*_______________________*/
