@@ -22,7 +22,7 @@ use App\Http\Controllers\PagoController;
 */
 
 Route::get('/', function () {
-    return view('doctor.atencion');
+    return view('home.index');
 })->name('home');
 
 Route::get('/register', [RegisterController::class, 'show'])->name('reg');
