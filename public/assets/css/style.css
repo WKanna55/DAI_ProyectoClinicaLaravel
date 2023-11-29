@@ -608,3 +608,37 @@ Seccion de estilos del perfil de Paciente
     background-color: var(--azul);
     color: var(--celeste-blanco);
 }
+
+
+
+/*==================================================
+Seccion de estilos de la interfaz de Nosotros
+====================================================*/
+.container-nosotros{
+    width: 65%;
+    padding-top: 100px;
+}
+
+/* Misión y Visión - Historia */
+.bg-seccion-nosotros{ 
+    height: 500px;  
+}
+
+.bg-seccion2-nosotros{ 
+    height: 800px;
+}
+
+/* Bienvenida */
+
+.parallax-nosotros {
+    background: linear-gradient(to right, #b9b9b9cd, hsla(249, 85%, 79%, 0.637)), url(../img/index/clinica.jpg);
+    height: 800px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo-nosotros{
+    color: #1b4965;
+}

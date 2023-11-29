@@ -8,6 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerfilPacienteController;
+use App\Http\Controllers\PagoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,4 +47,4 @@ Route::get('/perfilPaciente', [PerfilPacienteController::class, 'show'])->name('
 
 Route::get('/doctor',[DoctorController::class, 'citas'])->name('citas');
 
-
+Route::get('/pago',[PagoController::class, 'pago'])->name('pago');
