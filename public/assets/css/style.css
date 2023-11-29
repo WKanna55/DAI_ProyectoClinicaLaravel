@@ -603,10 +603,8 @@ Seccion de estilos del perfil de Paciente
     }
 }
 
-<<<<<<< HEAD
-=======
 /* diego card blue*/
 .card-blue:hover {
     background-color: var(--azul);
     color: var(--celeste-blanco);
->>>>>>> 8dd318ab9d7846d61aa415d18187309e272c1fc2
+}
