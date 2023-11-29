@@ -45,7 +45,7 @@
                 <a class="nav-link principal" href="{{ route('nosotros') }}">Nosotros</a>
               </li>
               <li class="nav-item principal">
-                <a class="nav-link principal" href="{{ url('/especialidades') }}">Especialidades</a>
+                <a class="nav-link principal" href="{{ route('especialidades') }}">Especialidades</a>
               </li>
               
               @guest

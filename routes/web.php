@@ -34,6 +34,8 @@ Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
 
+Route::get('/especialidades', [HomeController::class, 'especialidades'])->name('especialidades');
+
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
 Route::get('/admin', [AdminController::class, 'adminShow'])->name('adminShow');

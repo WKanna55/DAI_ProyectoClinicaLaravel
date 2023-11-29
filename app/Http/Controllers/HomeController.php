@@ -13,4 +13,8 @@ class HomeController extends Controller
         return view('generico.nosotros');
     }
 
+    public function especialidades() { 
+        return view('generico.especialidades');
+    }
+
 }
