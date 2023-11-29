@@ -5,20 +5,7 @@ Seccion: pagina raiz-base
 */
 
 :root{
-    --azul-grad-celeste: linear-gradient(45deg, rgb(21, 7, 223),rgb(0, 140, 255));
-    --celeste:  rgb(0, 153, 255);
-    --azul: rgb(36, 40, 255);
-    --verde-claro: rgb(47, 179, 47);
-    --verde-oscuro: rgb(0, 78, 21);
-    --gris-transparente: rgba(125, 129, 131, 0.589);
-    --fondo-rosado-claro: #ffdddd;
-    --gris-claro: #bbbbbb;
-    --verde-grad-azul: linear-gradient(45deg, rgb(7, 223, 115),rgb(0, 140, 255));
-
     /* nuevo root */
-    --verde-agua: #2ec4b6;
-
-    
     --celeste-claro: #bee9e8;
     --celeste: #62b6cb;
     --azul: #1b4965;
@@ -363,7 +350,6 @@ Nueva seccion: administrador
     color: var(--cian-azul);
 }
 
-
 /*______________________________________________________*/
 /* Estilos Interfaz pago */
 
@@ -616,3 +602,8 @@ Seccion de estilos del perfil de Paciente
         margin-top: 0;
     }
 }
+
+/* diego card blue*/
+.card-blue:hover {
+    background-color: var(--azul);
+    color: var(--celeste-blanco);
