@@ -6,7 +6,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PerfilPacienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,3 +39,5 @@ Route::get('/especialidades', [HomeController::class, 'especialidades'])->name('
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
 Route::get('/admin', [AdminController::class, 'adminShow'])->name('adminShow');
+
+Route::get('/perfilPaciente', [PerfilPacienteController::class, 'show'])->name('perfilPaciente');
