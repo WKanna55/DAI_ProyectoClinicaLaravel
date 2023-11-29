@@ -346,35 +346,10 @@ Nueva seccion: administrador
     text-align: center;
 
 }
-/*Seccion de estilos del perfil de Paciente*/
-/*=====================================
-estilos generales del Perfil del paciente
-=====================================*/
 
-html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    line-height: 1.4;
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-body {
-    color: #404040;
-    font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
-}
-
-/*=====================================
-estilos del perfil del Paciente
-=====================================*/
+/*==================================================
+Seccion de estilos del perfil de Paciente 
+====================================================*/
 .seccion-perfil-usuario .perfil-usuario-body,
 .seccion-perfil-usuario{
     display: flex;
@@ -527,9 +502,6 @@ estilos del perfil del Paciente
 .perfil-usuario-portada{
     margin-top: 30px;
 }
-
-
-
 
 /* adactacion a dispositivos */
 @media (max-width: 750px) {
