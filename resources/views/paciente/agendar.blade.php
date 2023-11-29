@@ -6,7 +6,7 @@
             <div class="d-flex flex-column justify-content-between align-items-center gap-4 col-md-8">
                 <div class="d-flex flex-column justify-content-between align-items-center gap-4 col-md-6">
                     <h2 class="agenda_title mt-4">Agenda tu cita</h2>
-                <form action="" class="agenda_form d-flex gap-5 flex-column p-4">
+                <form action="{{ route('pago') }}" class="agenda_form d-flex gap-5 flex-column p-4">
         
                     <div class="input-group">
                         <label class="input-group-text" for="inputGroupSelect01">Especialidad</label>
