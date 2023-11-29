@@ -20,7 +20,7 @@ use App\Http\Controllers\PerfilPacienteController;
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('doctor.atencion');
 })->name('home');
 
 Route::get('/register', [RegisterController::class, 'show'])->name('reg');
