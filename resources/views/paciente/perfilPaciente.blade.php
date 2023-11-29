@@ -1,6 +1,6 @@
 @extends ('layouts.plantilla')
 @section ('content')
-<body>
+
     <section class="seccion-perfil-usuario">
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
@@ -110,6 +110,5 @@
           });
         });
     </script>
-</body>
 
 @endsection
