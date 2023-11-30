@@ -37,6 +37,10 @@ class LoginController extends Controller
     }
 
     public function authenticated(Request $request, $user) {
+        //\Log::debug($user); //recibir parametros del usuario mediante debug
+        if ($user->rol_id == 2){ // redireccionar segun los roles de usuario en este caso doctor a view doctor
+            return view('doctor.doctor');
+        }
         return redirect('/');
     }
 }
