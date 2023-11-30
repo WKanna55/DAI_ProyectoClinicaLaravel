@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerfilPacienteController;
 use App\Http\Controllers\PagoController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,3 +49,15 @@ Route::get('/perfilPaciente', [PerfilPacienteController::class, 'show'])->name('
 Route::get('/doctor',[DoctorController::class, 'citas'])->name('citas');
 
 Route::get('/pago',[PagoController::class, 'pago'])->name('pago');
+
+Route::get('/dermatologia', [HomeController::class, 'dermatologia'])->name('dermatologia');
+
+Route::get('/gastroenterologia', [HomeController::class, 'gastroenterologia'])->name('gastroenterologia');
+
+Route::get('/ginecologia', [HomeController::class, 'ginecologia'])->name('ginecologia');
+
+Route::get('/medicina_general', [HomeController::class, 'medicina_general'])->name('medicina_general');
+
+Route::get('/odontologia', [HomeController::class, 'odontologia'])->name('odontologia');
+
+Route::get('/oftalmologia', [HomeController::class, 'oftalmologia'])->name('oftalmologia');

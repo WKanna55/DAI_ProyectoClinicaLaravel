@@ -1,22 +1,21 @@
 @extends('layouts.plantilla')
 @section('content')
     <main>
-      <div class="container especialidad mt-4 align-items-center ">
+      <div class="container especialidad mt-4 align-items-center">
         <!-- Parte 1: Descripción y Reserva de Cita -->
         <div class="row align-items-center pe-5 ps-5 mt-4">
           <div class="col-md-6 order-md-2 text-center">
             <img
-              src="assets/img/especialidades/cirugia/bg-login.jpg"
+              src="assets/img/especialidades/gastroenterología/Gastroenterologia.jpg"
               class="img-fluid-especialidad img-prin"
               alt="Imagen de la especialidad"
-              
             />
           </div>
-          <div class="col-md-6 order-md-1 ">
+          <div class="col-md-6 order-md-1">
             <div>
-              <h2 class="titulo-azul">Medicina General</h2>
+              <h2 class="titulo-azul">Gastroenterología</h2>
               <p>
-                Los médicos generales realizan una variedad de procedimientos y servicios, aunque su enfoque principal está en la atención primaria y la gestión de una amplia gama de condiciones médicas. 
+                Atendemos y tratamos los problemas de tu aparato digestivo (estómago, intestinos, etc)
               </p>
               <a class="btn btn-pers especialidades mt-2" href="{{route('reg')}}">Reservar Cita</a>
             </div>
@@ -30,54 +29,46 @@
           </div>
           <div class="col-sm-6 mb-5">
             <img
-              src="assets/img/especialidades/cirugia/electrocardiograma.jpg"
-              class="card-img-top img-fluid-fluid-especialidad"
+              src="assets/img/especialidades/gastroenterología/endoscopia.jpg"
+              class="card-img-top img-fluid-especialidad"
               alt="Procedimiento 1"
             />
-            <h4 class="titulo-azul mt-3">Electrocardiograma</h4>
+            <h4 class="titulo-azul mt-3">Endoscopía</h4>
             <p>
-              Para evaluar la salud del corazón y detectar posibles problemas
-              cardíacos.
+              Es un procedimiento que permite que el médico vea el interior de su cuerpo. Utiliza un instrumento llamado endoscopio o tubo visor.
             </p>
           </div>
           <div class="col-sm-6 mb-5">
             <img
-              src="assets/img/especialidades/cirugia/radiografia.webp"
-              class="card-img-top img-fluid-fluid-especialidad"
+              src="assets/img/especialidades/gastroenterología/colonoscopia.jpg"
+              class="card-img-top img-fluid-especialidad"
               alt="Procedimiento 2"
             />
-            <h4 class="titulo-azul mt-3">Radiografias</h4>
+            <h4 class="titulo-azul mt-3">Colonoscopia</h4>
             <p>
-              Ecografía abdominal o estudios de imágenes como la tomografía
-              computarizada (TC) o resonancia magnética (RM) para obtener
-              imágenes detalladas de los órganos internos.
+              Es un procedimiento que usa un médico para observar el interior del colon y del recto con un colonoscopio.
             </p>
           </div>
           <div class="col-sm-6 mt-3">
             <img
-              src="assets/img/especialidades/cirugia/p_resistencia.jpg"
-              class="card-img-top img-fluid-fluid-especialidad"
+              src="assets/img/especialidades/gastroenterología/ecografia.jpg"
+              class="card-img-top img-fluid-especialidad"
               alt="Procedimiento 3"
             />
-            <h4 class="titulo-azul mt-3">Prueba de resistencia</h4>
+            <h4 class="titulo-azul mt-3">Ecografía abdominal</h4>
             <p>
-              Evaluación física completa para identificar cualquier problema de
-              salud existente o potencial. Esto puede incluir la medición de
-              signos vitales, examen de los sistemas cardiovascular,
-              respiratorio, gastrointestinal, entre otros.
+              Utiliza ondas sonoras para crear imágenes del abdomen, permitiendo evaluar el hígado, la vesícula biliar, los riñones y otras estructuras.
             </p>
           </div>
           <div class="col-sm-6 mt-3">
             <img
-              src="assets/img/especialidades/cirugia/pulmonar.webp"
+              src="assets/img/especialidades/gastroenterología/manometria.jpg"
               class="card-img-top img-fluid-especialidad"
               alt="Procedimiento 4"
             />
-            <h4 class="titulo-azul mt-3">Examen Pulmonar</h4>
+            <h4 class="titulo-azul mt-3">Manometria Esofágica</h4>
             <p>
-              Estas pruebas pueden ser necesarias para evaluar la capacidad
-              pulmonar y asegurarse de que el paciente pueda tolerar la
-              anestesia y la cirugía.
+              Mide la presión en el esófago para evaluar problemas como la acalasia o el reflujo gastroesofágico.
             </p>
           </div>
         </div>
@@ -86,15 +77,15 @@
             <h2 class="titulo-azul mb-4 mt-5 text-center">Staff Médico</h2>
           </div>
           <div class="col-12 col-md-4 justify-content-center">
-            <div class="card img-especialidad" style="width: 15rem">
+            <div class="card img-especialidad " style="width: 15rem">
               <img
-                src="assets/img/Doctores/doctor4.webp.jpg"
+                src="assets/img/Doctores/doctor1.webp"
                 class="card-img-top img-fluid-especialidad"
                 alt="..."
               />
               <div class="card-body">
-                <h5 class="titulo-azul">Dr. Medina</h5>
-                <p class="card-text">Especialidad: Medicina general</p>
+                <h5 class="titulo-azul">Dr. Quintana</h5>
+                <p class="card-text">Especialidad: Gastroenterología</p>
                 <p class="card-text">CPM:XXXXXX</p>
               </div>
             </div>
@@ -102,13 +93,13 @@
           <div class="col-12 col-md-4 justify-content-center">
             <div class="card img-especialidad" style="width: 15rem">
               <img
-                src="assets/img/Doctores/doctora4.webp"
+                src="assets/img/Doctores/doctor2.webp"
                 class="card-img-top img-fluid-especialidad"
                 alt="..."
               />
               <div class="card-body">
-                <h5 class="titulo-azul">Dra. Manrrique</h5>
-                <p class="card-text">Especialidad: Medicina general</p>
+                <h5 class="titulo-azul">Dr. Arapa</h5>
+                <p class="card-text">Especialidad: Gastroenterología</p>
                 <p class="card-text">CPM:XXXXXX</p>
               </div>
             </div>
@@ -121,8 +112,8 @@
                 alt="..."
               />
               <div class="card-body">
-                <h5 class="titulo-azul">Dr. Torres</h5>
-                <p class="card-text">Especialidad: Medicina general</p>
+                <h5 class="titulo-azul">Dr. Perez</h5>
+                <p class="card-text">Especialidad: Gastroenterología</p>
                 <p class="card-text">CPM:XXXXXX</p>
               </div>
             </div>
@@ -131,8 +122,7 @@
       </div>
     </main>
 
-    
-    
+
   </body>
 </html>
-@endsection
+@endsection 

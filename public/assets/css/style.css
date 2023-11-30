@@ -35,7 +35,7 @@ Nueva seccion: index
 /* Barra de navegacion*/
 .navbar.principal {
     padding: 0.8rem;
-    background: var(--celeste-oscuro);
+    background: var(--azul);
 }
 .navbar-collapse.principal {
     align-items: center;
@@ -60,8 +60,11 @@ Nueva seccion: index
 }
 .btn-pers{
     background-color: var(--azul);
-    color: white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+.btn.lb{
+    color: white;
 }
 .btn-pers:hover{
     background-color: var(--celeste-claro);
@@ -70,9 +73,9 @@ Nueva seccion: index
 .btn-pers.green{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     background-color: var(--azul);
+    color: white;
 }
 .btn-pers.green:active{
-    background-color: rgb(47, 179, 47);
     color: white;
 }
 .btn-pers.green:hover{
@@ -170,7 +173,7 @@ Nueva seccion: index
 
 
 /* especialidades */
-.bg-seccion{
+/* .bg-seccion{
     background-color: rgb(230, 230, 230);
 }
 .icon-especializacion{
@@ -186,7 +189,7 @@ Nueva seccion: index
 .titulo-especialidad{
     background-color: aqua;
     
-}
+} */
 
 
 /* comentarios */
@@ -202,8 +205,8 @@ Nueva seccion: index
     width: 50px;
 }
 
-.bg-user{
-    background: var(--celeste);
+.card.bg-user{
+    background-color: var(--celeste);
 }
 
 
@@ -345,9 +348,21 @@ Nueva seccion: administrador
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
 }
+.efecto-div {
+    background-color: rgb(242, 246, 248);
+}
 /* Seccion:  interfaz-especialidades */
-.card-title{
-    color: var(--cian-azul);
+.titulo-azul{
+    color: var(--azul);
+}
+.especialidades{
+    background-color: var(--azul);
+    color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.especialidades:hover{
+    background-color: var(--celeste-oscuro);
+    color: black;
 }
 
 /*______________________________________________________*/
@@ -401,7 +416,7 @@ Nueva seccion: administrador
     object-fit: cover; /* Ajusta la imagen manteniendo las proporciones y cubriendo completamente el contenedor */
 }
 
-.container {
+.container.especialidad {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -409,14 +424,28 @@ Nueva seccion: administrador
     margin-top: 30px;
 }
 
-img.img-fluid {
+.img-fluid-especialidad {
     border-radius: 5px;
 }
 
-.card {
+.img-fluid-especialidad.img-prin {
+    border-radius: 5px;
+    width: 500px;
+}
+.card.img-especialidad {
     border: none;
     transition: transform 0.2s;
     margin-bottom: 20px;
+    background-color: rgb(242, 246, 248);
+}
+.btn-pers.especialidades{
+    background-color: var(--azul);
+    color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn-pers.especialidades:hover{
+    background-color: #5fa8d3;
+    color: black;
 }
 
 /*==================================================
