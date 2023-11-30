@@ -3,7 +3,7 @@
     <main>
       <!-- Descripción -->
       <section>
-        <div class="container-fluid align-items-center parallax">
+        <div class="container-fluid align-items-center parallax-nosotros">
           <div class="container-fluid" style="height: 50px"></div>
           <div class="container nosotros">
             <h1 class="mb-10 titulo" style="font-size: 4em">
