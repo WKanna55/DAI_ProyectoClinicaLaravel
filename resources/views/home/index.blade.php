@@ -31,99 +31,62 @@
     </div>
   </section>
   <!-- Especialidades -->
-  <section class="bg-seccion">
-    <div class="container-fluid" style="height: 50px;">
-    </div>
-    <div class="container align-items-center">
-      <h1 class="text-center mb-3">Nuestras especilidades</h1>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
-        <div class="col mb-4">
-          <a href="#">
-            <div class="card especialidades align-items-center">
-              <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Cardiología</h5>
-              </div>
+  <section class="">
+      <div class="container-fluid" style="height: 50px;">
+      </div>
+      <div class="container mt-5">
+        <h1 class="text-center mb-4">Nuestras Especialidades</h1>
+    
+        <div class="row">
+            <!-- Especialidad 1 -->
+            <div class="col-md-6">
+                <a href="{{ route('medicina_general')}}" class="d-flex align-items-center text-dark text-decoration-none rounded p-3 specialty-card">
+                    <img src="assets/img/iconos/cirgen-icon.png" alt="Icono de Cirugía General" class="mr-3" width="60">
+                    <span class="h5">Cirugía General</span>
+                </a>
             </div>
-          </a>
-            
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
+    
+            <!-- Especialidad 2 -->
+            <div class="col-md-6">
+                <a href="{{ route('dermatologia')}}" class="d-flex align-items-center text-dark text-decoration-none rounded p-3 specialty-card">
+                    <img src="assets/img/iconos//derma-icon.png" alt="Icono de Dermatología" class="mr-3" width="60">
+                    <span class="h5">Dermatología</span>
+                </a>
             </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
+            <!-- Especialidad 3 -->
+            <div class="col-md-6">
+              <a href="{{ route('gastroenterologia')}}" class="d-flex align-items-center text-dark text-decoration-none rounded p-3 specialty-card">
+                  <img src="assets/img/iconos//gastro-icon.png" alt="Icono de Cirugía General" class="mr-3" width="60">
+                  <span class="h5">Gastroenterología</span>
+              </a>
             </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
+    
+            <!-- Especialidad 4 -->
+            <div class="col-md-6">
+                <a href="{{ route('ginecologia')}}" class="d-flex align-items-center text-dark text-decoration-none rounded p-3 specialty-card">
+                    <img src="assets/img/iconos//gineco-icon.png" alt="Icono de Dermatología" class="mr-3" width="60">
+                    <span class="h5">Ginecología</span>
+                </a>
             </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
+            <!-- Especialidad 5 -->
+            <div class="col-md-6">
+              <a href="{{ route('odontologia')}}" class="d-flex align-items-center text-dark text-decoration-none rounded p-3 specialty-card">
+                  <img src="assets/img/iconos//odonto-icon.png" alt="Icono de Cirugía General" class="mr-3" width="60">
+                  <span class="h5">Odontología</span>
+              </a>
             </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
+    
+            <!-- Especialidad 6 -->
+            <div class="col-md-6">
+                <a href="{{ route('oftalmologia')}}" class="d-flex align-items-center text-dark text-decoration-none rounded p-3 specialty-card">
+                    <img src="assets/img/iconos//oftalmo-icon.png" alt="Icono de Dermatología" class="mr-3" width="60">
+                    <span class="h5">Oftalmología</span>
+                </a>
             </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card especialidades align-items-center">
-            <img src="assets/img/index/especialidades_icon/heart-pulse.svg" class="card-img-top icon-especializacion" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cardiología</h5>
-            </div>
-          </div>
         </div>
       </div>
-      <div class="container-fluid" style="height: 50px;"></div>
-    </div>
-  </section>
+        <div class="container-fluid" style="height: 50px;"></div>
+    </section>
   <!-- Comentarios -->
   <section>
     <div class="container-fluid align-items-center parallax">
@@ -132,8 +95,8 @@
         <h1 class="text-center mb-5 text-light">Comentarios de nuestros pacientes</h1>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
         <div class="col mb-4">
-          <div class="card align-items-center bg-user">
-            <img src="assets/img/index/user.svg" class="card-img-top user-icon" alt="...">
+          <div class="card bg-user align-items-center ">
+            <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
             <h5>Carlos Nuñez</h5>
             <div class="card-body bg-light">
               <p class="card-text">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore omnis eligendi dolorem aut rerum velit sit architecto impedit minima distinctio, atque est fugit, ex numquam, deserunt laboriosam maiores consequuntur!
@@ -142,8 +105,8 @@
           </div>
         </div>
         <div class="col mb-4">
-          <div class="card align-items-center bg-user">
-            <img src="assets/img/index/user.svg" class="card-img-top user-icon" alt="...">
+          <div class="card bg-user align-items-center ">
+            <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
             <h5>Carlos Nuñez</h5>
             <div class="card-body bg-light">
               <p class="card-text">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore omnis eligendi dolorem aut rerum velit sit architecto impedit minima distinctio, atque est fugit, ex numquam, deserunt laboriosam maiores consequuntur!
@@ -152,8 +115,8 @@
           </div>
         </div>
         <div class="col mb-4">
-          <div class="card align-items-center bg-user">
-            <img src="assets/img/index/user.svg" class="card-img-top user-icon" alt="...">
+          <div class="card bg-user align-items-center ">
+            <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
             <h5>Carlos Nuñez</h5>
             <div class="card-body bg-light">
               <p class="card-text">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore omnis eligendi dolorem aut rerum velit sit architecto impedit minima distinctio, atque est fugit, ex numquam, deserunt laboriosam maiores consequuntur!

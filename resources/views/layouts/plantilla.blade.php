@@ -50,22 +50,22 @@
               
               @guest
               <li class="nav-item principal">
-                <a role="button" class="btn btn-pers btn-lg" href="{{ route('loginShow') }}">Iniciar sesion</a>
+                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('loginShow') }}">Iniciar sesion</a>
               </li>
               <li class="nav-item principal">
-                <a role="button" class="btn btn-pers green btn-lg" href="{{ route('reg') }}">Registrate</a>
+                <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('reg') }}">Registrate</a>
               </li> 
               
               @else
               <li class="nav-item">
-                <a role="button" class="btn btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
+                <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
               </li>
               <li class="nav-item">
               <li class="nav-item">
-                <a role="button" class="btn btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
+                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
               </li>
               <li class="nav-item">
-                <a role="button" class="btn btn-pers btn-lg" href="{{ route('adminShow') }}">ventana admin</a>
+                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('adminShow') }}">ventana admin</a>
               </li>
               
               @endguest
