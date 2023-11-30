@@ -353,7 +353,7 @@ Nueva seccion: administrador
 /*______________________________________________________*/
 /* Estilos Interfaz pago */
 
-.container-formulario {
+.container.pago {
     background-image: linear-gradient(to right, #b9b9b9cd, hsla(249, 22%, 66%, 0.637)), url(../img/index/fondo-pago.jpg);
     background-attachment: fixed;
     background-position: center;
@@ -614,17 +614,17 @@ Seccion de estilos del perfil de Paciente
 /*==================================================
 Seccion de estilos de la interfaz de Nosotros
 ====================================================*/
-.container-nosotros{
+.container.nosotros{
     width: 65%;
     padding-top: 100px;
 }
 
 /* Misión y Visión - Historia */
-.bg-seccion-nosotros{ 
+.b-nosotros{ 
     height: 500px;  
 }
 
-.bg-seccion2-nosotros{ 
+.b-nosotros2{ 
     height: 800px;
 }
 
@@ -639,7 +639,7 @@ Seccion de estilos de la interfaz de Nosotros
     background-size: cover;
 }
 
-.titulo-nosotros{
+.titulo{
     color: #1b4965;
 }
 /*_______________________*/
