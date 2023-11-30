@@ -3,9 +3,9 @@
     <main>
       <!-- Descripción -->
       <section>
-        <div class="container-fluid align-items-center parallax">
+        <div class="container-fluid align-items-center parallax-nosotros">
           <div class="container-fluid" style="height: 50px"></div>
-          <div class="container-nosotros">
+          <div class="container nosotros">
             <h1 class="mb-10 titulo" style="font-size: 4em">
               <strong>Bienvenido</strong>
             </h1>
@@ -65,9 +65,9 @@
         </div>
       </section>
       <!-- Visión y Misión -->
-      <section class="bg-seccion">
+      <section class="bg-seccion b-nosotros">
         <div class="container-fluid"></div>
-        <div class="container-nosotros align-items-center d-flex">
+        <div class="container nosotros align-items-center d-flex">
           <div>
             <h2 class="titulo" style="font-size: 3em; margin-bottom: 50px">
               Somos la primera clínica...
@@ -109,9 +109,9 @@
         </div>
       </section>
       <!-- Historia -->
-      <section class="bg-seccion2">
+      <section class="bg-seccion b-nosotros2">
         <div class="container-fluid"></div>
-        <div class="container-nosotros align-items-center d-flex">
+        <div class="container nosotros align-items-center d-flex">
           <div>
             <img
               src="assets/img/index/comentarios-bg.jpg"

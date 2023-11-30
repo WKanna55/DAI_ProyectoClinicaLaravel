@@ -1,7 +1,7 @@
 @extends ('layouts.plantilla')
 @section ('content')
 <main>
-  <div class="container-formulario">
+  <div class="container pago">
     <form class="row formulario g-4">
       <legend class="text-center titulo-formulario"><strong>Pago con Visa</strong></legend>
       <div class="col-md-12">
