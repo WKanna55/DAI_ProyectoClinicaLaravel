@@ -424,6 +424,9 @@ Nueva seccion: administrador
 .titulo-formulario{
     color: #1b4965;
 }
+/*______________________________________________________*/
+/* Estilos Interfaz pago */
+
 
 /* Seccion: especialidad */
 
@@ -661,24 +664,19 @@ Seccion de estilos del perfil de Paciente
 Seccion de estilos de la interfaz de Nosotros
 ====================================================*/
 .container.nosotros{
-    width: 65%;
-    padding-top: 100px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
 }
 
 /* Misión y Visión - Historia */
-.b-nosotros{ 
-    height: 500px;  
-}
 
-.b-nosotros2{ 
-    height: 800px;
-}
 
 /* Bienvenida */
 
 .parallax-nosotros {
     background: linear-gradient(to right, #b9b9b9cd, hsla(249, 85%, 79%, 0.637)), url(..assets/img/index/clinica.jpg);
-    height: 800px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
