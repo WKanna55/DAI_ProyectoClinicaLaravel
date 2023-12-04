@@ -61,3 +61,5 @@ Route::get('/medicina_general', [HomeController::class, 'medicina_general'])->na
 Route::get('/odontologia', [HomeController::class, 'odontologia'])->name('odontologia');
 
 Route::get('/oftalmologia', [HomeController::class, 'oftalmologia'])->name('oftalmologia');
+
+Route::get('/doctor/atencion',[DoctorController::class, 'atencion'])->name('atencion');

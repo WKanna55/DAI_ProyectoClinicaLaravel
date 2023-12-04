@@ -10,4 +10,8 @@ class DoctorController extends Controller
     public function citas() {
         return view('doctor.doctor');
     }
+
+    public function atencion(){
+        return view('doctor.atencion');
+    }
 }

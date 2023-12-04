@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="HTML, Bootstrap, Vue, PHP, Laravel">
     <!-- Titulo -->
-    <title>Clinica final</title>
+    <title>Clínica Serenidad </title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/icono.svg">
     <!-- Bootstrap -->
@@ -65,9 +65,12 @@
                 <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
               </li>
               <li class="nav-item">
-                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('adminShow') }}">ventana admin</a>
+                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('adminShow') }}">Admin</a>
               </li>
-              
+              <li class="nav-item">
+                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('citas') }}">Doctor</a>
+              </li>
+
               @endguest
               
             </ul>
@@ -86,9 +89,9 @@
         <!-- Section: Text -->
         <section class="mb-4">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-            repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-            eum harum corrupti dicta, aliquam sequi voluptate quas.
+            Presentamos con orgullo la clinica Serenidad, un referente destacado en servicios de salud 
+            en la hermosa ciudad de Arequipa; desde el año 2005, nos dedicamos apasionadamente a atender 
+            las necesidades de nuestra comunidad.
           </p>
         </section>
         <!-- Section: Text -->
@@ -96,22 +99,13 @@
         <!-- Section: Links -->
         <section class="">
           <!--Grid row-->
-          <div class="row">
+          <div class="row justify-content-center align-items-center">
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
+              <h5 class="text-uppercase">Ubicanos en</h5>
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
+                  <p>José Luis Bustamante y Rivero <br> Arequipa - Peru</p>
                 </li>
               </ul>
             </div>
@@ -119,65 +113,17 @@
           
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
+              <h5 class="text-uppercase">Escribenos o llamanos:</h5>
 
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="#!" class="text-white">Link 1</a>
+                  <p>(054) 511000 - 988766332</p>
                 </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
+                
               </ul>
             </div>
             <!--Grid column-->
-          
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-          
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
 
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
           </div>
           <!--Grid row-->
         </section>
@@ -187,8 +133,7 @@
     
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        © 2023 Copyright Clínica Serenidad. Todos los derechos reservados.
       </div>
       <!-- Copyright -->
     </footer>

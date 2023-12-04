@@ -203,6 +203,7 @@ Nueva seccion: index
 }
 .user-icon{
     width: 50px;
+    margin: 10px;
 }
 
 .card.bg-user{
@@ -324,6 +325,7 @@ Nueva seccion: administrador
 
 .card.admin{
     border: 1px solid black;
+    
 }
 
 .imagen.user-admin{
@@ -336,6 +338,21 @@ Nueva seccion: administrador
     text-align: center;
 
 }
+
+.trash-icon{
+    font-size: 16px;
+}
+
+
+
+/* tabla con scroll admin inicio*/
+.table-responsive.admin{
+    overflow-y: auto;
+    height: 600px;
+    width: 100%;
+}
+/* tabla con scroll admin fin*/
+
 
 /* Seccion:  principal-especialidades */
 
@@ -672,3 +689,12 @@ Seccion de estilos de la interfaz de Nosotros
     color: #1b4965;
 }
 /*_______________________*/
+
+
+/* tabla con scroll atencion inicio*/
+.table-responsive.atencion{
+    overflow-y: auto;
+    height: 400px;
+    width: 100%;
+}
+/* tabla con scroll atencion fin*/

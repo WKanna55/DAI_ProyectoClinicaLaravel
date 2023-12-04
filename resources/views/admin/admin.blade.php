@@ -30,6 +30,7 @@
         
         <!-- Pills content -->
         <div class="tab-content">
+          <!-- Tab registrar cita INICIO -->
           <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="tab-1">
 
             <!-- Contenido input -->
@@ -90,130 +91,79 @@
             </div><!-- End -->
 
           </div>
+          <!-- Tab registrar cita FIN -->
+
+
+          <!-- Tab tabla citas INICIO -->
           <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="tab-2">
 
-
             <div class="card admin">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">nombre</th>
-                    <th scope="col">apellido</th>
-                    <th scope="col">Especialidad</th>
-                    <th scope="col">Doctor</th>
-                    <th scope="col">Horario</th>
-                    <th scope="col">Opciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr><tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Juan Miguel</td>
-                    <td>Gomez Torres</td>
-                    <td>Cardiologia</td>
-                    <td>Jose Fernandez</td>
-                    <td>10:00 - 10:30</td>
-                    <td>
-                      <a type="button" class="btn btn-primary" href="">eliminar</a>
-                    </td>
-                  </tr>
-                  
-                </tbody>
-              </table>
+
+              <div class="table-responsive admin">
+                <table class="table">
+                  <thead class="">
+                    <tr class="">
+                      <th class="col-1">ID</th>
+                      <th class="col-2">Nombre</th>
+                      <th class="col-2">Apellido</th>
+                      <th class="col-2">Especialidad</th>
+                      <th class="col-2">Doctor</th>
+                      <th class="col-2">Horario</th>
+                      <th class="col-1">Opcion</th>
+                    </tr>
+                  </thead>
+                  <tbody class="">
+  
+                    <tr class="">
+                      <td class="col-1">1</td>
+                      <td class="col-2">Juan Miguel</td>
+                      <td class="col-2">Gomez Torres</td>
+                      <td class="col-2">Cardiologia</td>
+                      <td class="col-2">Jose Fernandez parrillo</td>
+                      <td class="col-2">10:00 - 10:30</td>
+                      <td class="col-1">
+                        <a href=""><i class="bi bi-trash trash-icon"></i></a>
+                      </td>
+                    </tr>
+  
+                    <tr class="">
+                      <td class="col-1">1</td>
+                      <td class="col-2">Juan Miguel</td>
+                      <td class="col-2">Gomez Torres</td>
+                      <td class="col-2">Cardiologia</td>
+                      <td class="col-2">Jose Fernandez parrillo</td>
+                      <td class="col-2">10:00 - 10:30</td>
+                      <td class="col-1">
+                        <a href=""><i class="bi bi-trash trash-icon"></i></a>
+                      </td>
+                    </tr>
+  
+                    <tr class="">
+                      <td class="col-1">1</td>
+                      <td class="col-2">Juan Miguel</td>
+                      <td class="col-2">Gomez Torres</td>
+                      <td class="col-2">Cardiologia</td>
+                      <td class="col-2">Jose Fernandez parrillo</td>
+                      <td class="col-2">10:00 - 10:30</td>
+                      <td class="col-1">
+                        <a href=""><i class="bi bi-trash trash-icon"></i></a>
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+
+            
+
             </div>
 
             
 
 
           </div>
+          <!-- Tab tabla citas FIN -->
+
         </div>
         <!-- Pills content fin -->
 

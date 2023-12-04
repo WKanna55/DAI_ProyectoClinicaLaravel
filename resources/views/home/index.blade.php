@@ -8,7 +8,9 @@
         <div class="carousel-item active">
           <div class="sobreponer-carr texto-sobrepuesto">
             <h2 class="">¡Descubre el Bienestar Total en Nuestra Clínica de Excelencia!</h2>
-            <p>Bienvenido a [Nombre de la Clínica], donde tu salud y bienestar son nuestra prioridad. Nuestro equipo de profesionales altamente calificados está comprometido a brindarte atención personalizada y de calidad.
+            <p>Bienvenido a Clinica Serenidad, donde tu salud y bienestar son nuestra prioridad. 
+              Nuestro equipo de profesionales altamente calificados está comprometido a brindarte 
+              atención personalizada y de calidad.
             </p>
           </div>
           <img src="assets/img/index/carrusel/carr1.jpeg" class="d-block w-100 img-carr" alt="img1">
@@ -99,28 +101,47 @@
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
             <h5>Carlos Nuñez</h5>
             <div class="card-body bg-light">
-              <p class="card-text">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore omnis eligendi dolorem aut rerum velit sit architecto impedit minima distinctio, atque est fugit, ex numquam, deserunt laboriosam maiores consequuntur!
-                "</p>
+              <p class="card-text">
+                He tenido experiencias excepcionales en la Clínica Serenidad. 
+                Desde el momento en que entras, te envuelve una sensación acogedora 
+                y profesionalismo. El personal es atento y siempre dispuesto a ayudar. 
+                Los médicos y especialistas son altamente calificados, 
+                brindando una atención médica de primera clase. Recomiendo encarecidamente la Clínica 
+                Serenidad a aquellos que buscan una atención médica de calidad en 
+                un entorno que prioriza la comodidad y la excelencia.
+              </p>
             </div>
           </div>
         </div>
         <div class="col mb-4">
           <div class="card bg-user align-items-center ">
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
-            <h5>Carlos Nuñez</h5>
+            <h5>Lisbeth Torres</h5>
             <div class="card-body bg-light">
-              <p class="card-text">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore omnis eligendi dolorem aut rerum velit sit architecto impedit minima distinctio, atque est fugit, ex numquam, deserunt laboriosam maiores consequuntur!
-                "</p>
+              <p class="card-text">
+                La clínica Serenidad cuenta con instalaciones modernas y limpias, 
+                lo que contribuye a un ambiente acogedor y de confianza. 
+                Además, la eficiencia en la gestión de citas y la puntualidad 
+                en el servicio son aspectos que realmente aprecio. 
+              </p>
             </div>
           </div>
         </div>
         <div class="col mb-4">
           <div class="card bg-user align-items-center ">
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
-            <h5>Carlos Nuñez</h5>
+            <h5>Renata Lazo</h5>
             <div class="card-body bg-light">
-              <p class="card-text">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore omnis eligendi dolorem aut rerum velit sit architecto impedit minima distinctio, atque est fugit, ex numquam, deserunt laboriosam maiores consequuntur!
-                "</p>
+              <p class="card-text">
+                La Clínica Serenidad realmente ha marcado la diferencia en mi 
+                experiencia de atención médica. Siempre 
+                sentí una atmósfera de calma y profesionalismo. El personal es 
+                increíblemente amable y siempre está dispuesto a ayudar. Lo 
+                que más me sorprendió fue la atención personalizada que recibí 
+                de los médicos, quienes no solo son expertos en sus campos, 
+                sino que también se tomaron el tiempo de escuchar mis inquietudes 
+                y responder a todas mis preguntas de manera comprensible.
+              </p>
             </div>
           </div>
         </div>

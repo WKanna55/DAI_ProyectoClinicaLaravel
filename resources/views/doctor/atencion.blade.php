@@ -9,67 +9,91 @@
     </button>
   </div>
   
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-4" id="exampleModalLabel">Historial medico</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Fecha</th>
-            <th scope="col">Valoración</th>
-            <th scope="col">Alergia</th>
-            <th scope="col">Receta</th>
-            <th scope="col">Doctor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>01/11/2023</td>
-            <td>Buena</td>
-            <td>Polen</td>
-            <td>Medicamento XYZ</td>
-            <td>Dr. Rodríguez</td>
-          </tr>
-
-          <tr>
-            <td>15/10/2023</td>
-            <td>Buena</td>
-            <td>Polen</td>
-            <td>Medicamento XYZ</td>
-            <td>Dr. Rodríguez</td>
-          </tr>
-
-          <tr>
-            <td>12/09/2023</td>
-            <td>Buena</td>
-            <td>Mariscos</td>
-            <td>Medicamento XYZ</td>
-            <td>Dr. Garcia</td>
-          </tr>
-
-          <tr>
-            <td>22/08/2023</td>
-            <td>Buena</td>
-            <td>Mariscos</td>
-            <td>Medicamento XYZ</td>
-            <td>Dr. Garcia</td>
-          </tr>
-          
-        </tbody>
-      </table>
-          </div>
+  <!-- Modal INICIO -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-4" id="exampleModalLabel">Historial medico</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+
+          <div class="table-responsive atencion">
+            <table class="table table-hover">
+              <thead class="">
+                <tr class="">
+                  <th class="col-2" scope="col">Fecha</th>
+                  <th class="col-2" scope="col">Valoración</th>
+                  <th class="col-2" scope="col">Alergia</th>
+                  <th class="col-3" scope="col">Receta</th>
+                  <th class="col-3" scope="col">Doctor</th>
+                </tr>
+              </thead>
+              <tbody class="">
+                <tr class="">
+                  <td class="col-2">01/11/2023</td>
+                  <td class="col-2">Buena</td>
+                  <td class="col-2">Polen</td>
+                  <td class="col-3">Medicamento XYZ</td>
+                  <td class="col-3">Dr. Rodríguez</td>
+                </tr>
+                <tr class="">
+                  <td class="col-2">01/11/2023</td>
+                  <td class="col-2">Buena</td>
+                  <td class="col-2">Polen</td>
+                  <td class="col-3">Medicamento XYZ</td>
+                  <td class="col-3">Dr. Rodríguez</td>
+                </tr>
+                <tr class="">
+                  <td class="col-2">01/11/2023</td>
+                  <td class="col-2">Buena</td>
+                  <td class="col-2">Polen</td>
+                  <td class="col-3">Medicamento XYZ</td>
+                  <td class="col-3">Dr. Rodríguez</td>
+                </tr>
+                <tr class="">
+                  <td class="col-2">01/11/2023</td>
+                  <td class="col-2">Buena</td>
+                  <td class="col-2">Polen</td>
+                  <td class="col-3">Medicamento XYZ</td>
+                  <td class="col-3">Dr. Rodríguez</td>
+                </tr>
+                <tr class="">
+                  <td class="col-2">01/11/2023</td>
+                  <td class="col-2">Buena</td>
+                  <td class="col-2">Polen</td>
+                  <td class="col-3">Medicamento XYZ</td>
+                  <td class="col-3">Dr. Rodríguez</td>
+                </tr>
+                <tr class="">
+                  <td class="col-2">01/11/2023</td>
+                  <td class="col-2">Buena</td>
+                  <td class="col-2">Polen</td>
+                  <td class="col-3">Medicamento XYZ</td>
+                  <td class="col-3">Dr. Rodríguez</td>
+                </tr>
+                <tr class="">
+                  <td class="col-2">01/11/2023</td>
+                  <td class="col-2">Buena</td>
+                  <td class="col-2">Polen</td>
+                  <td class="col-3">Medicamento XYZ</td>
+                  <td class="col-3">Dr. Rodríguez</td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+          
+          
+
+        </div>
+
+
       </div>
-      </div>
-      
     </div>
   </div>
-</div>
+  <!-- Modal FIN -->
 
   <div class="container-fluid p-4">
     

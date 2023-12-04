@@ -21,7 +21,7 @@
             <div class="container">
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                    <a href="">
+                    <a href="{{ route('atencion')}}">
                         <div class="col mb-3">
                             <div class="card card-blue align-items-center bg-user p-3">
                                 <h6 class="">Carlos Nuñez</h6>
