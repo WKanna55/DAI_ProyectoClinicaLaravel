@@ -678,7 +678,7 @@ Seccion de estilos de la interfaz de Nosotros
 
 .parallax-nosotros {
     background: linear-gradient(to right, #b9b9b9cd, hsla(249, 85%, 79%, 0.637)), url(..assets/img/index/clinica.jpg);
-    height: 800px;
+    height: 800px; /*Hace que se mantenga fijo el contenedor - eliminar*/
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
