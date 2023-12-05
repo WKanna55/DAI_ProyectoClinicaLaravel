@@ -33,7 +33,7 @@
       <nav class="navbar principal navbar-expand-md">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ url('/')}}">
-            <img src="assets/img/index/logo.png" class="logo" alt="">
+            <img src="assets/img/logo_claro.png" class="logo" alt="">
           </a>
           <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-list icon-navbar"></i>

@@ -83,24 +83,22 @@ class RegisterController extends Controller
         //     return redirect()->route('reg');
         // }
         
-        $user = new User();
-            $user->dni = $request->input('dni');
-            $user->password = $request->input('password');
-            $user->rol_id = 1;
-            $user->save();
+        $user = User::create([
+            'dni' => $request->input('dni'),
+            'password' => $request->input('password'),
+            'rol_id' => 1,
+        ]);
+        
+        $patient = Patient::create([
+            'usuario_id' => $user->id,
+            'nombres' => $request->input('nombres'),
+            'apellidos' => $request->input('apellidos'),
+            'telefono' => $request->input('telefono'),
+            'email' => $request->input('email'),
+            'direccion' => $request->input('direccion'),
+            'fecha_nacimiento' => $request->input('fecha'),
+        ]);
 
-            $userId = $user->id;
-
-            $patient = new Patient();
-            $patient->usuario_id = $userId;
-            $patient->nombres = $request->input('nombres');
-            $patient->apellidos = $request->input('apellidos');
-            $patient->telefono = $request->input('telefono');
-            $patient->email = $request->input('email');
-            $patient->direccion = $request->input('direccion');
-            $patient->fecha_nacimiento = $request->input('fecha');
-            $patient->save();
-
-            return redirect()->route('home');
+        return redirect()->route('home');
     }
 }

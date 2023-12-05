@@ -9,7 +9,6 @@ use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerfilPacienteController;
 use App\Http\Controllers\PagoController;
-use App\Http\Controllers\PaypalController;
 
 
 /*
