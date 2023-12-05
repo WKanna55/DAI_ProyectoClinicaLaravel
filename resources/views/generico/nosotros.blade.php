@@ -69,11 +69,10 @@
 
       <!-- Visión y Misión -->
       <section class="">
-        <div class="container nosotros align-items-center d-flex">
-          <div class="row row-cols-1 row-cols-lg-2">
-
-            <div class="d-flex">
-
+        <div class="container nosotros align-items-center ">
+          <div class="row">
+            
+            <div class="col-lg-6 col-12 order-lg-1 order-sm-1">
               <div class="row">
                 <h2 class="titulo" style="font-size: 3em; margin-bottom: 50px">
                   Somos la primera clínica...
@@ -102,27 +101,15 @@
                   </div>
                 </div>
               </div>
-
             </div>
 
-            <div class="d-flex">
-
+            <div class="col-lg-6 col-12 order-lg-2 order-sm-2">
               <img
               src="assets/img/index/comentarios-bg.jpg"
               class="card-img-top icon-especializacion"
-              style="width:500px; height:100%; margin-left: 50px"
+              style="width:100%; height:100% "
               />
-
             </div>
-
-          </div>
-
-          <div>
-            
-            
-            <div class="container-fluid" style="height: 50px"></div>
-          </div>
-          <div>
             
           </div>
         </div>
@@ -131,57 +118,39 @@
 
       <!-- Historia -->
       <section class="">
-        <div class="container-fluid"></div>
-        <div class="container nosotros align-items-center d-flex">
+        
+        <div class="container nosotros align-items-center">
+          <div class="row">
 
-          <div class="row row-cols-1 row-cols-lg-2">
-
-            <div class="d-flex order-lg-2">
-
+            <div class="col-lg-6 col-12 order-lg-1 order-sm-2">
               <img
               src="assets/img/index/comentarios-bg.jpg"
               class="card-img-top icon-especializacion"
-              style="width:500px; height:100%; margin-right: 50px"
+              style="width:100%; height:100%; margin-right:50px"
               />
-
             </div>
 
-            <div class="d-flex order-lg-1">
-
-              
+            <div class="col-lg-6 col-12 order-lg-2 order-sm-1">
               <div class="row">
                 <h2 class="titulo" style="font-size: 3em; margin-bottom: 50px">
                   Nuestra Historia Médica
                 </h2>
-                <div>
-                  <h5 class="titulo" style="font-size: 1.5em">
-                    Nuestra Misión
-                  </h5>
-                </div>
-                <div>
-                  <div class="card-body">
-                    <p class="card-text" style="font-size: 1.2em; margin-bottom: 20px">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, laboriosam autem! Provident sint, 
-                      harum quas iure dolorem facilis esse dolores dolorum modi! Eos maxime id culpa praesentium eveniet voluptatum et. 
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt ut voluptatem harum sit amet illum qui magnam. 
-                      Dolorum consectetur commodi, omnis, delectus ipsum totam, fuga aliquid quis optio quasi cumque?. Lorem ipsum dolor 
-                      sit amet consectetur adipisicing elit. Debitis vel odit consequuntur, rem, assumenda, quos dolores possimus esse obcaecati 
-                      voluptatibus nostrum perferendis. Commodi mollitia dolorem libero iure in quae aliquid. Lorem ipsum dolor sit amet consectetur 
-                      adipisicing elit. Quidem in recusandae velit! Soluta inventore magni incidunt vel dolore fugiat, ex quam quas unde deleniti iste 
-                      distinctio. Ut et blanditiis laboriosam!
-                    </p>
-                  </div>
+                <div class="card-body">
+                  <p class="card-text" style="font-size: 1.2em; margin-bottom: 20px">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, laboriosam autem! Provident sint, 
+                    harum quas iure dolorem facilis esse dolores dolorum modi! Eos maxime id culpa praesentium eveniet voluptatum et. 
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt ut voluptatem harum sit amet illum qui magnam. 
+                    Dolorum consectetur commodi, omnis, delectus ipsum totam, fuga aliquid quis optio quasi cumque?. Lorem ipsum dolor 
+                    sit amet consectetur adipisicing elit. Debitis vel odit consequuntur, rem, assumenda, quos dolores possimus esse obcaecati 
+                    voluptatibus nostrum perferendis. Commodi mollitia dolorem libero iure in quae aliquid. Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Quidem in recusandae velit! Soluta inventore magni incidunt vel dolore fugiat, ex quam quas unde deleniti iste 
+                    distinctio. Ut et blanditiis laboriosam!
+                  </p>
                 </div>
               </div>
-
-             
-
-              <div class="container-fluid" style="height: 50px"></div>
-
             </div>
-
+            
           </div>
-
         </div>
       </section>
     </main>
