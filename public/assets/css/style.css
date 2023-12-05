@@ -4,6 +4,10 @@ Seccion: pagina raiz-base
 
 */
 
+/*Fuente Overpass regular*/
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital@0;1&display=swap');
+            /*como ponerlo -> font-family: 'Overpass', sans-serif;*/
+
 :root{
     /* nuevo root */
     --celeste-claro: #bee9e8;
@@ -15,16 +19,14 @@ Seccion: pagina raiz-base
 }
 
 
-
-/*Logo pagina*/
-.logo{
-    width: 180px;
-}
 /*general*/
 a {
     text-decoration: none;
 }
 
+*{
+    font-family: 'Overpass', sans-serif;
+}
 
 /*
 
@@ -34,7 +36,7 @@ Nueva seccion: index
 
 /* Barra de navegacion*/
 .navbar.principal {
-    padding: 0.5rem;
+    padding: 0.1rem;
     background: var(--azul);
 }
 .navbar-collapse.principal {
@@ -58,8 +60,25 @@ Nueva seccion: index
 .toggler-border-color.principal{
     border: white solid 3px;
 }
+.navbrand-pers{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+}
+/*Logo pagina*/
+.logo-brand{
+    width: 45px;
+    margin-right: 8px;
+    height: 45px;
+}
+.navbrand-text{
+    color: white;
+    padding-top: 23px;
+}
 .btn-pers{
-    background-color: var(--azul);
+    background-color: var(--celeste);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     color: white;
 }
@@ -85,6 +104,9 @@ Nueva seccion: index
 @media screen and (max-width: 991px){
     .nav-item{
         padding: 0.3rem;
+    }
+    .navbrand-pers{
+        margin-left: 20px;
     }
 }
 
@@ -159,6 +181,20 @@ Nueva seccion: index
     border-radius: 40px;
     margin-bottom: 10px;
 }
+.video-agendar{
+    width: 400px;
+}
+
+.modal-video{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.video-agendar{
+    width: 450px;
+}
+
 @media screen and (max-width: 751px) {
     .btn-pers.cita{
         font-size: 20px;
@@ -170,27 +206,6 @@ Nueva seccion: index
         width: 120px;
     }
 }
-
-
-/* especialidades */
-/* .bg-seccion{
-    background-color: rgb(230, 230, 230);
-}
-.icon-especializacion{
-    margin-top: 2rem;
-    height: 50px;
-}
-.card.especialidades{
-    background-color: rgb(242, 246, 248);
-}
-.card.especialidades:hover{
-    background-color: rgba(125, 129, 131, 0.589);
-}
-.titulo-especialidad{
-    background-color: aqua;
-    
-} */
-
 
 /* comentarios */
 .parallax {
@@ -233,6 +248,42 @@ Nueva seccion: Login
     transform: translate(-10%, -10%);
 }
 
+.logo-login-pers{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    bottom: 7px;
+}
+
+.container-izquierda{
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container-logo-login{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.img-logo-login{
+    width: 40px;
+    margin-right: 7px;
+}
+
+.texto-logo-login{
+    color: var(--azul);
+    padding-top: 23px;
+    font-weight: bold;
+    font-size: 18px;
+}
 
 /*
 
@@ -247,59 +298,6 @@ Nueva seccion: registro
     width: 100%;
     min-width: 300px;
   }
-
-/*
-
-Pasos con javascript ¡IGNORAR!(inicio)
-
-*/
-  
-/* Style the input fields */
-.input-register {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-}
-
-/* Mark input boxes that gets an error on validation: */
-.input-register.invalid {
-  background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #04AA6D;
-}
-
-/*
-
-Pasos con javascript ¡IGNORAR!(fin)
-
-*/
 
 .contenedor-100hv{
     min-height: 90vh;
@@ -354,7 +352,11 @@ Nueva seccion: administrador
 /* tabla con scroll admin fin*/
 
 
-/* Seccion:  principal-especialidades */
+/* 
+
+Seccion:  principal-especialidades 
+
+*/
 
 .specialty-card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -368,7 +370,13 @@ Nueva seccion: administrador
 .efecto-div {
     background-color: rgb(242, 246, 248);
 }
-/* Seccion:  interfaz-especialidades */
+
+
+/* 
+
+Seccion:  interfaz-especialidades 
+
+*/
 .titulo-azul{
     color: var(--azul);
 }
@@ -407,17 +415,12 @@ Nueva seccion: administrador
     padding: 2%;
 }
 
-.botones-pagar{
-    display: flex;  
-    justify-content: space-evenly; 
-}
-
-.botones-pagar button{
+.btn.pago{
     background-color: #1b4965;
     color: white;
 }
 
-.botones-pagar button:hover {
+.btn.pago:hover{
     background-color: #5fa8d3; /* Cambia el color del botón al pasar el mouse */
 }
 
@@ -425,10 +428,14 @@ Nueva seccion: administrador
     color: #1b4965;
 }
 /*______________________________________________________*/
-/* Estilos Interfaz pago */
+/* Estilos Interfaz pago  FIN*/
 
 
-/* Seccion: especialidad */
+/* 
+
+Seccion: especialidad 
+
+*/
 
 .card-img-top {
     width: 500px; /* El ancho deseado */
@@ -469,7 +476,9 @@ Nueva seccion: administrador
 }
 
 /*==================================================
+
 Seccion de estilos del perfil de Paciente 
+
 ====================================================*/
 .seccion-perfil-usuario .perfil-usuario-body,
 .seccion-perfil-usuario{
@@ -624,7 +633,7 @@ Seccion de estilos del perfil de Paciente
     margin-top: 30px;
 }
 
-/* adactacion a dispositivos */
+/* adaptacion a dispositivos perfil*/
 @media (max-width: 750px) {
     .seccion-perfil-usuario .lista-datos {
         width: 100%;
@@ -652,16 +661,27 @@ Seccion de estilos del perfil de Paciente
     }
 }
 
-/* diego card blue*/
+
+/* 
+
+Seccion: Doctor
+
+*/
 .card-blue:hover {
     background-color: var(--azul);
     color: var(--celeste-blanco);
 }
 
+.container.doctor{
+    min-height: 400px;
+}
+
 
 
 /*==================================================
+
 Seccion de estilos de la interfaz de Nosotros
+
 ====================================================*/
 .container.nosotros{
     width: 100%;
@@ -669,9 +689,6 @@ Seccion de estilos de la interfaz de Nosotros
     padding-bottom: 50px;
     
 }
-
-/* Misión y Visión - Historia */
-
 
 /* Bienvenida */
 
@@ -688,6 +705,11 @@ Seccion de estilos de la interfaz de Nosotros
 }
 /*_______________________*/
 
+/*
+
+Seccion: atencion
+
+*/
 
 /* tabla con scroll atencion inicio*/
 .table-responsive.atencion{

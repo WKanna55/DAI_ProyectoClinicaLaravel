@@ -30,10 +30,14 @@
   <body>
     <!-- Barra de navegacion -->
     <header>
-      <nav class="navbar principal navbar-expand-md">
+      <nav class="navbar principal navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ url('/')}}">
-            <img src="assets/img/logo_final.png" class="logo" alt="">
+            <div class="d-flex justify-content-center align-items-center navbrand-pers">
+              <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+              <p class="navbrand-text">Clínica Tecsana</p>
+            </div>
+            
           </a>
           <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-list icon-navbar"></i>
