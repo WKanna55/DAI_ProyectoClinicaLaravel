@@ -33,7 +33,7 @@
       <nav class="navbar principal navbar-expand-md">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ url('/')}}">
-            <img src="assets/img/index/logo.png" class="logo" alt="">
+            <img src="assets/img/logo_final.png" class="logo" alt="">
           </a>
           <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-list icon-navbar"></i>
@@ -57,26 +57,25 @@
               </li> 
               
               @else
-              <li class="nav-item">
-                <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
-              </li>
-              <li class="nav-item">
-              <li class="nav-item">
-                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
-              </li>
-              <li class="nav-item">
-                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('adminShow') }}">Admin</a>
-              </li>
-              <li class="nav-item">
-                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('citas') }}">Doctor</a>
-              </li>
-
+                @if(auth()->user()->rol_id == 1)
+                  <li class="nav-item">
+                    <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
+                  </li>
+                @elseif(auth()->user()->rol_id == 2 || auth()->user()->rol_id == 3)
+                  <li class="nav-item">
+                    <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
+                  </li>
+                @endif
               @endguest
               
             </ul>
           </div>
         </div>
       </nav>
+
     </header>
 
 

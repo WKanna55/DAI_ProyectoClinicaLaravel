@@ -143,7 +143,7 @@
                     Dolorum consectetur commodi, omnis, delectus ipsum totam, fuga aliquid quis optio quasi cumque?. Lorem ipsum dolor 
                     sit amet consectetur adipisicing elit. Debitis vel odit consequuntur, rem, assumenda, quos dolores possimus esse obcaecati 
                     voluptatibus nostrum perferendis. Commodi mollitia dolorem libero iure in quae aliquid. Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Quidem in recusandae velit! Soluta inventore magni incidunt vel dolore fugiat, ex quam quas unde deleniti iste 
+                    adipisicing elit. Quidem in recusandae velit! Soluta inventore magni incidunt vel dolore fugiat, ex quam quas unde deleniti iste  
                     distinctio. Ut et blanditiis laboriosam!
                   </p>
                 </div>

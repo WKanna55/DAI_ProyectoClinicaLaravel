@@ -41,6 +41,9 @@ class LoginController extends Controller
         if ($user->rol_id == 2){ // redireccionar segun los roles de usuario en este caso doctor a view doctor
             return view('doctor.doctor');
         }
+        elseif ($user->rol_id == 3){ // Agregado
+            return view('admin.admin');
+        }
         return redirect('/');
     }
 }

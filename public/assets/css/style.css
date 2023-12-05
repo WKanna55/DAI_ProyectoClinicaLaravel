@@ -18,7 +18,7 @@ Seccion: pagina raiz-base
 
 /*Logo pagina*/
 .logo{
-    width: 150px;
+    width: 180px;
 }
 /*general*/
 a {
@@ -34,7 +34,7 @@ Nueva seccion: index
 
 /* Barra de navegacion*/
 .navbar.principal {
-    padding: 0.8rem;
+    padding: 0.5rem;
     background: var(--azul);
 }
 .navbar-collapse.principal {
@@ -385,7 +385,7 @@ Nueva seccion: administrador
 /*______________________________________________________*/
 /* Estilos Interfaz pago */
 
-.container.pago {
+.container.pago{
     background-image: linear-gradient(to right, #b9b9b9cd, hsla(249, 22%, 66%, 0.637)), url(../img/index/fondo-pago.jpg);
     background-attachment: fixed;
     background-position: center;
@@ -696,3 +696,4 @@ Seccion de estilos de la interfaz de Nosotros
     width: 100%;
 }
 /* tabla con scroll atencion fin*/
+
