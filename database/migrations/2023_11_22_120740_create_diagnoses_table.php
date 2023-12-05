@@ -18,6 +18,10 @@ return new class extends Migration
             $table->text('operAnteriores')->nullable();
             $table->text('valoracion')->nullable();
             $table->string('receta')->nullable();
+            //-------------
+            $table->unsignedBigInteger('cita_id');
+            $table->foreign('cita_id')->references('id')->on('appointments');
+            //-------------
             $table->timestamps();
         });
     }
@@ -30,3 +34,4 @@ return new class extends Migration
         Schema::dropIfExists('diagnoses');
     }
 };
+// nombre: 2023_11_22_114329_create_diagnoses_table.php

@@ -11,6 +11,7 @@ class Diagnosis extends Model
 
     public function Appointments()
     {
-        return $this->hasOne(Appointment::class);
+        //return $this->hasOne(Appointment::class);
+        return $this->belongsTo(Appointment::class);
     }
 }
