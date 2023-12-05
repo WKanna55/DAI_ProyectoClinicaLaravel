@@ -2,7 +2,8 @@
 @section ('content')
 <main>
   <div class="container pago">
-    <form class="row formulario g-4">
+    <form class="row formulario g-4" method="post" action="{{ route('paypal') }}">
+      @csrf
       <legend class="text-center titulo-formulario"><strong>Pago con Visa</strong></legend>
       <div class="col-md-12">
         <input type="text" class="form-control" id="validationDefault03" required placeholder="Número de tarjeta">
@@ -16,6 +17,7 @@
       <div class="col-md-12">
         <input type="text" class="form-control" id="validationDefault03" required placeholder="Nombre del titular de la tarjeta">
       </div>
+      <input type="hidden" name="precio" value="200">
       <div class="botones-pagar">
         <button class="btn btn-block" type="button" onclick="window.location.href='register'">Volver</button>
         <button class="btn btn-block" type="submit">Pagar</button>
