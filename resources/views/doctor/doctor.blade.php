@@ -16,7 +16,7 @@
     <section>
         <div class="container doctor">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                @foreach($doctor->Appointments as $cita)
+                @foreach($doctor->Appointment as $cita)
                     <a href="{{ route('atencion')}}">
                         <div class="col mb-3">
                             <div class="card card-blue align-items-center bg-user p-3">
