@@ -23,14 +23,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            ScheduleTableSeeder::class,
-            RolTableSeeder::class,
-            SpecialtyTableSeeder::class,
-            UserTableSeeder::class,
-            ShiftTableSeeder::class,
-            AppointmentTableSeeder::class
+            UPDADSeeder::class,
+            SpecialtyTableSeeder::class
             
-        
         ]);       
     }
 }

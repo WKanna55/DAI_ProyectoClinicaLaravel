@@ -13,12 +13,7 @@ class SpecialtyTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $speciality1 = new Specialty;
-        $speciality1-> nombre = "medicina general";
-        $speciality1-> costo = 100;
-        $speciality1-> descripcion = "atender cita de medicina general";
-        $speciality1-> img_source = "medicinaGenral.jpg";
-        $speciality1->save();
+        
 
         $speciality2 = new Specialty;
         $speciality2-> nombre = "ginecologia";
