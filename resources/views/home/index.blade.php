@@ -28,9 +28,33 @@
       </div>
       <div class="sobreponer d-flex">
         <a role="button" class="btn btn-pers cita m-2" href="{{route('reg')}}">Agendar cita</a>
-        <a role="button" class="btn btn-pers green video m-2" href="#">Como agendar</a>
+        <button type="button" class="btn btn-pers green video m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Como agendar
+        </button>
       </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="assets/img/index/video.png" alt="video" class="video-agendar">
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
     </div>
+
+        
+
+
+
   </section>
   <!-- Especialidades -->
   <section class="">
@@ -102,7 +126,7 @@
             <h5>Carlos Nuñez</h5>
             <div class="card-body bg-light">
               <p class="card-text">
-                He tenido experiencias excepcionales en la Clínica Serenidad. 
+                He tenido experiencias excepcionales en la Clínica Tecsana. 
                 Desde el momento en que entras, te envuelve una sensación acogedora 
                 y profesionalismo. El personal es atento y siempre dispuesto a ayudar. 
                 Los médicos y especialistas son altamente calificados, 
@@ -119,7 +143,7 @@
             <h5>Lisbeth Torres</h5>
             <div class="card-body bg-light">
               <p class="card-text">
-                La clínica Serenidad cuenta con instalaciones modernas y limpias, 
+                La clínica Tecsana cuenta con instalaciones modernas y limpias, 
                 lo que contribuye a un ambiente acogedor y de confianza. 
                 Además, la eficiencia en la gestión de citas y la puntualidad 
                 en el servicio son aspectos que realmente aprecio. 
@@ -133,7 +157,7 @@
             <h5>Renata Lazo</h5>
             <div class="card-body bg-light">
               <p class="card-text">
-                La Clínica Serenidad realmente ha marcado la diferencia en mi 
+                La Clínica Tecsana realmente ha marcado la diferencia en mi 
                 experiencia de atención médica. Siempre 
                 sentí una atmósfera de calma y profesionalismo. El personal es 
                 increíblemente amable y siempre está dispuesto a ayudar. Lo 

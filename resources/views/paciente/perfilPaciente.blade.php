@@ -102,6 +102,7 @@
                    <i class="far fa-eye">Historial</i> 
                 </button>
             </div>
+
             <!-- Modal del historial de citas -->
           <section>
             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -177,6 +178,7 @@
                       </table>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
