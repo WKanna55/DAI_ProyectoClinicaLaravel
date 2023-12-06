@@ -52,7 +52,7 @@
                 <a class="nav-link principal" href="{{ route('especialidades') }}">Especialidades</a>
               </li>
               
-              @guest
+             @guest
               <li class="nav-item principal">
                 <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('loginShow') }}">Iniciar sesion</a>
               </li>
