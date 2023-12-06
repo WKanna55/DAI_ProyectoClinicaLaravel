@@ -9,12 +9,12 @@ class Shift extends Model
 {
     use HasFactory;
 
-    public function Doctors()
+    public function Doctor()
     {
         return $this->belongsTo(Doctor::class);
     }
 
-    public function Schedules()
+    public function Schedule()
     {
         return $this->belongsTo(Schedule::class);
     }

@@ -9,7 +9,7 @@ class Diagnosis extends Model
 {
     use HasFactory;
 
-    public function Appointments()
+    public function Appointment()
     {
         //return $this->hasOne(Appointment::class);
         return $this->belongsTo(Appointment::class);

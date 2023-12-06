@@ -19,8 +19,8 @@ return new class extends Migration
             $table->text('valoracion')->nullable();
             $table->string('receta')->nullable();
             //-------------
-            $table->unsignedBigInteger('cita_id');
-            $table->foreign('cita_id')->references('id')->on('appointments');
+            $table->unsignedBigInteger('appointment_id');
+            $table->foreign('appointment_id')->references('id')->on('appointments');
             //-------------
             $table->timestamps();
         });

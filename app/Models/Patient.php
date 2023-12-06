@@ -19,13 +19,13 @@ class Patient extends Model
         'fecha_nacimiento'
     ];
 
-    public function Users()
+    public function User()
     {
         return $this->belongsTo(User::class);
     }
 
 
-    public function Appoitnments()
+    public function Appoitnment()
     {
         return $this->hasMany(Appointment::class);
     }
