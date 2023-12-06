@@ -80,16 +80,10 @@
                   <td class="col-3">Medicamento XYZ</td>
                   <td class="col-3">Dr. Rodríguez</td>
                 </tr>
-                
               </tbody>
             </table>
           </div>
-          
-          
-
         </div>
-
-
       </div>
     </div>
   </div>

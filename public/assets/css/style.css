@@ -607,8 +607,20 @@ Seccion de estilos del perfil de Paciente
     color: #050505;
     cursor: pointer;
 }
-.perfil-usuario-citas{
 
+.boton-historial-paciente{
+    position: absolute;
+    top: 25rem;
+    right: 1rem;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 10px;
+    background-color: rgba(43, 122, 240, 0.445);
+    color: #050505;
+    cursor: pointer;
+}
+
+.perfil-usuario-citas{
     display: flex;
     flex-wrap: wrap;
     padding: 1.5rem 2rem;
