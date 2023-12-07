@@ -38,6 +38,7 @@ class LoginController extends Controller
     }
 
     public function authenticated(Request $request, $user) {
+        
         //\Log::debug($user); //recibir parametros del usuario mediante debug
         if ($user->role_id == 2) {
             // Utilizamos la relación 'Doctors' definida en el modelo User
