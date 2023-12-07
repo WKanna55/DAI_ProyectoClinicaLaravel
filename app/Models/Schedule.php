@@ -10,7 +10,7 @@ class Schedule extends Model
 {
     use HasFactory;
 
-    public function Shifts()
+    public function Shift()
     {
         return $this->hasMany(Shift::class);
     }

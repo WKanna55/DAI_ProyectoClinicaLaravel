@@ -61,14 +61,14 @@
               </li> 
               
               @else
-                @if(auth()->user()->rol_id == 1)
+                @if(auth()->user()->role_id == 1)
                   <li class="nav-item">
                     <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
                   </li>
                   <li class="nav-item">
                     <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
                   </li>
-                @elseif(auth()->user()->rol_id == 2 || auth()->user()->rol_id == 3)
+                @elseif(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
                   <li class="nav-item">
                     <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
                   </li>

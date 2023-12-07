@@ -19,7 +19,7 @@ class AppointmentTableSeeder extends Seeder
         $appointment1->fecha ="2023-11-05";
         $appointment1->edad =25;
         $appointment1->condicion ="finalizado";
-        $appointment1->paciente_id =1;
+        $appointment1->patient_id =1;
         $appointment1->doctor_id =1;
         $appointment1->save();
 
@@ -29,7 +29,7 @@ class AppointmentTableSeeder extends Seeder
         $diagnoses->operAnteriores = "Extirpacion de apendice";
         $diagnoses->valoracion = "Amigdalitis";
         $diagnoses->receta = "sulfacid balsamico cada 12h, apronax cada 12h";
-        $diagnoses->cita_id = 1;
+        $diagnoses->appointment_id = 1;
         $diagnoses->save();
 
         $appointment2 = new Appointment;
@@ -37,7 +37,7 @@ class AppointmentTableSeeder extends Seeder
         $appointment2->fecha ="2023-12-05";
         $appointment2->edad =25;
         $appointment2->condicion ="pendiente";
-        $appointment2->paciente_id =1;
+        $appointment2->patient_id =1;
         $appointment2->doctor_id =1;
         $appointment2->save();
     }
