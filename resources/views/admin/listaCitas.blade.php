@@ -8,7 +8,7 @@
         <div class="col-2 texto admin mb-5">
           <h2>Administrador</h2>
         </div>
-  
+        dd($appointment)
         <div class="col-10">
             <div class="card admin">
   

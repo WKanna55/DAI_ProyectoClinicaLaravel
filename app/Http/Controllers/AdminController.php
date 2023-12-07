@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class AdminController extends Controller
 {
 
-    public function adminShow() {
+    public function show() {
         return view('admin.admin');
     }
 
@@ -25,12 +25,11 @@ class AdminController extends Controller
         $appointment = Appointment::whereHas('shift.schedule', function ($query) use ($fechaActual) {
             $query->where('fecha', '>=', $fechaActual);
             })
-            ->with(['patient:id,nombrePaciente,apellidoPaciente', 'doctor:id,nombreDoctor,especialidad_id', 'doctor.especialidad:id,especialidad', 'shift.schedule:id,horario'])
+            ->with(['patient:id,nombres,apellidos', 'doctor:id,nombres,specialty_id', 'doctor.specialty:id,nombre', 'shift.schedule:id,horario'])
             ->get();
-        
-        dd($appointment);
 
-        // return view('admin.listaCitas', ['citas' => $appointment]);
+        return redirect()->route('citasAdmin')->with('citas', $appointment);
+    
     }
 
 
