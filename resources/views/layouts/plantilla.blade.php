@@ -73,6 +73,7 @@
                     <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
                   </li>
                 @endif
+                
               @endguest
               
             </ul>

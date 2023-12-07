@@ -32,20 +32,23 @@ class UPDADSeeder extends Seeder
 
         $rol1 = new Role;
         $rol1->nombre = "paciente";
+        $rol1->id_ref = 1;
         $rol1->save();
 
         $rol2 = new Role;
         $rol2->nombre = "doctor";
+        $rol2->id_ref = 2;
         $rol2->save();
 
         $rol3 = new Role;
         $rol3->nombre = "administrador";
+        $rol3->id_ref = 3;
         $rol3->save();
         
         $user1 = new User;
         $user1->dni = "54545454";
         $user1->password = "123456789";
-        $user1->rol_id = $rol1->id;
+        $user1->role_id = 1;//$rol1->id;
         $user1->save();
 
         $user1ID = $user1->id;
@@ -64,7 +67,7 @@ class UPDADSeeder extends Seeder
         $user2 = new User;
         $user2->dni = "12121212";
         $user2->password = "123456789";
-        $user2->rol_id = $rol2->id;
+        $user2->role_id = 2; //$rol2->id;
         $user2->save();
 
         $user2ID = $user2->id;
@@ -82,7 +85,7 @@ class UPDADSeeder extends Seeder
         $user3 = new User;
         $user3->dni = "89898989";
         $user3->password = "123456789";
-        $user3->rol_id = $rol3->id;
+        $user3->role_id = 3; //$rol3->id;
         $user3->save();
 
         $appointment1 = new Appointment;
