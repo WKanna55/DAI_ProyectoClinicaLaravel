@@ -18,10 +18,10 @@ return new class extends Migration
             $table->integer('CMP');
             $table->string('consultorio');
             $table->string('img_source');
-            $table->unsignedBigInteger('usuario_id');
-            $table->foreign('usuario_id')->references('id')->on('users');
-            $table->unsignedBigInteger('especialidad_id');
-            $table->foreign('especialidad_id')->references('id')->on('specialties');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('specialty_id');
+            $table->foreign('specialty_id')->references('id')->on('specialties');
             $table->timestamps();
         });
     }

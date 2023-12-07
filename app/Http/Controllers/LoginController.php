@@ -7,6 +7,7 @@ use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     public function show() {
@@ -38,10 +39,13 @@ class LoginController extends Controller
 
     public function authenticated(Request $request, $user) {
         //\Log::debug($user); //recibir parametros del usuario mediante debug
-        if ($user->rol_id == 2){ // redireccionar segun los roles de usuario en este caso doctor a view doctor
-            return view('doctor.doctor');
+        if ($user->role_id == 2) {
+            // Utilizamos la relación 'Doctors' definida en el modelo User
+            $doctor = $user->Doctor;
+            return view('doctor.doctor', ['doctor' => $doctor]);
         }
-        elseif ($user->rol_id == 3){ // Agregado
+
+        elseif ($user->role_id == 3){ // Agregado
             return view('admin.admin');
         }
         return redirect('/');

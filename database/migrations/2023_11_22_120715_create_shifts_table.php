@@ -16,8 +16,8 @@ return new class extends Migration
             $table->boolean('disponible');
             $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');
-            $table->unsignedBigInteger('horario_id');
-            $table->foreign('horario_id')->references('id')->on('schedules');
+            $table->unsignedBigInteger('schedule_id');
+            $table->foreign('schedule_id')->references('id')->on('schedules');
             $table->timestamps();
         });
     }

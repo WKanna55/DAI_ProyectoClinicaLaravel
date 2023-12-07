@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('dni');
             // email no es necesario
             $table->string('password');
-            $table->unsignedBigInteger('rol_id');
-            $table->foreign('rol_id')->references('id')->on('roles');
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('roles');
             $table->rememberToken();
             $table->timestamps();
         });
