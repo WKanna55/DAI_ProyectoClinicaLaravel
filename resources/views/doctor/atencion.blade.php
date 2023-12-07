@@ -99,6 +99,7 @@
     
     <div class="row">
       <!-- Lado izquierdo más pequeño -->
+      
       <div class="col-md-4  d-flex flex-column p-3">
         <!-- Contenido del lado izquierdo -->
         <div class="card mb-4">
@@ -112,7 +113,7 @@
             <div class="row mb-2">
               <label for="nombre" class="col-sm-3 col-form-label col-form-label-sm">Nombre</label>
               <div class="col-sm-9">
-                  <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Juan" readonly>
+                  <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Alonzo" readonly>
               </div>
           </div>
   
@@ -143,7 +144,6 @@
                 <input type="text" class="form-control form-control-sm" id="fecha" placeholder="25 de Noviembre, 2023" readonly>
             </div>
         </div>
-        
         <div class="row mb-3">
             <label for="especialidad" class="col-sm-3 col-form-label col-form-label-sm">Especialidad</label>
             <div class="col-sm-9">
