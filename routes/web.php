@@ -42,14 +42,6 @@ Route::get('/especialidades', [HomeController::class, 'especialidades'])->name('
 
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
-Route::get('/admin', [AdminController::class, 'show'])->name('admin');
-
-Route::get('/admin', [AdminController::class, 'register'])->name('registerAdmin');
-
-Route::get('/admin', [AdminController::class, 'listar'])->name('listarAdmin');
-
-Route::get('/admin/list', [AdminController::class, 'show'])->name('citasAdmin');
-
 Route::get('/perfilPaciente', [PerfilPacienteController::class, 'show'])->name('perfilPaciente');
 
 Route::get('/doctor',[DoctorController::class, 'citas'])->name('citas');
@@ -75,4 +67,10 @@ Route::post('pago/payment', [PagoController::class, 'payment'])->name('paypal');
 Route::get('pago/success', [PagoController::class, 'success'])->name('paypal_success');
 
 Route::get('pago/cancel', [PagoController::class, 'cancel'])->name('paypal_cancel');
+
+Route::get('/admin', [AdminController::class, 'show'])->name('admin');
+
+Route::get('/admin/register', [AdminController::class, 'register'])->name('registerAdmin');
+
+Route::get('/admin/list', [AdminController::class, 'show'])->name('citasAdmin');
 

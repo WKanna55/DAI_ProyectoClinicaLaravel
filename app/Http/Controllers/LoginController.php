@@ -45,7 +45,7 @@ class LoginController extends Controller
         }
 
         elseif ($user->role_id == 3){ // Agregado
-            return redirect()->route('admin');
+            return view('admin.admin');
         }
         return redirect('/');
     }

@@ -17,6 +17,14 @@ class AdminController extends Controller
         return view('admin.registroCitas');
     }
 
+    public function citas() {
+        return view('admin.listaCitas');
+    }
+
+    public function agendar() {
+        return view('admin.registroCitas');
+    }
+
     public function listar() {
 
         $fechaActual = Carbon::now()->toDateString();

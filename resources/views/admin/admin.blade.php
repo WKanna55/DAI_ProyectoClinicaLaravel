@@ -22,7 +22,7 @@
       <div class="container col-4">
         <div class="container d-flex flex-column gap-5">
 
-          <a class="derivacion" href="{{ route('registerAdmin') }}">
+          <a class="derivacion" href=" {{ route('registerAdmin')}} ">
             <div class="card derivacion-card">
               <div class="card-body derivacion-card-body">
                 <h5 class="card-title fw-semibold">Agendar Cita</h5>
@@ -31,7 +31,7 @@
             </div>
           </a>
           
-          <a class="derivacion" href="{{ route('listarAdmin') }}">
+          <a class="derivacion" href="{{ route('citasAdmin')}} ">
             <div class="card derivacion-card">
               <div class="card-body derivacion-card-body">
                 <h5 class="card-title fw-semibold">Gestionar Citas</h5>

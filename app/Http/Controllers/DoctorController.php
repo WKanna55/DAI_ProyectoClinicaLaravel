@@ -15,7 +15,6 @@ class DoctorController extends Controller
 
     }
 
-
     public function atencion(){
         return view('doctor.atencion');
     }
