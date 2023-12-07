@@ -15,12 +15,11 @@ class AppointmentTableSeeder extends Seeder
     public function run(): void
     {
         $appointment1 = new Appointment;
-        $appointment1->horario ="10:00:00";
-        $appointment1->fecha ="2023-11-05";
         $appointment1->edad =25;
         $appointment1->condicion ="finalizado";
         $appointment1->patient_id =1;
         $appointment1->doctor_id =1;
+        $appointment1->shift_id = 1;
         $appointment1->save();
 
         $diagnoses = new Diagnosis;
@@ -33,12 +32,11 @@ class AppointmentTableSeeder extends Seeder
         $diagnoses->save();
 
         $appointment2 = new Appointment;
-        $appointment2->horario ="08:00:00";
-        $appointment2->fecha ="2023-12-05";
         $appointment2->edad =25;
         $appointment2->condicion ="pendiente";
         $appointment2->patient_id =1;
         $appointment2->doctor_id =1;
+        $appointment2->shift_id = 2;
         $appointment2->save();
     }
 }

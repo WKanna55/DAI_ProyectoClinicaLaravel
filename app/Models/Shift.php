@@ -18,4 +18,9 @@ class Shift extends Model
     {
         return $this->belongsTo(Schedule::class);
     }
+
+    public function Appointment()
+    {
+        return $this->hasOne(Appointment::class);
+    }
 }

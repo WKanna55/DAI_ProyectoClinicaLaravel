@@ -42,8 +42,7 @@ class LoginController extends Controller
         //\Log::debug($user); //recibir parametros del usuario mediante debug
         if ($user->role_id == 2) {
             // Utilizamos la relación 'Doctors' definida en el modelo User
-            $doctor = $user->Doctor;
-            return view('doctor.doctor', ['doctor' => $doctor]);
+            return redirect()->route('citas');
         }
 
         elseif ($user->role_id == 3){ // Agregado
