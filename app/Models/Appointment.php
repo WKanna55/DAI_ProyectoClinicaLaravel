@@ -31,6 +31,9 @@ class Appointment extends Model
         return $this->hasOne(Payment::class);
     }
 
-
+    public function Shift()
+    {
+        return $this->belongsTo(Shift::class);
+    }
 
 }
