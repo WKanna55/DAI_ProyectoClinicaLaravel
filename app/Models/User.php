@@ -52,18 +52,18 @@ class User extends Authenticatable
     
     // ---------------- Relaciones --------------------
 
-    public function Roles()
+    public function Role()
     {
-        return $this->belongsTo(Rol::class);
+        return $this->belongsTo(Role::class);
     }
 
-    public function Patients()
+    public function Patient()
     {
         return $this->hasOne(Patient::class);
     }
 
-    public function Doctors()
+    public function Doctor()
     {
-        return $this->hasOne(Doctor::class);
+        return $this->hasOne(Doctor::class, 'user_id');
     }
 }

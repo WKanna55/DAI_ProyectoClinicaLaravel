@@ -9,23 +9,24 @@ class Doctor extends Model
 {
     use HasFactory;
 
-    public function Users()
+    public function User()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function Specialties()
+    public function Specialty()
     {
         return $this->belongsTo(Specialty::class);
     }
 
-    public function Appointments()
+    public function Appointment()
     {
         return $this->hasMany(Appointment::class);
     }
 
-    public function Shifts()
+    public function Shift()
     {
         return $this->hasMany(Shift::class);
     }
+    
 }

@@ -102,4 +102,4 @@
         
     </main>
     
- @endsection
+@endsection

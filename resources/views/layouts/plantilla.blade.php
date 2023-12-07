@@ -26,29 +26,56 @@
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+
   </head>
   <body>
     <!-- Barra de navegacion -->
     <header>
-      <nav class="navbar principal navbar-expand-md">
+      <nav class="navbar principal navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{ url('/')}}">
-            <img src="assets/img/index/logo.png" class="logo" alt="">
-          </a>
+          @guest
+          @else
+            @if(auth()->user()->rol_id == 1)
+              <a class="navbar-brand" href="{{ url('/')}}">
+                <div class="d-flex justify-content-center align-items-center navbrand-pers">
+                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <p class="navbrand-text">Clínica Tecsana</p>
+                </div>
+              </a>
+            @elseif(auth()->user()->rol_id == 2)
+              <a class="navbar-brand" href="{{ route('citas')}}">
+                <div class="d-flex justify-content-center align-items-center navbrand-pers">
+                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <p class="navbrand-text">Clínica Tecsana</p>
+                </div>
+              </a>
+            @elseif(auth()->user()->rol_id == 3)
+              <a class="navbar-brand" href="{{ route('adminShow')}}">
+                <div class="d-flex justify-content-center align-items-center navbrand-pers">
+                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <p class="navbrand-text">Clínica Tecsana</p>
+                </div>
+              </a>
+            @endif
+          @endguest
+    
           <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-list icon-navbar"></i>
           </button>
           <div class="collapse navbar-collapse principal align-content-end" id="navbarTogglerDemo02">
             <!-- items del navbar-->
             <ul class="navbar-nav principal me-10 mb-2">
+              
+             @guest
               <li class="nav-item principal">
                 <a class="nav-link principal" href="{{ route('nosotros') }}">Nosotros</a>
               </li>
+
               <li class="nav-item principal">
                 <a class="nav-link principal" href="{{ route('especialidades') }}">Especialidades</a>
               </li>
-              
-              @guest
+             
               <li class="nav-item principal">
                 <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('loginShow') }}">Iniciar sesion</a>
               </li>
@@ -57,26 +84,25 @@
               </li> 
               
               @else
-              <li class="nav-item">
-                <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
-              </li>
-              <li class="nav-item">
-              <li class="nav-item">
-                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
-              </li>
-              <li class="nav-item">
-                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('adminShow') }}">Admin</a>
-              </li>
-              <li class="nav-item">
-                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('citas') }}">Doctor</a>
-              </li>
-
+                @if(auth()->user()->role_id == 1)
+                  <li class="nav-item">
+                    <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
+                  </li>
+                @elseif(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+                  <li class="nav-item">
+                    <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
+                  </li>
+                @endif
               @endguest
               
             </ul>
           </div>
         </div>
       </nav>
+
     </header>
 
 
@@ -139,5 +165,6 @@
     </footer>
     <!-- Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="{{ asset('/assets/js/scripts.js')}}"></script>
   </body>
 </html>

@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('shifts', function (Blueprint $table) {
             $table->id();
             $table->boolean('disponible');
+            $table->date('fecha');
             $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');
-            $table->unsignedBigInteger('horario_id');
-            $table->foreign('horario_id')->references('id')->on('schedules');
+            $table->unsignedBigInteger('schedule_id');
+            $table->foreign('schedule_id')->references('id')->on('schedules');
             $table->timestamps();
         });
     }

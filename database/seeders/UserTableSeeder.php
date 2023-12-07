@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
         $user1 = new User;
         $user1->dni = "54545454";
         $user1->password = "123456789";
-        $user1->rol_id = 1;
+        $user1->role_id = 1;
         $user1->save();
 
         $paciente = new Patient;
@@ -28,14 +28,14 @@ class UserTableSeeder extends Seeder
         $paciente->direccion = "Arequipa, JLBR av EEUU N312";
         $paciente->email = "rmartinez12@gmail.com";
         $paciente->fecha_nacimiento = "2000-01-12";
-        $paciente->usuario_id = 1;
+        $paciente->user_id = 1;
         $paciente->save();
 
 
         $user2 = new User;
         $user2->dni = "12121212";
         $user2->password = "123456789";
-        $user2->rol_id = 2;
+        $user2->role_id = 2;
         $user2->save();
 
         $doctor = new Doctor;
@@ -44,15 +44,31 @@ class UserTableSeeder extends Seeder
         $doctor->CMP = 1234;
         $doctor->consultorio = "consultorio medicina general";
         $doctor->img_source = "jperez.jpg";
-        $doctor->usuario_id = 2;
-        $doctor->especialidad_id = 1;
+        $doctor->user_id = 2;
+        $doctor->specialty_id = 1;
         $doctor->save();
 
+        
         $user3 = new User;
         $user3->dni = "89898989";
         $user3->password = "123456789";
-        $user3->rol_id = 3;
+        $user3->role_id = 3;
         $user3->save();
         
+        $user3 = new User;
+        $user3->dni = "23232323";
+        $user3->password = "23232323";
+        $user3->role_id = 2;
+        $user3->save();
+
+        $doctor = new Doctor;
+        $doctor->nombres = "pedro";
+        $doctor->apellidos = "lopez";
+        $doctor->CMP = 4321;
+        $doctor->consultorio = "consultorio medicina general";
+        $doctor->img_source = "plopez.jpg";
+        $doctor->user_id = 4;
+        $doctor->specialty_id = 1;
+        $doctor->save();
     }
 }

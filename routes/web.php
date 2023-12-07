@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgendarCitaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
@@ -63,5 +64,3 @@ Route::get('/odontologia', [HomeController::class, 'odontologia'])->name('odonto
 Route::get('/oftalmologia', [HomeController::class, 'oftalmologia'])->name('oftalmologia');
 
 Route::get('/doctor/atencion',[DoctorController::class, 'atencion'])->name('atencion');
-
-Route::post('/doctor/atencion/guardar',[DoctorController::class, 'guardarAtencion'])->name('guardar.atencion');

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('direccion');
             $table->string('email');
             $table->date('fecha_nacimiento');
-            $table->unsignedBigInteger('usuario_id');
-            $table->foreign('usuario_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

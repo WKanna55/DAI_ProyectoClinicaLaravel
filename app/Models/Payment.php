@@ -9,7 +9,7 @@ class Payment extends Model
 {
     use HasFactory;
 
-    public function Appointments()
+    public function Appointment()
     {
         return $this->belongsTo(Appointment::class);
     }

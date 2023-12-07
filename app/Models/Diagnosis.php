@@ -12,7 +12,7 @@ class Diagnosis extends Model
     protected $fillable = ['alergias', 'operaciones_anteriores', 'sintomas', 'valoracion', 'receta'];
 
 
-    public function Appointments()
+    public function Appointment()
     {
         //return $this->hasOne(Appointment::class);
         return $this->belongsTo(Appointment::class);

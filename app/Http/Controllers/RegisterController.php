@@ -92,7 +92,7 @@ class RegisterController extends Controller
             $userId = $user->id;
 
             $patient = new Patient();
-            $patient->usuario_id = $userId;
+            $patient->user_id = $userId;
             $patient->nombres = $request->input('nombres');
             $patient->apellidos = $request->input('apellidos');
             $patient->telefono = $request->input('telefono');

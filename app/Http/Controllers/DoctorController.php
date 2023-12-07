@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Patient;
@@ -9,8 +9,13 @@ use App\Models\Patient;
 class DoctorController extends Controller
 {
     public function citas() {
-        return view('doctor.doctor');
+        $user = Auth::user();
+
+        $doctor = $user->Doctor;
+        return view('doctor.doctor', ['doctor' => $doctor]);
+
     }
+
 
     public function atencion(){
 
