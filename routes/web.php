@@ -68,9 +68,10 @@ Route::get('pago/success', [PagoController::class, 'success'])->name('paypal_suc
 
 Route::get('pago/cancel', [PagoController::class, 'cancel'])->name('paypal_cancel');
 
-Route::get('/admin', [AdminController::class, 'show'])->name('admin');
+Route::get('/admin', [AdminController::class, 'show'])->name('admin'); // muestra pagina de inicio de admin
 
-Route::get('/admin/register', [AdminController::class, 'register'])->name('registerAdmin');
 
-Route::get('/admin/list', [AdminController::class, 'show'])->name('citasAdmin');
+Route::get('/admin/list', [AdminController::class, 'citas'])->name('citasAdmin'); // muestra citas
+
+Route::get('/admin/agendar', [AdminController::class, 'agendar'])->name('agendaAdmin'); // agenda citas
 

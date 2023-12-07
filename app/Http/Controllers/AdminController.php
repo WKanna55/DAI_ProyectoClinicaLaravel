@@ -13,16 +13,12 @@ class AdminController extends Controller
         return view('admin.admin');
     }
 
-    public function register() {
-        return view('admin.registroCitas');
+    public function agendar() {
+        return view('admin.agenda');
     }
 
     public function citas() {
-        return view('admin.listaCitas');
-    }
-
-    public function agendar() {
-        return view('admin.registroCitas');
+        return view('/');
     }
 
     public function listar() {
@@ -36,7 +32,7 @@ class AdminController extends Controller
             ->with(['patient:id,nombres,apellidos', 'doctor:id,nombres,specialty_id', 'doctor.specialty:id,nombre', 'shift.schedule:id,horario'])
             ->get();
 
-        return redirect()->route('citasAdmin')->with('citas', $appointment);
+        return view('admin.citas')->with('citas', $appointment);
     
     }
 
