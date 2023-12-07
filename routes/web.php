@@ -62,4 +62,6 @@ Route::get('/odontologia', [HomeController::class, 'odontologia'])->name('odonto
 
 Route::get('/oftalmologia', [HomeController::class, 'oftalmologia'])->name('oftalmologia');
 
-Route::get('/doctor/atencion',[DoctorController::class, 'atencion'])->name('atencion');
+Route::get('/doctor/atencion/{$cita}',[DoctorController::class, 'atencion'])->name('atencion');
+
+Route::post('/doctor/atencion',[DoctorController::class, 'post_consulta'])->name('post_consulta');

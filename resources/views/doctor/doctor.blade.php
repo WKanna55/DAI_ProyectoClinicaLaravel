@@ -17,7 +17,11 @@
         <div class="container doctor">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                 @foreach($doctor->Appointment as $cita)
-                    <a href="{{ route('atencion')}}">
+                    <form id="formulario-ruta" action="{{ route('atencion') }}" method="get" style="display: none;">
+                        <input hidden="" value="{$cita->doctor_id}" type="text">
+                    </form>
+                    <a href="{{ route('atencion')}}" onclick="enviarFormulario()">
+                        
                         <div class="col mb-3">
                             <div class="card card-blue align-items-center bg-user p-3">
                                 <h6 class="">{{ $cita->patient-> nombres}}</h6>
