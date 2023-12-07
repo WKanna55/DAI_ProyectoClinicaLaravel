@@ -72,6 +72,7 @@ Route::post('/agendar_especialidad',[AgendarCitaController::class, 'showDoctores
 
 /*Route::post('/agendar_doctor',[AgendarCitaController::class, 'showDoctores'])->name('showDoctores');*/
 
-Route::get('/agendar_fecha',[AgendarCitaController::class, 'showFechas'])->name('showFechas');
+Route::post('/agendar_fecha',[AgendarCitaController::class, 'showFechas'])->name('showFechas');
+
 
 Route::post('/agendar_horario',[AgendarCitaController::class, 'showHorarios'])->name('showHorarios');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
+use App\Models\Schedule;
+use App\Models\Shift;
 use App\Models\Specialty;
 use Illuminate\Http\Request;
 
@@ -20,11 +22,14 @@ class AgendarCitaController extends Controller
     }
     
     public function showFechas(Request $request){
-        
-        return view('paciente.agendar_fecha');
+        $doctor_id = $request->input('doctor_id');
+        $fechas = Shift::where('doctor_id', $doctor_id)->select('fecha')->distinct()->get();
+        return view('paciente.agendar_fecha', compact('fechas'));
     }
 
-    public function showHorarios(){
-        return view('paciente.agendar_horario');
+    public function showHorarios(Request $request){
+        $horario_id = $request->input('schedule_id');
+        $horarios = Schedule::where('id', $horario_id)->get();
+        return view('paciente.agendar_horario', compact('horarios'));
     }
 }

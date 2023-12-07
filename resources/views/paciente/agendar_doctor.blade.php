@@ -14,8 +14,9 @@
                 <h2 class="pt-5">Doctor</h2>
                 <form action="{{ route('showFechas') }}" method="post" id="doctorForm">
                     @csrf
+                    <input type="hidden" name="doctor_id" id="doctor_id" value="">
                     <div class="swiper main_agendar_especialidad">
-                        <div class="swiper-wrapper" name="doctor_id">
+                        <div class="swiper-wrapper">
                             @foreach($doctores as $doctor)
                             <div class="swiper-slide">
                                 <div class="swiper-slide-img">
@@ -29,7 +30,7 @@
                                 <div class="swiper-slide-content">
                                     <div>
                                         <h2>{{ $doctor->nombres }}</h2>
-                                        <a class="show-more"  target="_blank"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <a href="#" class="show-more" onclick="seleccionarDoctor('{{ $doctor->id }}')"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
                                         </svg></a>
                                     </div>
@@ -44,5 +45,11 @@
     </main>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script><script  src="js/hearde.js"></script>
+    <script>
+        function seleccionarDoctor(doctorId) {
+            document.getElementById('doctor_id').value = doctorId;
+            document.getElementById('doctorForm').submit();
+        }
+    </script>
 
 @endsection
