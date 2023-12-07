@@ -16,7 +16,7 @@
                     <select class="form-select" aria-label="Default select example" name="horario_id">
                         <option selected>Selecciona el horario</option>
                         @foreach($horarios as $horario)
-                        <option value="">{{ $horario->horario }}</option>
+                            <option value="">{{ $horario->horario }}</option>
                         @endforeach
                     </select>   
                     <h2 class="pt-5 text-center">S/ 200.00</h2>

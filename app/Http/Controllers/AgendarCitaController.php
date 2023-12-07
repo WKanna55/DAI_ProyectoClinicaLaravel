@@ -23,13 +23,25 @@ class AgendarCitaController extends Controller
     
     public function showFechas(Request $request){
         $doctor_id = $request->input('doctor_id');
-        $fechas = Shift::where('doctor_id', $doctor_id)->select('fecha')->distinct()->get();
+        //$fechas = Shift::where('doctor_id', $doctor_id)->select('fecha')->distinct()->get();
+        $fechas = Shift::where('doctor_id', $doctor_id)->select('fecha', 'doctor_id')->distinct()->get();
+        
         return view('paciente.agendar_fecha', compact('fechas'));
     }
 
     public function showHorarios(Request $request){
-        $horario_id = $request->input('schedule_id');
-        $horarios = Schedule::where('id', $horario_id)->get();
+        $fecha = $request->input('fecha');
+        $id_doctor = $request->input('id_doctor');
+        //dd($id_doctor);
+        $turno = Shift::where('fecha', $fecha)->get();
+        //dd($turno);
+        
+        $horarios = Shift::where('fecha', $fecha)->where('doctor_id', $id_doctor)->where('disponible', 1)
+            ->join('schedules', 'schedule_id', '=', 'schedules.id')
+            ->select('schedules.horario', 'doctor_id', 'schedule_id', 'shifts.id')->get();
+        //dd($horarios);
         return view('paciente.agendar_horario', compact('horarios'));
     }
+
+
 }
