@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgendarCitaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
@@ -64,18 +65,13 @@ Route::get('/oftalmologia', [HomeController::class, 'oftalmologia'])->name('ofta
 
 Route::get('/doctor/atencion',[DoctorController::class, 'atencion'])->name('atencion');
 
-Route::get('/agendar_especialidad', function () {
-    return view('paciente.agendar_especialidad');
-})->name('agendar_especialidad');
 
-Route::get('/agendar_doctor', function () {
-    return view('paciente.agendar_doctor');
-})->name('agendar_doctor');
+Route::get('/agendar_especialidad',[AgendarCitaController::class, 'showEspecialidad'])->name('showEspecialidad');
 
-Route::get('/agendar_fecha', function () {
-    return view('paciente.agendar_fecha');
-})->name('agendar_fecha');
+Route::post('/agendar_especialidad',[AgendarCitaController::class, 'showDoctores'])->name('showDoctores');
 
-Route::get('/agendar_horario', function () {
-    return view('paciente.agendar_horario');
-})->name('agendar_horario');
+/*Route::post('/agendar_doctor',[AgendarCitaController::class, 'showDoctores'])->name('showDoctores');*/
+
+Route::get('/agendar_fecha',[AgendarCitaController::class, 'showFechas'])->name('showFechas');
+
+Route::post('/agendar_horario',[AgendarCitaController::class, 'showHorarios'])->name('showHorarios');
