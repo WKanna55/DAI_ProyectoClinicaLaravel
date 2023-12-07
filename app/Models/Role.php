@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use MongoDB\Laravel\Eloquent\Model;
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class Role extends Model
 {
     use HasFactory;
 
-    public function Users()
+    public function User()
     {
         return $this->hasOne(User::class);
     }

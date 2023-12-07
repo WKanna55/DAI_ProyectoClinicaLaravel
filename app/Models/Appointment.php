@@ -10,22 +10,23 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    public function Patients()
+    public function Patient()
     {
         return $this->belongsTo(Patient::class);
     }
 
-    public function Diagnoses()
+    public function Diagnosis()
     {
-        return $this->belongsTo(Diagnosis::class);
+        //return $this->belongsTo(Diagnosis::class);
+        return $this->hasOne(Diagnosis::class);
     }
 
-    public function Doctors()
+    public function Doctor()
     {
         return $this->belongsTo(Doctor::class);
     }
 
-    public function Payments()
+    public function Payment()
     {
         return $this->hasOne(Payment::class);
     }

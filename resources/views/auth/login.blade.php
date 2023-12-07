@@ -2,8 +2,17 @@
 @section('content')
 <div class="container-fluid">
   <a href="{{ url('/')}}">
-      <img src="assets/img/index/logo.png" class="logo sobreponer esquinaIzquierda" alt="">
+      
+      <div class="container-izquierda">
+        <div class="d-flex container-logo-login">
+          <img src="assets/img/Recurso.svg" class="img-logo-login" alt="">
+          <p class="texto-logo-login">Clínica Tecsana</p>
+        </div>
+        
+      </div>
   </a>
+
+  
   <div class="row no-gutter">
     <!-- Mitad izquierda imagen -->
     <div class="col-md-6 d-none d-md-flex bg-login-image">
@@ -37,7 +46,6 @@
             </div>
           </div>
        </div><!-- End -->
-
       </div>
     </div><!-- End -->
   </div>

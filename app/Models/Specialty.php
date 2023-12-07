@@ -10,7 +10,7 @@ class Specialty extends Model
 {
     use HasFactory;
 
-    public function Doctors()
+    public function Doctor()
     {
         return $this->hasMany(Doctor::class);
     }

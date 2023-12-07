@@ -18,9 +18,9 @@
         <input type="text" class="form-control" id="validationDefault03" required placeholder="Nombre del titular de la tarjeta">
       </div>
       <input type="hidden" name="precio" value="200">
-      <div class="botones-pagar">
-        <button class="btn btn-block" type="button" onclick="window.location.href='register'">Volver</button>
-        <button class="btn btn-block" type="submit">Pagar</button>
+      <div class=" d-flex justify-content-evenly align-items-center">
+        <button class="btn pago btn-lg" type="button">Volver</button>
+        <button class="btn pago btn-lg" type="submit">Pagar</button>
       </div>
     </form>
   </div>  

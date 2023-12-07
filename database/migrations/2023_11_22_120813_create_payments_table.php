@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->decimal('monto');
-            $table->unsignedBigInteger('citas_id');
-            $table->foreign('citas_id')->references('id')->on('appointments');
+            $table->unsignedBigInteger('appointment_id');
+            $table->foreign('appointment_id')->references('id')->on('appointments');
             $table->timestamps();
         });
     }
