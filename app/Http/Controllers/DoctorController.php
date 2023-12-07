@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Auth;
 class DoctorController extends Controller
 {
     public function citas() {
-        
-        return view('doctor.doctor');
+        $user = Auth::user();
+
+        $doctor = $user->Doctor;
+        return view('doctor.doctor', ['doctor' => $doctor]);
+
     }
 
     public function atencion()

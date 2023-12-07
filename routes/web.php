@@ -62,6 +62,20 @@ Route::get('/odontologia', [HomeController::class, 'odontologia'])->name('odonto
 
 Route::get('/oftalmologia', [HomeController::class, 'oftalmologia'])->name('oftalmologia');
 
-Route::get('/doctor/atencion/{$cita}',[DoctorController::class, 'atencion'])->name('atencion');
+Route::get('/doctor/atencion',[DoctorController::class, 'atencion'])->name('atencion');
 
-Route::post('/doctor/atencion',[DoctorController::class, 'post_consulta'])->name('post_consulta');
+Route::get('/agendar_especialidad', function () {
+    return view('paciente.agendar_especialidad');
+})->name('agendar_especialidad');
+
+Route::get('/agendar_doctor', function () {
+    return view('paciente.agendar_doctor');
+})->name('agendar_doctor');
+
+Route::get('/agendar_fecha', function () {
+    return view('paciente.agendar_fecha');
+})->name('agendar_fecha');
+
+Route::get('/agendar_horario', function () {
+    return view('paciente.agendar_horario');
+})->name('agendar_horario');
