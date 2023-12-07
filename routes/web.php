@@ -42,7 +42,9 @@ Route::get('/especialidades', [HomeController::class, 'especialidades'])->name('
 
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
-Route::get('/admin', [AdminController::class, 'adminShow'])->name('adminShow');
+Route::get('/admin/register', [AdminController::class, 'register'])->name('registerAdmin');
+
+Route::get('/admin/list', [AdminController::class, 'listar'])->name('listarAdmin');
 
 Route::get('/perfilPaciente', [PerfilPacienteController::class, 'show'])->name('perfilPaciente');
 

@@ -15,7 +15,7 @@ Seccion: pagina raiz-base
     --azul: #1b4965;
     --celeste-blanco: #cae9ff;
     --celeste-oscuro: #5fa8d3;
-
+    --blanco: #fff;
 }
 
 
@@ -731,3 +731,31 @@ Seccion: atencion
 }
 /* tabla con scroll atencion fin*/
 
+
+
+
+
+/* Administrador */
+
+.bienvenido {
+    height: 100%;
+}
+
+.bienvenido-card {
+    background-color: var(--celeste-blanco);
+}
+
+.derivacion:hover {
+    text-decoration: none;
+}
+
+.derivacion-card-body {
+    background-color: var(--celeste-blanco);
+}
+
+.derivacion-card-body:hover {
+    border: none;
+    background-color: var(--celeste-oscuro);
+    color: var(--blanco);
+    transition: ease 0.2s;
+}
