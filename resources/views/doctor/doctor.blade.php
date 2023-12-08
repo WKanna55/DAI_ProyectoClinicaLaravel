@@ -22,8 +22,8 @@
                         
                         <div class="col mb-3">
                             <div class="card card-blue align-items-center bg-user p-3">
-                                <h6 class=""></h6>
-                                <p class="m-0"><i class="bi bi-clock pr-2"></i></p>
+                                <h6 class="">{{ $cita->patient-> nombres}} {{ $cita->patient-> apellidos}}</h6>
+                                <p class="m-0"><i class="bi bi-clock pr-2"></i>{{ $cita->horario}}</p>
                             </div>
                         </div>
                     </a>
