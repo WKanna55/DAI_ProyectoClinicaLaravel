@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use App\Models\Doctor;
+use App\Models\Patient;
 use App\Models\Schedule;
 use App\Models\Shift;
 use App\Models\Specialty;
@@ -49,16 +50,20 @@ class AgendarCitaController extends Controller
     public function agendarCita(Request $request){
         $edad = 20;
         $condicion = 'pendiente';
-        $patient_id = Auth::user()->id;
+        $user_id = Auth::user()->id;
+        $patient_id = Patient::where('user_id', $user_id)->get();
+        
         $doctor_id = $request->input('id_doctor');
         $shift_id = $request->input('id_shift');
 
         $cita = New Appointment();
         $cita->edad = $edad;
         $cita->condicion = $condicion;
-        $cita->patient_id = $patient_id;
+        $cita->patient_id = $patient_id[0]->id;
+        
         $cita->doctor_id = $doctor_id;
         $cita->shift_id = $shift_id;
+        
         $cita->save();
 
         $shift = Shift::find($shift_id);

@@ -20,8 +20,9 @@
                     <a href="{{ route('atencion')}}">
                         <div class="col mb-3">
                             <div class="card card-blue align-items-center bg-user p-3">
-                                <h6 class="">{{ $cita->patient-> nombres}}</h6>
-                                <p class="m-0"><i class="bi bi-clock pr-2"></i>{{ $cita->horario}}</p>
+                                <h6 class="text-white">{{ $cita->patient-> nombres}}</h6>
+                                
+                                <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->horario}}</p>
                             </div>
                         </div>
                     </a>

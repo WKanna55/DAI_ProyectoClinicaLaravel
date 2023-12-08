@@ -86,7 +86,7 @@ class RegisterController extends Controller
         $user = new User();
             $user->dni = $request->input('dni');
             $user->password = $request->input('password');
-            $user->rol_id = 1;
+            $user->role_id = 1;
             $user->save();
 
             $userId = $user->id;
