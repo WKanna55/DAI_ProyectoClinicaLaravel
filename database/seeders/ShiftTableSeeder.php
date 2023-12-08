@@ -14,14 +14,14 @@ class ShiftTableSeeder extends Seeder
     public function run(): void
     {
         $shift1 = new Shift;
-        $shift1->disponible = 1;
+        $shift1->disponible = 0;
         $shift1->doctor_id = 1;
         $shift1->fecha = '2023-12-11';
         $shift1->schedule_id = 1;
         $shift1->save();
 
         $shift2 = new Shift;
-        $shift2->disponible = 1;
+        $shift2->disponible = 0;
         $shift2->doctor_id = 1;
         $shift2->fecha = '2023-12-11';
         $shift2->schedule_id = 2;
