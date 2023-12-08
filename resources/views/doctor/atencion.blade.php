@@ -154,8 +154,8 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="alergias" id="accordionContentOne" rows="2" ></textarea>
-                 
+                    <textarea class="form-control" name="alergias" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->alergias}}@endif
+                    </textarea>
                   </div>
                 </div>
               </div>
@@ -168,7 +168,7 @@
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="operAnteriores" id="accordionContentOne" rows="2" ></textarea>
+                    <textarea class="form-control" name="operAnteriores" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->operAnteriores}}@endif                    </textarea>
                   </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="sintomas" id="accordionContentOne" rows="2" ></textarea>
+                    <textarea class="form-control" name="sintomas" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->sintomas}}@endif</textarea>
                   </div>
                 </div>
               </div>
@@ -194,7 +194,7 @@
                 </h2>
                 <div id="flush-collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="valoracion" id="accordionContentOne" rows="2" ></textarea>
+                    <textarea class="form-control" name="valoracion" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->valoracion}}@endif</textarea>
                   </div>
                 </div>
               </div> <br>
@@ -207,15 +207,21 @@
                   <div class="row align-items-start">
                     <div class="col">
                       Medicamentos e instrucciones <br>
-                      <textarea class="form-control" name="receta" id="accordionContentOne" rows="6" ></textarea>
+                      <textarea class="form-control" name="receta" id="accordionContentOne" rows="6" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->receta}}@endif</textarea>
                     </div>
                     
                   </div>
                 </div> <br>
-
+                @if($appointment->condicion == 'finalizado')
+                  <input type="hidden" name="diagnostico_id" value="{{ $diagnostico[0]->id }}">
+                @endif
               </div>
               <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                @if($appointment->condicion == 'pendiente')
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                @elseif($appointment->condicion == 'finalizado')
+                  <button type="submit" class="btn btn-warning">Actualizar</button>
+                @endif
               </div>
             </form>
           </div>
