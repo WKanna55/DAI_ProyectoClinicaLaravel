@@ -18,7 +18,7 @@ class AdminController extends Controller
     }
 
     public function citas() {
-        return view('/');
+        return view('admin.agenda');
     }
 
     public function listar() {
