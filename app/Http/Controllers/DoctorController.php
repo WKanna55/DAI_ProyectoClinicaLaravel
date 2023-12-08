@@ -14,8 +14,7 @@ class DoctorController extends Controller
         return view('doctor.doctor', ['doctor' => $doctor]);
 
     }
-
-
+    
     public function atencion(){
         return view('doctor.atencion');
     }

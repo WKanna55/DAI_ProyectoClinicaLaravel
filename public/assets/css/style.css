@@ -606,19 +606,18 @@ Seccion de estilos del perfil de Paciente
 }
 
 .boton-editar {
-    position: absolute;
+    
     top: 20rem;
     right: 1rem;
     border: 0;
     border-radius: 8px;
     padding: 10px 10px;
-    background-color: rgba(32, 128, 3, 0.445);
+    background-color: rgba(40, 197, 61, 0.445);
     color: #050505;
     cursor: pointer;
 }
 
 .boton-historial-paciente{
-    position: absolute;
     top: 25rem;
     right: 1rem;
     border: 0;
