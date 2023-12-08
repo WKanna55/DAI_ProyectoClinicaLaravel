@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgendarCitaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
@@ -61,6 +62,24 @@ Route::get('/odontologia', [HomeController::class, 'odontologia'])->name('odonto
 Route::get('/oftalmologia', [HomeController::class, 'oftalmologia'])->name('oftalmologia');
 
 Route::get('/doctor/atencion',[DoctorController::class, 'atencion'])->name('atencion');
+
+Route::post('/doctor/atencion',[DoctorController::class, 'post_consulta'])->name('post_consulta');
+
+Route::get('/agendar_especialidad',[AgendarCitaController::class, 'showEspecialidad'])->name('showEspecialidad');
+
+Route::post('/agendar_especialidad',[AgendarCitaController::class, 'showDoctores'])->name('showDoctores');
+
+/*Route::post('/agendar_doctor',[AgendarCitaController::class, 'showDoctores'])->name('showDoctores');*/
+
+Route::post('/agendar_fecha',[AgendarCitaController::class, 'showFechas'])->name('showFechas');
+
+
+Route::post('/agendar_horario',[AgendarCitaController::class, 'showHorarios'])->name('showHorarios');
+
+
+//Route::get('/pago',[PagoController::class, 'pago'])->name('pago');
+
+Route::post('/agendar', [AgendarCitaController::class, 'agendarCita'])->name('agendarCita');
 
 Route::post('pago/payment', [PagoController::class, 'payment'])->name('paypal');
 

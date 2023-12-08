@@ -32,76 +32,130 @@
   <body>
     <!-- Barra de navegacion -->
     <header>
-      <nav class="navbar principal navbar-expand-lg">
-        <div class="container-fluid">
-          @guest
-          @else
-            @if(auth()->user()->rol_id == 1)
-              <a class="navbar-brand" href="{{ url('/')}}">
-                <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
-                  <p class="navbrand-text">Clínica Tecsana</p>
-                </div>
-              </a>
-            @elseif(auth()->user()->rol_id == 2)
-              <a class="navbar-brand" href="{{ route('citas')}}">
-                <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
-                  <p class="navbrand-text">Clínica Tecsana</p>
-                </div>
-              </a>
-            @elseif(auth()->user()->rol_id == 3)
-              <a class="navbar-brand" href="{{ route('adminShow')}}">
-                <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
-                  <p class="navbrand-text">Clínica Tecsana</p>
-                </div>
-              </a>
-            @endif
-          @endguest
-    
-          <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list icon-navbar"></i>
-          </button>
-          <div class="collapse navbar-collapse principal align-content-end" id="navbarTogglerDemo02">
-            <!-- items del navbar-->
-            <ul class="navbar-nav principal me-10 mb-2">
-              
-             @guest
-              <li class="nav-item principal">
-                <a class="nav-link principal" href="{{ route('nosotros') }}">Nosotros</a>
-              </li>
 
-              <li class="nav-item principal">
-                <a class="nav-link principal" href="{{ route('especialidades') }}">Especialidades</a>
-              </li>
-             
-              <li class="nav-item principal">
-                <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('loginShow') }}">Iniciar sesion</a>
-              </li>
-              <li class="nav-item principal">
-                <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('reg') }}">Registrate</a>
-              </li> 
+      @guest
+        <nav class="navbar principal navbar-expand-lg">
+          <div class="container-fluid">
+
+            <a class="navbar-brand" href="{{ url('/')}}">
+              <div class="d-flex justify-content-center align-items-center navbrand-pers">
+                <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                <p class="navbrand-text">Clínica Tecsana</p>
+              </div>
+            
+            </a>
+            <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="bi bi-list icon-navbar"></i>
+            </button>
+            <div class="collapse navbar-collapse principal align-content-end" id="navbarTogglerDemo02">
+              <!-- items del navbar-->
+              <ul class="navbar-nav principal me-10 mb-2">
+                <li class="nav-item principal">
+                  <a class="nav-link principal" href="{{ route('nosotros') }}">Nosotros</a>
+                </li>
+                <li class="nav-item principal">
+                  <a class="nav-link principal" href="{{ route('especialidades') }}">Especialidades</a>
+                </li>
+                <li class="nav-item principal">
+                  <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('loginShow') }}">Iniciar sesion</a>
+                </li>
+                <li class="nav-item principal">
+                  <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('reg') }}">Registrate</a>
+                </li> 
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      @else
+
+        @if(auth()->user()->role_id == 1)
+          <nav class="navbar principal navbar-expand-lg">
+            <div class="container-fluid">
+            
+              <a class="navbar-brand" href="{{ route('home')}}">
+                <div class="d-flex justify-content-center align-items-center navbrand-pers">
+                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <p class="navbrand-text">Clínica Tecsana</p>
+                </div>
               
-              @else
-                @if(auth()->user()->role_id == 1)
+              </a>
+              <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list icon-navbar"></i>
+              </button>
+              <div class="collapse navbar-collapse principal align-content-end" id="navbarTogglerDemo02">
+                <!-- items del navbar-->
+                <ul class="navbar-nav principal me-10 mb-2">
+                  <li class="nav-item principal">
+                    <a class="nav-link principal" href="{{ route('nosotros') }}">Nosotros</a>
+                  </li>
+                  <li class="nav-item principal">
+                    <a class="nav-link principal" href="{{ route('especialidades') }}">Especialidades</a>
+                  </li>
                   <li class="nav-item">
                     <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
                   </li>
                   <li class="nav-item">
                     <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
                   </li>
-                @elseif(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        @elseif(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+          <nav class="navbar principal navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{{ route('citas')}}">
+                <div class="d-flex justify-content-center align-items-center navbrand-pers">
+                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <p class="navbrand-text">Clínica Tecsana</p>
+                </div>
+              </a>
+              <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list icon-navbar"></i>
+              </button>
+              <div class="collapse navbar-collapse principal align-content-end" id="navbarTogglerDemo02">
+                <!-- items del navbar-->
+                <ul class="navbar-nav principal me-10 mb-2">
+                  
                   <li class="nav-item">
                     <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
                   </li>
-                @endif
-              @endguest
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        @elseif(auth()->user()->role_id == 3)
+
+          <nav class="navbar principal navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{{ route('adminShow')}}">
+                <div class="d-flex justify-content-center align-items-center navbrand-pers">
+                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <p class="navbrand-text">Clínica Tecsana</p>
+                </div>
+              </a>
+              <button class="navbar-toggler toggler-border-color principal" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list icon-navbar"></i>
+              </button>
+              <div class="collapse navbar-collapse principal align-content-end" id="navbarTogglerDemo02">
+                <!-- items del navbar-->
+                <ul class="navbar-nav principal me-10 mb-2">
+
+                  <li class="nav-item">
+                    <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        @endif
+
+      @endguest
 
     </header>
 
@@ -115,7 +169,7 @@
         <!-- Section: Text -->
         <section class="mb-4">
           <p>
-            Presentamos con orgullo la clinica Serenidad, un referente destacado en servicios de salud 
+            Presentamos con orgullo la clinica Tecsana, un referente destacado en servicios de salud 
             en la hermosa ciudad de Arequipa; desde el año 2005, nos dedicamos apasionadamente a atender 
             las necesidades de nuestra comunidad.
           </p>
@@ -159,7 +213,7 @@
     
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Copyright Clínica Serenidad. Todos los derechos reservados.
+        © 2023 Copyright Clínica Tecsana. Todos los derechos reservados.
       </div>
       <!-- Copyright -->
     </footer>
