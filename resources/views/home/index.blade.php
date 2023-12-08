@@ -8,7 +8,7 @@
         <div class="carousel-item active">
           <div class="sobreponer-carr texto-sobrepuesto">
             <h2 class="">¡Descubre el Bienestar Total en Nuestra Clínica de Excelencia!</h2>
-            <p>Bienvenido a Clinica Serenidad, donde tu salud y bienestar son nuestra prioridad. 
+            <p>Bienvenido a Clinica Tecsana, donde tu salud y bienestar son nuestra prioridad. 
               Nuestro equipo de profesionales altamente calificados está comprometido a brindarte 
               atención personalizada y de calidad.
             </p>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="sobreponer d-flex">
-        <a role="button" class="btn btn-pers cita m-2" href="{{route('reg')}}">Agendar cita</a>
+        <a role="button" class="btn btn-pers cita m-2" href="{{ route('showEspecialidad') }}">Agendar cita</a>
         <button type="button" class="btn btn-pers green video m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Como agendar
         </button>
@@ -123,7 +123,7 @@
         <div class="col mb-4">
           <div class="card bg-user align-items-center ">
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
-            <h5>Carlos Nuñez</h5>
+            <h5 class="text-white">Carlos Nuñez</h5>
             <div class="card-body bg-light">
               <p class="card-text">
                 He tenido experiencias excepcionales en la Clínica Tecsana. 
@@ -140,7 +140,7 @@
         <div class="col mb-4">
           <div class="card bg-user align-items-center ">
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
-            <h5>Lisbeth Torres</h5>
+            <h5 class="text-white">Lisbeth Torres</h5>
             <div class="card-body bg-light">
               <p class="card-text">
                 La clínica Tecsana cuenta con instalaciones modernas y limpias, 
@@ -154,7 +154,7 @@
         <div class="col mb-4">
           <div class="card bg-user align-items-center ">
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
-            <h5>Renata Lazo</h5>
+            <h5 class="text-white">Renata Lazo</h5>
             <div class="card-body bg-light">
               <p class="card-text">
                 La Clínica Tecsana realmente ha marcado la diferencia en mi 

@@ -15,7 +15,6 @@ class AppointmentTableSeeder extends Seeder
     public function run(): void
     {
         $appointment1 = new Appointment;
-        $appointment1->edad =25;
         $appointment1->condicion ="finalizado";
         $appointment1->patient_id =1;
         $appointment1->doctor_id =1;
@@ -32,7 +31,6 @@ class AppointmentTableSeeder extends Seeder
         $diagnoses->save();
 
         $appointment2 = new Appointment;
-        $appointment2->edad =25;
         $appointment2->condicion ="pendiente";
         $appointment2->patient_id =1;
         $appointment2->doctor_id =1;
