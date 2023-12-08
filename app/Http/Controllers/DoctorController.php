@@ -17,15 +17,25 @@ class DoctorController extends Controller
         $user = Auth::user();
 
         $doctor = $user->Doctor;
+        //dd($doctor);
         return view('doctor.doctor', ['doctor' => $doctor]);
 
     }
 
-    public function atencion()
+    public function atencion(Request $request)
     {
+        $appointment_id = $request->input('appointment_id');
+        $doctor_id = $request->input('doctor_id');
         
-        $cita = Appointment::with('patient','doctor.specialty', 'diagnosis','shift.schedule')->find(1);
-        return view('doctor.atencion', compact('cita'));
+        //$cita = Appointment::with('patient','doctor.specialty', 'diagnosis','shift.schedule')->find(1);
+        $appointment = Appointment::find($appointment_id);
+        //dd($appointment->patient_id);
+        $patient = Patient::find($appointment->patient_id);
+        //dd($patient);
+        $doctor = Doctor::find($doctor_id);
+        //dd($doctor);
+        
+        return view('doctor.atencion', compact('appointment', 'patient', 'doctor'));
 
     }
     
@@ -44,6 +54,7 @@ class DoctorController extends Controller
             'receta' => 'required',
             'appointment_id' => 'required',  
         ]);
+
         $appointment_id = $request->input('appointment_id');
         $diagnostico = new Diagnosis;
         $diagnostico->alergias = $request->input('alergias');
@@ -54,10 +65,11 @@ class DoctorController extends Controller
         
         $diagnostico->appointment_id = $appointment_id;
         $diagnostico->save();
-        return view('doctor.doctor');
+
+        $appointment_update= Appointment::find($appointment_id);
+        $appointment_update->condicion = "finalizado";
+        $appointment_update->save();
+
+        return redirect()->route('citas');
     }
 }
-        
-
-
-
