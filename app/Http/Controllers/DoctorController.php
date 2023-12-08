@@ -24,10 +24,15 @@ class DoctorController extends Controller
     public function atencion()
     {
         
-        $cita = Appointment::with('patient','doctor.specialty', 'diagnosis')->find(1);
+        $cita = Appointment::with('patient','doctor.specialty', 'diagnosis','shift.schedule')->find(1);
         return view('doctor.atencion', compact('cita'));
 
     }
+    
+    // public function doc_citas(){
+    //     $doctor = Appointment::with('doctor', 'patient', 'shift.schedule');
+    //     return view('doctor.doctor', compact('doctor'));
+    // }
 
     public function post_consulta(Request $request)
     {
@@ -40,7 +45,6 @@ class DoctorController extends Controller
             'appointment_id' => 'required',  
         ]);
         $appointment_id = $request->input('appointment_id');
-        $doctor_id = 
         $diagnostico = new Diagnosis;
         $diagnostico->alergias = $request->input('alergias');
         $diagnostico->sintomas = $request->input('sintomas');

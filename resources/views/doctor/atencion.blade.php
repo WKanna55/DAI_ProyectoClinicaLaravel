@@ -33,15 +33,13 @@
                 </tr>
               </thead>
               <tbody class="">
-              
-                  <tr class="">
-                      <td class="col-2">{{$cita->fecha}}</td>
+              <tr class="">
+                      <td class="col-2">{{$cita->shift->fecha}}</td>
                       <td class="col-2">{{$cita->diagnosis->valoracion}}</td>
                       <td class="col-2">{{$cita->diagnosis->alergias}}</td>
                       <td class="col-3">{{$cita->diagnosis->receta}}</td>
                       <td class="col-3">{{$cita->doctor->nombres}} {{$cita->doctor->apellidos}}</td>
                   </tr>
-
               </tbody>
             </table>
           </div>
@@ -90,14 +88,14 @@
                 <div class="row mb-3">
                   <label for="horario" class="col-sm-3 col-form-label col-form-label-sm">Horario</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control form-control-sm" id="horario" value="{{ $cita->horario }}" readonly>
+                      <input type="text" class="form-control form-control-sm" id="horario" value="{{ $cita->shift->schedule->horario }}" readonly>
                   </div>
                 </div>
               
                 <div class="row mb-3">
                     <label for="fecha" class="col-sm-3 col-form-label col-form-label-sm">Fecha</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control form-control-sm" id="fecha" value="{{ $cita->fecha }}" readonly>
+                        <input type="text" class="form-control form-control-sm" id="fecha" value="{{ $cita->shift->fecha }}" readonly>
                     </div>
                 </div>
               
@@ -135,7 +133,7 @@
           <div class="card-body" >
             <h3 class="card-title">Consulta</h3>
             
-          <form action="{{ route('post_consulta') }}" method="POST">
+          <form action="{{ route('atencion') }}" method="POST">
 
             {{ csrf_field() }}
 

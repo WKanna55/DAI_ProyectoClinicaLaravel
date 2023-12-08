@@ -64,6 +64,8 @@ Route::get('/oftalmologia', [HomeController::class, 'oftalmologia'])->name('ofta
 
 Route::get('/doctor/atencion',[DoctorController::class, 'atencion'])->name('atencion');
 
+Route::post('/doctor/atencion',[DoctorController::class, 'post_consulta'])->name('post_consulta');
+
 Route::get('/agendar_especialidad', function () {
     return view('paciente.agendar_especialidad');
 })->name('agendar_especialidad');
