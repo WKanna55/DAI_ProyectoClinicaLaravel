@@ -74,7 +74,7 @@
           <nav class="navbar principal navbar-expand-lg">
             <div class="container-fluid">
             
-              <a class="navbar-brand" href="{{ route('perfilPaciente')}}">
+              <a class="navbar-brand" href="{{ route('home')}}">
                 <div class="d-flex justify-content-center align-items-center navbrand-pers">
                   <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
                   <p class="navbrand-text">Clínica Tecsana</p>

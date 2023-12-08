@@ -123,7 +123,7 @@
         <div class="col mb-4">
           <div class="card bg-user align-items-center ">
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
-            <h5>Carlos Nuñez</h5>
+            <h5 class="text-white">Carlos Nuñez</h5>
             <div class="card-body bg-light">
               <p class="card-text">
                 He tenido experiencias excepcionales en la Clínica Tecsana. 
@@ -140,7 +140,7 @@
         <div class="col mb-4">
           <div class="card bg-user align-items-center ">
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
-            <h5>Lisbeth Torres</h5>
+            <h5 class="text-white">Lisbeth Torres</h5>
             <div class="card-body bg-light">
               <p class="card-text">
                 La clínica Tecsana cuenta con instalaciones modernas y limpias, 
@@ -154,7 +154,7 @@
         <div class="col mb-4">
           <div class="card bg-user align-items-center ">
             <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
-            <h5>Renata Lazo</h5>
+            <h5 class="text-white">Renata Lazo</h5>
             <div class="card-body bg-light">
               <p class="card-text">
                 La Clínica Tecsana realmente ha marcado la diferencia en mi 
