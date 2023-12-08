@@ -48,7 +48,6 @@ class AgendarCitaController extends Controller
     }
 
     public function agendarCita(Request $request){
-        $edad = 20;
         $condicion = 'pendiente';
         $user_id = Auth::user()->id;
         $patient_id = Patient::where('user_id', $user_id)->get();
@@ -57,7 +56,6 @@ class AgendarCitaController extends Controller
         $shift_id = $request->input('id_shift');
 
         $cita = New Appointment();
-        $cita->edad = $edad;
         $cita->condicion = $condicion;
         $cita->patient_id = $patient_id[0]->id;
         
