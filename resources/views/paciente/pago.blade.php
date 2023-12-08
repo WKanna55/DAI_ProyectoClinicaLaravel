@@ -16,6 +16,7 @@
       <div class="col-md-12">
         <input type="text" class="form-control" id="validationDefault03" required placeholder="Nombre del titular de la tarjeta">
       </div>
+      <input type="hidden" name="id_paciente">
       <div class=" d-flex justify-content-evenly align-items-center">
         <button class="btn pago btn-lg" type="button">Volver</button>
         <button class="btn pago btn-lg" type="submit">Pagar</button>

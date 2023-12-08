@@ -76,3 +76,8 @@ Route::post('/agendar_fecha',[AgendarCitaController::class, 'showFechas'])->name
 
 
 Route::post('/agendar_horario',[AgendarCitaController::class, 'showHorarios'])->name('showHorarios');
+
+
+//Route::get('/pago',[PagoController::class, 'pago'])->name('pago');
+
+Route::post('/agendar', [AgendarCitaController::class, 'agendarCita'])->name('agendarCita');

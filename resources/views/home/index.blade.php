@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="sobreponer d-flex">
-        <a role="button" class="btn btn-pers cita m-2" href="{{route('reg')}}">Agendar cita</a>
+        <a role="button" class="btn btn-pers cita m-2" href="#">Agendar cita</a>
         <button type="button" class="btn btn-pers green video m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Como agendar
         </button>

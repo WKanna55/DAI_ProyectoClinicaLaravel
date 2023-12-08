@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Schedule;
 use App\Models\Shift;
 use App\Models\Specialty;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AgendarCitaController extends Controller
 {
@@ -41,6 +43,29 @@ class AgendarCitaController extends Controller
             ->select('schedules.horario', 'doctor_id', 'schedule_id', 'shifts.id')->get();
         //dd($horarios);
         return view('paciente.agendar_horario', compact('horarios'));
+    }
+
+    public function agendarCita(Request $request){
+        $edad = 20;
+        $condicion = 'pendiente';
+        $patient_id = Auth::user()->id;
+        $doctor_id = $request->input('id_doctor');
+        $shift_id = $request->input('id_shift');
+
+        $cita = New Appointment();
+        $cita->edad = $edad;
+        $cita->condicion = $condicion;
+        $cita->patient_id = $patient_id;
+        $cita->doctor_id = $doctor_id;
+        $cita->shift_id = $shift_id;
+        $cita->save();
+
+        $shift = Shift::find($shift_id);
+
+        $shift->disponible = 0;
+        $shift->save();
+
+        return redirect()->route('home');
     }
 
 
