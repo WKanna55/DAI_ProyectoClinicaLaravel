@@ -25,7 +25,7 @@ class Patient extends Model
     }
 
 
-    public function Appoitnment()
+    public function Appointment()
     {
         return $this->hasMany(Appointment::class);
     }
