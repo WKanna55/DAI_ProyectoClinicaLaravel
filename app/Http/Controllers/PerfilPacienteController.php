@@ -12,8 +12,9 @@ class PerfilPacienteController extends Controller
     public function show()
     {
         $user = Auth::user();
-
-        $patient = $user->Patient->with('user')->first();
+        $user_id = Auth::user()->id;
+        $patients = Patient::where('user_id', $user_id)->get();
+        $patient = $patients[0];
 
         $cita = Appointment::where('patient_id', $patient->id)
                 ->where('condicion', 'pendiente')

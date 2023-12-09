@@ -46,31 +46,4 @@ class AgendarCitaController extends Controller
         //dd($horarios);
         return view('paciente.agendar_horario', compact('horarios'));
     }
-
-    public function agendarCita(Request $request){
-        $condicion = 'pendiente';
-        $user_id = Auth::user()->id;
-        $patient_id = Patient::where('user_id', $user_id)->get();
-        
-        $doctor_id = $request->input('id_doctor');
-        $shift_id = $request->input('id_shift');
-
-        $cita = New Appointment();
-        $cita->condicion = $condicion;
-        $cita->patient_id = $patient_id[0]->id;
-        
-        $cita->doctor_id = $doctor_id;
-        $cita->shift_id = $shift_id;
-        
-        $cita->save();
-
-        $shift = Shift::find($shift_id);
-
-        $shift->disponible = 0;
-        $shift->save();
-
-        return redirect()->route('home');
-    }
-
-
 }
