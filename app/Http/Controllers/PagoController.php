@@ -89,34 +89,45 @@ class PagoController extends Controller
     }
 
     public function cancel(Request $request) {
-        return 'Se ha cancelado el proceso de pago';
+        return view('paciente.pago_cancelado');
     }
 
     public function aviso() {
-
-        $condicion = session('cita')['condicion'];
-        $user_id = session('cita')['user_id'];
-        $patient_id = session('cita')['patient_id'];
-        $doctor_id = session('cita')['doctor_id'];
-        $shift_id = session('cita')['shift_id'];
-
-        $cita = New Appointment();
-        $cita->condicion = $condicion;
-        $cita->patient_id = $patient_id;
-        $cita->doctor_id = $doctor_id;
-        $cita->shift_id = $shift_id;
-        $cita->save();
-
-        $payment = new Payment();
-        $cita_id = $cita->id;
-        $monto = session('cita')['monto'];
-        $payment->monto = $monto;
-        $payment->appointment_id = $cita_id;
-        $payment->save();
-
-        $shift = Shift::find($shift_id);
-        $shift->disponible = 0;
-        $shift->save();
-        return view('paciente.pago_exitoso');
+        // Verificar si la sesión existe
+        if (session()->has('cita')) {
+            // Recuperar datos de la sesión
+            $condicion = session('cita')['condicion'];
+            $user_id = session('cita')['user_id'];
+            $patient_id = session('cita')['patient_id'];
+            $doctor_id = session('cita')['doctor_id'];
+            $shift_id = session('cita')['shift_id'];
+    
+            // Crear registros solo si la sesión está presente
+            $cita = new Appointment();
+            $cita->condicion = $condicion;
+            $cita->patient_id = $patient_id;
+            $cita->doctor_id = $doctor_id;
+            $cita->shift_id = $shift_id;
+            $cita->save();
+    
+            $payment = new Payment();
+            $cita_id = $cita->id;
+            $monto = session('cita')['monto'];
+            $payment->monto = $monto;
+            $payment->appointment_id = $cita_id;
+            $payment->save();
+    
+            $shift = Shift::find($shift_id);
+            $shift->disponible = 0;
+            $shift->save();
+            
+            // Limpiar la sesión después de crear los registros
+            session()->forget('cita');
+    
+            return view('paciente.pago_exitoso');
+        } else {
+            // La sesión no está presente, realizar alguna acción de manejo de error
+            return redirect()->route('home'); // Reemplaza 'ruta_del_error' con la ruta real
+        }
     }
 }
