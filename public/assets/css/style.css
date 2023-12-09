@@ -15,7 +15,7 @@ Seccion: pagina raiz-base
     --azul: #1b4965;
     --celeste-blanco: #cae9ff;
     --celeste-oscuro: #5fa8d3;
-
+    --blanco: #fff;
 }
 
 
@@ -585,9 +585,15 @@ Seccion de estilos del perfil de Paciente
     flex-wrap: wrap;
     padding: 1.5rem 2rem;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    background-color: #fff;
+    background-color: var(--blanco);
     border-radius: 15px;
     width: 100%;
+    justify-content: space-between;
+}
+
+.perfil-usuario-citas-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .seccion-perfil-usuario .perfil-usuario-bio {
@@ -686,10 +692,15 @@ Seccion: Doctor
 .card-blue:hover {
     background-color: var(--azul);
     color: var(--celeste-blanco);
+    cursor: pointer;
 }
 
 .card-red{
     background-color: red;
+}
+
+.card-red:hover {
+    cursor: pointer;
 }
 
 .container.doctor{
@@ -741,6 +752,32 @@ Seccion: atencion
 
 
 
+
+
+/* Administrador */
+
+.bienvenido {
+    height: 100%;
+}
+
+.bienvenido-card {
+    background-color: var(--celeste-blanco);
+}
+
+.derivacion:hover {
+    text-decoration: none;
+}
+
+.derivacion-card-body {
+    background-color: var(--celeste-blanco);
+}
+
+.derivacion-card-body:hover {
+    border: none;
+    background-color: var(--celeste-oscuro);
+    color: var(--blanco);
+    transition: ease 0.2s;
+}
 /*--  Interfaz agendar_especialidad.blade.php  --*/
 
 

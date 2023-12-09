@@ -43,9 +43,9 @@ Route::get('/especialidades', [HomeController::class, 'especialidades'])->name('
 
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
-Route::get('/admin', [AdminController::class, 'adminShow'])->name('adminShow');
-
 Route::get('/perfilPaciente', [PerfilPacienteController::class, 'show'])->name('perfilPaciente');
+
+Route::post('/perfilPaciente', [PerfilPacienteController::class, 'update'])->name('actualizarPaciente');
 
 Route::get('/doctor',[DoctorController::class, 'citas'])->name('citas');
 
@@ -82,3 +82,25 @@ Route::post('/agendar_horario',[AgendarCitaController::class, 'showHorarios'])->
 //Route::get('/pago',[PagoController::class, 'pago'])->name('pago');
 
 Route::post('/agendar', [AgendarCitaController::class, 'agendarCita'])->name('agendarCita');
+
+
+// Pago
+
+Route::post('pago/payment', [PagoController::class, 'payment'])->name('paypal');
+
+Route::get('pago/success', [PagoController::class, 'success'])->name('paypal_success');
+
+Route::get('paypal_aviso', [PagoController::class, 'aviso'])->name('paypal_aviso');
+
+Route::get('pago/cancel', [PagoController::class, 'cancel'])->name('paypal_cancel');
+
+
+// Admin
+
+Route::get('/admin', [AdminController::class, 'show'])->name('admin'); // muestra pagina de inicio de admin
+
+
+Route::get('/admin/list', [AdminController::class, 'citas'])->name('citasAdmin'); // muestra citas
+
+Route::get('/admin/agendar', [AdminController::class, 'agendar'])->name('agendaAdmin'); // agenda citas
+
