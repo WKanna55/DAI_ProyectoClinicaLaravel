@@ -45,6 +45,8 @@ Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
 Route::get('/perfilPaciente', [PerfilPacienteController::class, 'show'])->name('perfilPaciente');
 
+Route::post('/perfilPaciente', [PerfilPacienteController::class, 'update'])->name('actualizarPaciente');
+
 Route::get('/doctor',[DoctorController::class, 'citas'])->name('citas');
 
 Route::get('/pago',[PagoController::class, 'pago'])->name('pago');

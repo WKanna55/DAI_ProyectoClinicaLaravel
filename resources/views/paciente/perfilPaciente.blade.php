@@ -28,7 +28,7 @@
             <div class="perfil-usuario-footer">
                 
                     <ul class="lista-datos">
-                        <li><i class="icono fas fa-id-card"></i> DNI:{{$patient->dni}}</li>
+                        <li><i class="icono fas fa-id-card"></i> DNI: {{$patient->user->dni}}</li>
                         <li><i class="icono fas fa-phone-alt"></i>{{$patient->telefono}}</li>
                         <li><i class="icono fas fa-envelope"></i>{{$patient->email}}</li>
                         <li><i class="icono fas fa-calendar-alt"></i>{{$patient->fecha_nacimiento}}</li>
@@ -42,10 +42,31 @@
             </div>
 
             <div class="perfil-usuario-citas">
-                <h3 class="titulo">Citas</h3>
-                <button class="boton-historial-paciente" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                   <i class="far fa-eye">Historial</i> 
-                </button>
+                <div class="container-fluid perfil-usuario-citas-header mb-5 mt-3">
+                  <h3 class="titulo">Citas</h3>
+                  <button class="boton-historial-paciente" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    <i class="far fa-eye">Historial</i> 
+                  </button>
+                </div>
+
+                <div class="container-fluid perfil-usuario-citas-main">
+                  <div class="perfil-usuario-cita row gap-3 ml-5">
+
+                    @foreach ($cita as $c)
+                    <div class="card col-5 card-cita">
+                      <div class="card-body">
+                        <h5 class="card-title">{{$c->doctor->specialty->nombre}}</h5>
+                        <p class="card-text">Dr: {{$c->doctor->nombres}} {{$c->doctor->apellidos}}</p>
+                        <p class="card-text">Consultorio: {{$c->doctor->consultorio}}</p>
+                        <p class="card-text">{{$c->shift->fecha}}</p>
+                        <p class="card-text">{{$c->shift->schedule->horario}}</p>
+                      </div>
+                    </div>
+                    @endforeach
+
+                  </div>
+                </div>
+                
             </div>
 
             <section>
@@ -60,40 +81,41 @@
                         <div class="modal-body">
                           <div class="form-responsive datos">
                             <!-- formulario -->
-                            <form>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">DNI</label>
-                                    <input type="text" class="form-control" id="nombre">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="nombre" class="form-label">Nombre</label>
-                                  <input type="text" class="form-control" id="nombre">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Apellidos</label>
-                                    <input type="text" class="form-control" id="nombre">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Telefono</label>
-                                    <input type="text" class="form-control" id="nombre">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Direccion</label>
-                                    <input type="text" class="form-control" id="nombre">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Email</label>
-                                    <input type="text" class="form-control" id="nombre">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Fecha Nacimiento</label>
-                                    <input type="date" class="form-control" id="nombre">
-                                </div>
-                              </form>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                              <button type="button" class="btn btn-primary">Guardar cambios</button>
-                            </div>
+                            <form method="post" action="{{route('actualizarPaciente')}}">
+                              @csrf
+                              <div class="mb-3">
+                                  <label for="nombre" class="form-label">DNI</label>
+                                  <input type="text" class="form-control" name="dni" value="{{$patient->user->dni}}">
+                              </div>
+                              <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombres</label>
+                                <input type="text" class="form-control" name="nombres" value="{{$patient->nombres}}">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="nombre" class="form-label">Apellidos</label>
+                                  <input type="text" class="form-control" name="apellidos" value="{{$patient->apellidos}}">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="nombre" class="form-label">Telefono</label>
+                                  <input type="text" class="form-control" name="telefono" value="{{$patient->telefono}}">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="nombre" class="form-label">Direccion</label>
+                                  <input type="text" class="form-control" name="direccion" value="{{$patient->direccion}}">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="nombre" class="form-label">Email</label>
+                                  <input type="text" class="form-control" name="email" value="{{$patient->email}}">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="nombre" class="form-label">Fecha Nacimiento</label>
+                                  <input type="date" class="form-control" name="fecha_nacimiento" value="{{$patient->fecha_nacimiento}}">
+                              </div>
+                              <input type="hidden" name="id" value={{$patient->id}}>
+                              <div class="modal-footer">
+                                <input type="submit" class="btn btn-primary" value="Confirmar cambios"></input>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
@@ -124,55 +146,18 @@
                           </tr>
                         </thead>
                         <tbody class="">
+
+                          @foreach ($cita_historial as $c)
+                                                       
                           <tr class="">
-                            <td class="col-2">01/11/2023</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-3">Medicamento XYZ</td>
-                            <td class="col-3">Dr. Rodríguez</td>
+                            <td class="col-2">{{$c->shift->fecha}}</td>
+                            <td class="col-2">{{$c->diagnosis->valoracion}}</td>
+                            <td class="col-2">{{$c->diagnosis->alergias}}</td>
+                            <td class="col-3">{{$c->diagnosis->receta}}</td>
+                            <td class="col-3">{{$c->doctor->nombres}} {{$c->doctor->apellidos}}</td>
                           </tr>
-                          <tr class="">
-                            <td class="col-2">01/11/2023</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-3">Medicamento XYZ</td>
-                            <td class="col-3">Dr. Rodríguez</td>
-                          </tr>
-                          <tr class="">
-                            <td class="col-2">01/11/2023</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-3">Medicamento XYZ</td>
-                            <td class="col-3">Dr. Rodríguez</td>
-                          </tr>
-                          <tr class="">
-                            <td class="col-2">01/11/2023</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-3">Medicamento XYZ</td>
-                            <td class="col-3">Dr. Rodríguez</td>
-                          </tr>
-                          <tr class="">
-                            <td class="col-2">01/11/2023</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-3">Medicamento XYZ</td>
-                            <td class="col-3">Dr. Rodríguez</td>
-                          </tr>
-                          <tr class="">
-                            <td class="col-2">01/11/2023</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-3">Medicamento XYZ</td>
-                            <td class="col-3">Dr. Rodríguez</td>
-                          </tr>
-                          <tr class="">
-                            <td class="col-2">01/11/2023</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-2">Lorem ipsum dolor sit amet</td>
-                            <td class="col-3">Medicamento XYZ</td>
-                            <td class="col-3">Dr. Rodríguez</td>
-                          </tr>
+                          @endforeach
+
                         </tbody>
                       </table>
                     </div>
