@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Payment;
 use App\Models\Shift;
 use App\Models\Patient;
 use Illuminate\Http\Request;
@@ -34,7 +35,8 @@ class PagoController extends Controller
                             'user_id' => $user_id,
                             'patient_id' => $patient_id,
                             'doctor_id' => $doctor_id,
-                            'shift_id' => $shift_id]]);
+                            'shift_id' => $shift_id,
+                            'monto' => $monto]]);
 
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal')); 
@@ -104,6 +106,13 @@ class PagoController extends Controller
         $cita->doctor_id = $doctor_id;
         $cita->shift_id = $shift_id;
         $cita->save();
+
+        $payment = new Payment();
+        $cita_id = $cita->id;
+        $monto = session('cita')['monto'];
+        $payment->monto = $monto;
+        $payment->appointment_id = $cita_id;
+        $payment->save();
 
         $shift = Shift::find($shift_id);
         $shift->disponible = 0;

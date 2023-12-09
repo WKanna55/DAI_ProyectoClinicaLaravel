@@ -27,7 +27,12 @@
         </div>
       </div>
       <div class="sobreponer d-flex">
+        @guest
+            
+        <a role="button" class="btn btn-pers cita m-2" href="{{ route('home') }}">Agendar cita</a>
+        @else
         <a role="button" class="btn btn-pers cita m-2" href="{{ route('showEspecialidad') }}">Agendar cita</a>
+        @endguest
         <button type="button" class="btn btn-pers green video m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Como agendar
         </button>

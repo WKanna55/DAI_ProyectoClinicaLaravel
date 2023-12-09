@@ -21,12 +21,11 @@
                         @endforeach
                     </select>
                     <input type="hidden" name = "id_doctor" id="iddoctor" value="{{$horarios[0]->doctor_id}}">
-                    <h2 class="pt-5 text-center">S/ 200.00</h2>
-                    <input type="hidden" name="precio" value="1">
+                    <h2 class="pt-5 text-center">{{$doctor->Specialty->costo}}</h2>
+                    <input type="hidden" name="precio" value="{{$doctor->Specialty->costo}}">
                     <div class="pt-5 text-center">
                         <input type="submit" class="btn btn-success"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" value="Pagar">
-                            
                     </div>
                 </form>
             </div>

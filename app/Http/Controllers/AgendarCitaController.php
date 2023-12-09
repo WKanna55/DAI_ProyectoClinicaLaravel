@@ -36,6 +36,8 @@ class AgendarCitaController extends Controller
     public function showHorarios(Request $request){
         $fecha = $request->input('fecha');
         $id_doctor = $request->input('id_doctor');
+        $doctor = Doctor::find($id_doctor);
+
         //dd($id_doctor);
         //$turno = Shift::where('fecha', $fecha)->get();
         //dd($turno);
@@ -44,6 +46,6 @@ class AgendarCitaController extends Controller
             ->join('schedules', 'schedule_id', '=', 'schedules.id')
             ->select('schedules.horario', 'doctor_id', 'schedule_id', 'shifts.id')->get();
         //dd($horarios);
-        return view('paciente.agendar_horario', compact('horarios'));
+        return view('paciente.agendar_horario', compact('horarios', 'doctor'));
     }
 }
