@@ -10,17 +10,34 @@ use App\Models\Doctor;
 use App\Models\Specialty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 
 class DoctorController extends Controller
 {
     public function citas() {
         $user = Auth::user();
-
         $doctor = $user->Doctor;
-        //dd($doctor);
-        return view('doctor.doctor', ['doctor' => $doctor]);
-
+        
+        //citas del doctor para el día hoy
+        $fechaActual = now()->toDateString();
+        $citasHoy = Appointment::join('shifts', 'appointments.shift_id', '=', 'shifts.id')
+            ->join('schedules', 'shifts.schedule_id', '=', 'schedules.id')
+            ->join('patients', 'appointments.patient_id', '=', 'patients.id')
+            ->whereDate('shifts.fecha', '=', $fechaActual)
+            ->select(
+                'shifts.fecha',
+                'schedules.horario',  
+                'appointments.id',
+                'patients.nombres',
+                'patients.apellidos'
+            )
+            ->orderBy('schedules.horario')
+            ->get();
+    
+        return view('doctor.doctor', ['doctor' => $doctor, 'citasHoy' => $citasHoy]);
     }
+    
+      
 
     public function atencion(Request $request)
     {
