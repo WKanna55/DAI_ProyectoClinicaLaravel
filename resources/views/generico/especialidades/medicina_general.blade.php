@@ -18,7 +18,11 @@
               <p>
                 Los médicos generales realizan una variedad de procedimientos y servicios, aunque su enfoque principal está en la atención primaria y la gestión de una amplia gama de condiciones médicas. 
               </p>
-              <a class="btn btn-pers especialidades mt-2" href="{{route('reg')}}">Reservar Cita</a>
+              @guest
+              <a class="btn btn-pers especialidades mt-2" href="{{route('login')}}">Reservar Cita</a>
+              @else
+              <a class="btn btn-pers especialidades mt-2" href="{{route('showEspecialidad')}}">Reservar Cita</a>
+              @endguest
             </div>
           </div>
         </div>

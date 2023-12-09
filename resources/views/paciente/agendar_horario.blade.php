@@ -12,6 +12,10 @@
                     <div class="step-circle bg-danger"></div>
                 </div>
                 <h2 class="pt-5 pb-2">Horario</h2>
+
+                @if(count(($horarios)) == 0)
+                <p class="text-center">La fecha no tiene horarios dispononibles actualmente.</p>
+                @else
                 <form action="{{ route('paypal') }}" method="post" id="horarioForm">
                     @csrf
                     <select class="form-select" name="id_shift">
@@ -28,6 +32,7 @@
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" value="Pagar">
                     </div>
                 </form>
+                @endif
             </div>
         </section>
     </main>
