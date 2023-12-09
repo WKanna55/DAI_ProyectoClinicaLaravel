@@ -18,7 +18,11 @@
                 Diagnosticamos y tratamos los problemas relacionados a la piel como rosácea, acné, vitíligo, 
                 psoriasis, micosis, melasmas, alopecia, foliculitis, etc.
               </p>
-              <a class="btn btn-pers especialidades mt-2" href="{{route('reg')}}">Reservar Cita</a>
+              @guest
+              <a class="btn btn-pers especialidades mt-2" href="{{route('login')}}">Reservar Cita</a>
+              @else
+              <a class="btn btn-pers especialidades mt-2" href="{{route('showEspecialidad')}}">Reservar Cita</a>
+              @endguest
             </div>
           </div>
         </div>
