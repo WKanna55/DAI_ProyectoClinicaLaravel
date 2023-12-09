@@ -596,11 +596,6 @@ Seccion de estilos del perfil de Paciente
     justify-content: space-between;
 }
 
-.card-cita {
-
-}
-
-
 .seccion-perfil-usuario .perfil-usuario-bio {
     margin-bottom: 1.25rem;
     text-align: center;
@@ -697,10 +692,15 @@ Seccion: Doctor
 .card-blue:hover {
     background-color: var(--azul);
     color: var(--celeste-blanco);
+    cursor: pointer;
 }
 
 .card-red{
     background-color: red;
+}
+
+.card-red:hover {
+    cursor: pointer;
 }
 
 .container.doctor{
