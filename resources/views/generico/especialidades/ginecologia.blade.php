@@ -13,7 +13,7 @@
           </div>
           <div class="col-md-6 order-md-1">
             <div>
-              <h2 class="titulo-azul">Ginicología</h2>
+              <h2 class="titulo-azul">Ginecología</h2>
               <p>
                 Diagnosticamos, tratamos y hacemos prevención y control del aparato reproductor de la mujer.
               </p>
