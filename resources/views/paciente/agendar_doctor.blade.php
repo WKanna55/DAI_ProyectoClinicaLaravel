@@ -37,6 +37,10 @@
                                 </div>
                             </div>
                             @endforeach
+
+                            @empty($doctor)
+                                <h1>No hay</h1>
+                            @endempty
                         </div>
                     </div>
                 </form>
