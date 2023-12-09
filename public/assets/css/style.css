@@ -226,6 +226,10 @@ Nueva seccion: index
     
 }
 
+.card.bg-user-red{
+    background-color: red;
+    
+}
 
 /*
 
@@ -693,6 +697,10 @@ Seccion: Doctor
 .card-blue:hover {
     background-color: var(--azul);
     color: var(--celeste-blanco);
+}
+
+.card-red{
+    background-color: red;
 }
 
 .container.doctor{

@@ -16,7 +16,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-4" id="exampleModalLabel">Historial medico</h1>
+          <h1 class="modal-title fs-4" id="exampleModalLabel">Historial medico paciente</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -33,13 +33,19 @@
                 </tr>
               </thead>
               <tbody class="">
-              <tr class="">
-                      <td class="col-2">{{$cita->shift->fecha}}</td>
-                      <td class="col-2">{{$cita->diagnosis->valoracion}}</td>
-                      <td class="col-2">{{$cita->diagnosis->alergias}}</td>
-                      <td class="col-3">{{$cita->diagnosis->receta}}</td>
-                      <td class="col-3">{{$cita->doctor->nombres}} {{$cita->doctor->apellidos}}</td>
-                  </tr>
+                
+                @foreach ($patient->Appointment as $cita_paciente)
+                  @if($cita_paciente->condicion == "finalizado")
+                    <tr class="">
+                      <td class="col-2">{{$cita_paciente->Shift->fecha}}</td>
+                      <td class="col-2">{{$cita_paciente->Diagnosis->valoracion}}</td>
+                      <td class="col-2">{{$cita_paciente->Diagnosis->alergias}}</td>
+                      <td class="col-3">{{$cita_paciente->Diagnosis->receta}}</td>
+                      <td class="col-3">{{$cita_paciente->Doctor->nombres}} {{$cita_paciente->doctor->apellidos}}</td>
+                    </tr>
+                  @endif
+                @endforeach
+                
               </tbody>
             </table>
           </div>
@@ -66,36 +72,30 @@
                 <div class="row mb-2">
                   <label for="nombre" class="col-sm-3 col-form-label col-form-label-sm">Nombre</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control form-control-sm" value="{{ $cita->patient->nombres }}"   readonly>
+                      <input type="text" class="form-control form-control-sm" value="{{ $patient->nombres }}"   readonly>
                   </div>
                 </div>
       
                 <div class="row mb-3">
                     <label for="apellido" class="col-sm-3 col-form-label col-form-label-sm">Apellido</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control form-control-sm" id="apellido" value="{{ $cita->patient->apellidos }}" readonly>
+                        <input type="text" class="form-control form-control-sm" id="apellido" value="{{ $patient->apellidos }}" readonly>
                     </div>
                 </div>
               
-             
-                <div class="row mb-3">
-                    <label for="edad" class="col-sm-3 col-form-label col-form-label-sm">Edad</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control form-control-sm" id="edad" value="{{ $cita->edad}}"  readonly>
-                    </div>
-                </div>
+          
         
                 <div class="row mb-3">
                   <label for="horario" class="col-sm-3 col-form-label col-form-label-sm">Horario</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control form-control-sm" id="horario" value="{{ $cita->shift->schedule->horario }}" readonly>
+                      <input type="text" class="form-control form-control-sm" id="horario" value="{{ $appointment->Shift->Schedule->horario }}" readonly>
                   </div>
                 </div>
               
                 <div class="row mb-3">
                     <label for="fecha" class="col-sm-3 col-form-label col-form-label-sm">Fecha</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control form-control-sm" id="fecha" value="{{ $cita->shift->fecha }}" readonly>
+                        <input type="text" class="form-control form-control-sm" id="fecha" value="{{ $appointment->Shift->fecha }}" readonly>
                     </div>
                 </div>
               
@@ -104,7 +104,7 @@
                   <div class="row mb-3">
                       <label for="especialidad" class="col-sm-3 col-form-label col-form-label-sm">Especialidad</label>
                       <div class="col-sm-9">
-                          <input type="text" class="form-control form-control-sm" id="especialidad" value="{{ $cita->doctor->specialty->nombre }}" readonly>
+                          <input type="text" class="form-control form-control-sm" id="especialidad" value="{{ $doctor->Specialty->nombre }}" readonly>
                       </div>
                   </div>
                   
@@ -114,7 +114,7 @@
                   <div class="row mb-3">
                       <label for="doctor" class="col-sm-3 col-form-label col-form-label-sm">Doctor</label>
                       <div class="col-sm-9">
-                          <input type="text" class="form-control form-control-sm" id="doctor" value="{{ $cita->doctor->nombres }} {{ $cita->doctor->apellidos }}"  readonly>
+                          <input type="text" class="form-control form-control-sm" id="doctor" value="{{ $doctor->nombres }} {{ $doctor->apellidos }}"  readonly>
                       </div>
                   </div>
                 
@@ -143,8 +143,8 @@
                 @endforeach
             </ul>
 
-            <input type="hidden" name="appointment_id" value="{{ $cita->id }}">
-            <input type="hidden" name="doctor_id" value="{{ $cita->doctor_id }}">
+            <input type="hidden" name="appointment_id" value="{{ $appointment->id }}">
+            
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
                 <h2 class="accordion-header">
@@ -154,8 +154,8 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="alergias" id="accordionContentOne" rows="2" ></textarea>
-                 
+                    <textarea class="form-control" name="alergias" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->alergias}}@endif
+                    </textarea>
                   </div>
                 </div>
               </div>
@@ -168,7 +168,7 @@
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="operAnteriores" id="accordionContentOne" rows="2" ></textarea>
+                    <textarea class="form-control" name="operAnteriores" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->operAnteriores}}@endif                    </textarea>
                   </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="sintomas" id="accordionContentOne" rows="2" ></textarea>
+                    <textarea class="form-control" name="sintomas" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->sintomas}}@endif</textarea>
                   </div>
                 </div>
               </div>
@@ -194,7 +194,7 @@
                 </h2>
                 <div id="flush-collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="valoracion" id="accordionContentOne" rows="2" ></textarea>
+                    <textarea class="form-control" name="valoracion" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->valoracion}}@endif</textarea>
                   </div>
                 </div>
               </div> <br>
@@ -206,19 +206,22 @@
                 <div class="container text-center">
                   <div class="row align-items-start">
                     <div class="col">
-                      Medicamentos <br>
-                      <textarea class="form-control" name="receta" id="accordionContentOne" rows="6" ></textarea>
+                      Medicamentos e instrucciones <br>
+                      <textarea class="form-control" name="receta" id="accordionContentOne" rows="6" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->receta}}@endif</textarea>
                     </div>
-                    <div class="col">
-                      Instrucciones <br>
-                      <textarea class="form-control" name="receta" id="accordionContentOne" rows="6" ></textarea>
-                    </div>
+                    
                   </div>
                 </div> <br>
-
+                @if($appointment->condicion == 'finalizado')
+                  <input type="hidden" name="diagnostico_id" value="{{ $diagnostico[0]->id }}">
+                @endif
               </div>
               <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                @if($appointment->condicion == 'pendiente')
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                @elseif($appointment->condicion == 'finalizado')
+                  <button type="submit" class="btn btn-warning">Actualizar</button>
+                @endif
               </div>
             </form>
           </div>
