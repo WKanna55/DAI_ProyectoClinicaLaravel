@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
+use App\Models\Payment;
+use App\Models\Shift;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
@@ -18,7 +22,21 @@ class PagoController extends Controller
 
     public function payment(Request $request) {
 
-        
+        // Para pasar info
+        $condicion = 'pendiente';
+        $user_id = Auth::user()->id;
+        $patient = Patient::where('user_id', $user_id)->get();
+        $patient_id = $patient[0]->id;
+        $doctor_id = $request->input('id_doctor');
+        $shift_id = $request->input('id_shift');
+        $monto = $request->input('precio');
+
+        session(['cita' => ['condicion' => $condicion,
+                            'user_id' => $user_id,
+                            'patient_id' => $patient_id,
+                            'doctor_id' => $doctor_id,
+                            'shift_id' => $shift_id,
+                            'monto' => $monto]]);
 
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal')); 
@@ -75,7 +93,30 @@ class PagoController extends Controller
     }
 
     public function aviso() {
-        
+
+        $condicion = session('cita')['condicion'];
+        $user_id = session('cita')['user_id'];
+        $patient_id = session('cita')['patient_id'];
+        $doctor_id = session('cita')['doctor_id'];
+        $shift_id = session('cita')['shift_id'];
+
+        $cita = New Appointment();
+        $cita->condicion = $condicion;
+        $cita->patient_id = $patient_id;
+        $cita->doctor_id = $doctor_id;
+        $cita->shift_id = $shift_id;
+        $cita->save();
+
+        $payment = new Payment();
+        $cita_id = $cita->id;
+        $monto = session('cita')['monto'];
+        $payment->monto = $monto;
+        $payment->appointment_id = $cita_id;
+        $payment->save();
+
+        $shift = Shift::find($shift_id);
+        $shift->disponible = 0;
+        $shift->save();
         return view('paciente.pago_exitoso');
     }
 }

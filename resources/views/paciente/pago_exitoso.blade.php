@@ -1,6 +1,7 @@
 @extends ('layouts.plantilla')
 @section ('content')
 
+
 <main>
     <div class="container-fluid col-10 d-flex flex-column gap-3">
 
@@ -10,10 +11,7 @@
 
 
             <p class="mb-5 text-center">Felicitaciones, puedes visualizar tus citas en tu perfil, haz click en el siguiente botón para redirigirte</p>
-
-            <form action="{{ route('agendarCita')}}" method="post">
-                <input class="btn btn-primary mb-5 btn-ver-citas" type="submit" value="Ver citas">
-            </form>
+            <a class="btn btn-primary" href="{{route('perfilPaciente')}}">Ver citas</a>
         </div>
 
     </div>
