@@ -12,9 +12,9 @@
                     <div class="step-circle bg-danger"></div>
                 </div>
                 <h2 class="pt-5 pb-2">Horario</h2>
-                <form action="{{ route('agendarCita') }}" method="post" id="horarioForm">
+                <form action="{{ route('paypal') }}" method="post" id="horarioForm">
                     @csrf
-                    <select class="form-select" aria-label="Default select example" name="id_shift">
+                    <select class="form-select" name="id_shift">
                         <option selected>Selecciona el horario</option>
                         @foreach($horarios as $horario)
                             <option value="{{ $horario->id }}">{{ $horario->horario }}</option>
@@ -22,6 +22,7 @@
                     </select>
                     <input type="hidden" name = "id_doctor" id="iddoctor" value="{{$horarios[0]->doctor_id}}">
                     <h2 class="pt-5 text-center">S/ 200.00</h2>
+                    <input type="hidden" name="precio" value="1">
                     <div class="pt-5 text-center">
                         <input type="submit" class="btn btn-success"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" value="Pagar">

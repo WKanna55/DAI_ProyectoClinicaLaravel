@@ -11,7 +11,7 @@
 
             <p class="mb-5 text-center">Felicitaciones, puedes visualizar tus citas en tu perfil, haz click en el siguiente botón para redirigirte</p>
 
-            <form action="{{ route('paypal_agendar')}}" method="post">
+            <form action="{{ route('agendarCita')}}" method="post">
                 <input class="btn btn-primary mb-5 btn-ver-citas" type="submit" value="Ver citas">
             </form>
         </div>

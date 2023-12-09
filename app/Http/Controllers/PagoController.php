@@ -19,6 +19,7 @@ class PagoController extends Controller
     public function payment(Request $request) {
 
         
+
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal')); 
         $paypalToken = $provider->getAccessToken();
@@ -63,7 +64,7 @@ class PagoController extends Controller
         //dd($response);
 
         if(isset($response['status']) && $response['status'] == 'COMPLETED') {
-            return "Pago exitoso";
+            return redirect()->route('paypal_aviso');
         } else {
             return redirect()->route('paypal_cancel');
         }
@@ -71,5 +72,10 @@ class PagoController extends Controller
 
     public function cancel(Request $request) {
         return 'Se ha cancelado el proceso de pago';
+    }
+
+    public function aviso() {
+        
+        return view('paciente.pago_exitoso');
     }
 }
