@@ -83,11 +83,19 @@ Route::post('/agendar_horario',[AgendarCitaController::class, 'showHorarios'])->
 
 Route::post('/agendar', [AgendarCitaController::class, 'agendarCita'])->name('agendarCita');
 
+
+// Pago
+
 Route::post('pago/payment', [PagoController::class, 'payment'])->name('paypal');
 
 Route::get('pago/success', [PagoController::class, 'success'])->name('paypal_success');
 
+Route::get('paypal_aviso', [PagoController::class, 'aviso'])->name('paypal_aviso');
+
 Route::get('pago/cancel', [PagoController::class, 'cancel'])->name('paypal_cancel');
+
+
+// Admin
 
 Route::get('/admin', [AdminController::class, 'show'])->name('admin'); // muestra pagina de inicio de admin
 
