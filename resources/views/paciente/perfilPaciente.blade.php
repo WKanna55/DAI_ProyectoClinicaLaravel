@@ -50,21 +50,19 @@
                 </div>
 
                 <div class="container-fluid perfil-usuario-citas-main">
-                  <div class="perfil-usuario-cita row gap-3 ml-5">
-
-                    @foreach ($cita as $c)
-                    <div class="card col-5 card-cita">
-                      <div class="card-body">
-                        <h5 class="card-title">{{$c->doctor->specialty->nombre}}</h5>
-                        <p class="card-text">Dr: {{$c->doctor->nombres}} {{$c->doctor->apellidos}}</p>
-                        <p class="card-text">Consultorio: {{$c->doctor->consultorio}}</p>
-                        <p class="card-text">{{$c->shift->fecha}}</p>
-                        <p class="card-text">{{$c->shift->schedule->horario}}</p>
-                      </div>
+                    <div class="perfil-usuario-cita row gap-3 ml-5">
+                        @foreach ($citas as $c)
+                            <div class="card col-5 card-cita">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $c->doctor->specialty->nombre }}</h5>
+                                    <p class="card-text">Dr: {{ $c->doctor->nombres }} {{ $c->doctor->apellidos }}</p>
+                                    <p class="card-text">Consultorio: {{ $c->doctor->consultorio }}</p>
+                                    <p class="card-text">{{ $c->shift->fecha }}</p>
+                                    <p class="card-text">{{ $c->shift->schedule->horario }}</p>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                    @endforeach
-
-                  </div>
                 </div>
                 
             </div>

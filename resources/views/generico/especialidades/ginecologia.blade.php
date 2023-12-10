@@ -17,7 +17,11 @@
               <p>
                 Diagnosticamos, tratamos y hacemos prevención y control del aparato reproductor de la mujer.
               </p>
-              <a class="btn btn-pers especialidades mt-2" href="{{route('reg')}}">Reservar Cita</a>
+              @guest
+              <a class="btn btn-pers especialidades mt-2" href="{{route('login')}}">Reservar Cita</a>
+              @else
+              <a class="btn btn-pers especialidades mt-2" href="{{route('showEspecialidad')}}">Reservar Cita</a>
+              @endguest
             </div>
           </div>
         </div>

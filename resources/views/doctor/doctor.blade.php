@@ -15,38 +15,26 @@
     <!-- Citas -->
     <section>
         <div class="container doctor">
-            <form action="{{ route('atencion')}}" id="citapost">
+            <form action="{{ route('atencion') }}" id="citapost">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                
-            
                     <input type="hidden" name="appointment_id" id="cita_selector" value="">
-                    <input type="hidden" name="doctor_id" value="{{ $doctor->id}}">
-                    
-                    @foreach ($doctor->Appointment as $cita)
-                        @if ($cita->condicion == 'pendiente')
+                    <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
 
-                            <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
-                                <div class="card card-blue align-items-center bg-user p-3">
-                                    <h6 class="text-white">{{ $cita->patient-> nombres}} {{ $cita->patient-> apellidos}}</h6>
-                                    <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->Shift->Schedule->horario}}</p>
-                                </div>
+                    <!-- Añade un encabezado para las citas de hoy -->
+                    <div class="col-12">
+                        <h4>Citas para hoy:</h4>
+                    </div>
+
+                    @foreach ($citasHoy as $cita)
+                        <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
+                            <div class="card card-blue align-items-center bg-user p-3">
+                                <h6 class="text-white">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
+                                <p class="m-0">                                    
+                                    <i class="bi bi-clock pr-2 text-white">{{ $cita->horario }}</i>
+                                </p>
                             </div>
-
-                        @elseif ($cita->condicion == 'finalizado')
-
-                            <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
-                                <div class="card card-red align-items-center bg-user-red p-3">
-                                    <h6 class="text-white">{{ $cita->patient-> nombres}} {{ $cita->patient-> apellidos}}</h6>
-                                    <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->Shift->Schedule->horario}}</p>
-                                </div>
-                            </div>
-
-                        @endif
-
-                
+                        </div>
                     @endforeach
-                        
-
                 </div>
             </form>
         </div>

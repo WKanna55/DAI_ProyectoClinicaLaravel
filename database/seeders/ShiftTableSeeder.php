@@ -13,8 +13,6 @@ class ShiftTableSeeder extends Seeder
      */
     public function run(): void
     {
-
-
         $fecha = now();
         for ($i = 1; $i <= 30; $i++){ // se itera las fechas
             for($j = 1; $j <= 18; $j++){ // se itera los doctores
