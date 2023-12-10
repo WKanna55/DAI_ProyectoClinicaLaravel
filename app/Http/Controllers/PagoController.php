@@ -168,10 +168,7 @@ class PagoController extends Controller
 
             $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
             $data = [
-                // "51999999999@c.us",
-                // "51".$persona->celular."@c.us",
-                // "title" => "Clinica Vida", 
-                "chatId" => "51967660693"."@c.us",
+                "chatId" => "51".$telefono."@c.us",
                 "message" =>  'Estimado(a) *'.strtoupper($nombres).' '.strtoupper($apellidos).'*, se confirma el registro de su cita para el dia 🗓️ *'.strtoupper($fechaFormateada).'* en el horario 🕒  *'.strtoupper($hora).'*'. ' para la especialidad de *'. strtoupper($especialidad).'* con el doctor 👨‍⚕️ *'.strtoupper($doctorNombres).' '.strtoupper($doctorApellidos).'*, en el consultorio'. ' *'.strtoupper($consultorio).'* '.'recuerda presentarte con tiempo a tus citas.'
             ];
 
@@ -195,12 +192,6 @@ class PagoController extends Controller
             // La sesión no está presente, realizar alguna acción de manejo de error
             return redirect()->route('home'); // Reemplaza 'ruta_del_error' con la ruta real
         }
-
-        
-
-        
-
-        return view('paciente.pago_exitoso');
 
     }
 }

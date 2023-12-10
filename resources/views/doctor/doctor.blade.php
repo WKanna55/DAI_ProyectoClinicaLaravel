@@ -2,10 +2,9 @@
 @section ('content')
 
 <main>
-
     <!-- Doctor generales-->
     <section class="container-fluid align-items-center p-4 mt-3">
-        <h2 class="text-center p-2 mt-3">Dr. {{$doctor->nombres}} {{$doctor->apellidos}}</h2>
+        <h2 class="text-center p-2 mt-3">Dr. {{ $doctor->nombres }} {{ $doctor->apellidos }}</h2>
         <div class="container-sm mx-auto text-center p-2">
             <label for="fotoInput" class="cursor-pointer">
                 <img id="fotoPreview" style="max-width: 30%" src="" alt="Foto de doctor">
@@ -19,21 +18,23 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                     <input type="hidden" name="appointment_id" id="cita_selector" value="">
                     <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
-
-                    <!-- Añade un encabezado para las citas de hoy -->
-                    <div class="col-12">
-                        <h4>Citas para hoy:</h4>
-                    </div>
-
+                    
                     @foreach ($citasHoy as $cita)
-                        <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
-                            <div class="card card-blue align-items-center bg-user p-3">
-                                <h6 class="text-white">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
-                                <p class="m-0">                                    
-                                    <i class="bi bi-clock pr-2 text-white">{{ $cita->horario }}</i>
-                                </p>
+                        @if ($cita->condicion == 'pendiente')
+                            <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
+                                <div class="card card-blue align-items-center bg-user p-3">
+                                    <h6 class="text-white">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
+                                    <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->horario }}</p>
+                                </div>
                             </div>
-                        </div>
+                        @elseif ($cita->condicion == 'finalizado')
+                            <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
+                                <div class="card card-red align-items-center bg-user-red p-3">
+                                    <h6 class="text-white">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
+                                    <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->horario }}</p>
+                                </div>
+                            </div>
+                        @endif
                     @endforeach
                 </div>
             </form>
