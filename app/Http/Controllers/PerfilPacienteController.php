@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Patient;
 use App\Models\Appointment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,7 +42,9 @@ class PerfilPacienteController extends Controller
     public function update(Request $request) {
 
         $patient = Patient::findOrFail($request->id);
-        $patient->update([
+        $user = $patient->user;
+        
+        $patient->update; $user->update([
             'dni' => $request->input('dni'),
             'nombres' => $request->input('nombres'),
             'apellidos' => $request->input('apellidos'),
