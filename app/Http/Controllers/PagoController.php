@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
+use function PHPUnit\Framework\isEmpty;
+
 class PagoController extends Controller
 {
     public function pago() {
@@ -23,7 +25,12 @@ class PagoController extends Controller
         return view('auth.register');
     }
 
+
     public function payment(Request $request) {
+
+        $request->validate([
+            'id_shift' => 'required|exists:shifts,id',
+        ]);
 
         // Para pasar info
         $condicion = 'pendiente';
@@ -39,6 +46,7 @@ class PagoController extends Controller
         $doctorNombres = Doctor::find($doctor_id)['nombres'];
         $doctorApellidos = Doctor::find($doctor_id)['apellidos'];
         $shift_id = $request->input('id_shift');
+
         $fecha = Shift::find($shift_id)['fecha'];
         $consultorio = Doctor::find($doctor_id)['consultorio'];
 

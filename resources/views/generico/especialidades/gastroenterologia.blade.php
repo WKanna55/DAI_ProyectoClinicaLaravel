@@ -80,47 +80,22 @@
           <div class="col-md-12 ">
             <h2 class="titulo-azul mb-4 mt-5 text-center">Staff Médico</h2>
           </div>
-          <div class="col-12 col-md-4 justify-content-center">
-            <div class="card img-especialidad " style="width: 15rem">
-              <img
-                src="assets/img/Doctores/doctor1.webp"
-                class="card-img-top img-fluid-especialidad"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="titulo-azul">Dr. Quintana</h5>
-                <p class="card-text">Especialidad: Gastroenterología</p>
-                <p class="card-text">CPM:XXXXXX</p>
+            @foreach ($doctors as $doctor)
+            <div class="col-12 col-md-4 justify-content-center">
+              <div class="card img-especialidad" style="width: 15rem">
+                <img
+                  src="{{asset('assets/img/doctor/' . $doctor->img_source)}}"
+                  class="card-img-top img-fluid-especialidad"
+                  alt="imagen de doctor"
+                />
+                <div class="card-body">
+                  <h5 class="titulo-azul">Dr. {{$doctor->nombres}} {{$doctor->apellidos}}</h5>
+                  <p class="card-text cmp">CMP: {{$doctor->CMP}}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-md-4 justify-content-center">
-            <div class="card img-especialidad" style="width: 15rem">
-              <img
-                src="assets/img/Doctores/doctor2.webp"
-                class="card-img-top img-fluid-especialidad"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="titulo-azul">Dr. Arapa</h5>
-                <p class="card-text">Especialidad: Gastroenterología</p>
-                <p class="card-text">CPM:XXXXXX</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 justify-content-center">
-            <div class="card img-especialidad" style="width: 15rem">
-              <img
-                src="assets/img/Doctores/doctor3.webp"
-                class="card-img-top img-fluid-especialidad"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="titulo-azul">Dr. Perez</h5>
-                <p class="card-text">Especialidad: Gastroenterología</p>
-                <p class="card-text">CPM:XXXXXX</p>
-              </div>
-            </div>
+            @endforeach
+          
           </div>
         </div>
       </div>
