@@ -315,6 +315,16 @@ Nueva seccion: Login
     font-size: 18px;
 }
 
+.btn.auth{
+    background-color: var(--azul);
+    color: var(--blanco);
+}
+
+.btn.auth:hover{
+    background-color: var(--celeste-oscuro);
+    color: black;
+}
+
 /*
 
 Nueva seccion: registro
