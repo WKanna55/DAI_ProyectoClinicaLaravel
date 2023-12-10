@@ -806,8 +806,6 @@ Seccion: atencion
 /*--  Interfaz agendar_especialidad.blade.php  --*/
 
 
-
-
 .main_agendar_especialidad{
   position: relative;
   width: calc(min(90rem, 90%));
@@ -944,17 +942,19 @@ Seccion: atencion
   }
 }
 
-/*_______________________________________________________*/
+
+/*______________________________________________________*/
 
 
 .step-circle{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
      /* Puedes cambiar el color según tus preferencias */
+    background-color: #5fa8d3; 
     display: inline-block;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 18px;
+    margin-left: 18px;
 }
 
 
@@ -963,6 +963,10 @@ Seccion: atencion
     padding-bottom: 8rem;
     padding-left: 25%; /* 10 * 0.25rem = 2.5rem */
     padding-right: 25%; /* 10 * 0.25rem = 2.5rem */
+}
+
+.btn.btn-info {
+    background-color: #5fa8d3; 
 }
 
 /*_______________________________________________________*/
@@ -974,17 +978,27 @@ Seccion: atencion
 
 .card.pago{
     border-radius: 25px;
-    background-color: #DFE5F2;
+    background-color: #fff;
     width: 70%;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding-top: 2em;
     padding-bottom: 2em;
+    margin-top: -7em;
+    margin-bottom: -7em;
+    border: 2px solid #5fa8d3;
 }
 
+.btn-verc {
+    background-color: #5fa8d3; 
+    color: #fff; 
+   border:10px solid #5fa8d3
+   
+  }
+
 .card-img-top.pago{
-    width: 40%;
+    width: 30%;
     height: auto;
     align-items: center;
     justify-content: center;
@@ -994,8 +1008,10 @@ Seccion: atencion
 .pago-cont{
     padding-top: 12em;
     padding-bottom: 12em;
-    background: linear-gradient(var(--celeste), var(--celeste-claro));
+    background: white;
 }
+
+
 
 @media screen and (max-width: 600px){
     .card.pago{
@@ -1022,6 +1038,23 @@ Seccion: atencion
         width: 70%;
     }
 }
+
+/* cambiar a dropdown en navbar */
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+  }
+  .text-white {
+    color: white; 
+  }
+    
+
+
+
 /* pago exitoso*/
 
 /* Pagos interfaces nuevas*/
+
+
+  
+

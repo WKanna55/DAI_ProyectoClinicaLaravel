@@ -6,8 +6,8 @@
             <div class="container-agedar custom-px-10">
                 <h1 class="text-center">Reserva tu Cita</h1>
                 <div class="text-center mt-5">
-                    <div class="step-circle bg-danger"></div>
-                    <div class="step-circle bg-danger"></div>
+                    <div class="step-circle "></div>
+                    <div class="step-circle "></div>
                     <div class="step-circle bg-secondary"></div>
                     <div class="step-circle bg-secondary"></div>
                 </div>
