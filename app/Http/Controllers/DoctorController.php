@@ -18,23 +18,25 @@ class DoctorController extends Controller
     public function citas() {
         $user = Auth::user();
         $doctor = $user->Doctor;
-        
-        //citas del doctor para el día hoy
+    
+        // Citas del doctor para el día de hoy
         $fechaActual = now()->toDateString();
-        $citasHoy = Appointment::join('shifts', 'appointments.shift_id', '=', 'shifts.id')
+        $citasHoy = $doctor->Appointment()
+            ->join('shifts', 'appointments.shift_id', '=', 'shifts.id')
             ->join('schedules', 'shifts.schedule_id', '=', 'schedules.id')
             ->join('patients', 'appointments.patient_id', '=', 'patients.id')
-            ->whereDate('shifts.fecha', '=', $fechaActual)
+            ->whereDate('shifts.fecha', $fechaActual)
             ->select(
                 'shifts.fecha',
                 'schedules.horario',  
                 'appointments.id',
                 'patients.nombres',
-                'patients.apellidos'
+                'patients.apellidos',
+                'appointments.condicion'
             )
             ->orderBy('schedules.horario')
             ->get();
-    
+        
         return view('doctor.doctor', ['doctor' => $doctor, 'citasHoy' => $citasHoy]);
     }
     
@@ -89,6 +91,7 @@ class DoctorController extends Controller
         $cita = Appointment::find($appointment_id);
 
         $patient = Patient::find($cita->patient_id);
+        $patient_telefono = $patient->telefono;
 
         $doctor = Doctor::find($cita->doctor_id);
 
@@ -113,7 +116,7 @@ class DoctorController extends Controller
 
             $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
             $data = [
-                "chatId" => "51".$patient->telefono."c.us",
+                "chatId" => "51".$patient_telefono."@c.us",
                 "message" =>  'Hola *'.$patient->nombres.' '.$patient->apellidos.'*,
 Tu cita médica con el *Dr. '.$doctor->nombres.' '.$doctor->apellidos.'* en Clinica Tecsana ha finalizado✅.
 *Detalles:*
@@ -151,7 +154,7 @@ Si tienes alguna pregunta o necesitas más información, no dudes en contactarno
 
             $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
             $data = [
-                "chatId" => "51".$patient->telefono."c.us",
+                "chatId" => "51".$patient_telefono."@c.us",
                 "message" =>  'Hola *'.$patient->nombres.' '.$patient->apellidos.'*,
 Tu cita médica con el *Dr. '.$doctor->nombres.' '.$doctor->apellidos.'* en Clinica Tecsana ha sido actualizada✅.
 *Nuevos Detalles:*
