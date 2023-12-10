@@ -1025,3 +1025,21 @@ Seccion: atencion
 /* pago exitoso*/
 
 /* Pagos interfaces nuevas*/
+
+
+
+.cmp {
+    color: var(--celeste-oscuro);
+}
+
+.m-comentario {
+    margin-top: 1rem;
+}
+
+.bg-comentario {
+    background-color: var(--celeste-oscuro)!important;
+}
+
+.bg-footer {
+    background-color: var(--azul);
+}

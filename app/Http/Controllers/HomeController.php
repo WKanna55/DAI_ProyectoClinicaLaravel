@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Doctor;
 
 class HomeController extends Controller
 {
@@ -18,26 +19,57 @@ class HomeController extends Controller
     }
     
     public function dermatologia() {
-        return view('generico.especialidades.dermatologia');
+
+        $doctors = Doctor::with('specialty')
+                    ->whereHas('specialty', function ($query) {
+                        $query->where('nombre', 'dermatologia');
+                    })
+                    ->get();
+        return view('generico.especialidades.dermatologia', compact('doctors'));
     }
 
     public function gastroenterologia(){
-        return view('generico.especialidades.gastroenterologia');    
+        $doctors = Doctor::with('specialty')
+                    ->whereHas('specialty', function ($query) {
+                        $query->where('nombre', 'gastroenterologia');
+                    })
+                    ->get();
+        return view('generico.especialidades.gastroenterologia', compact('doctors'));   
     }
 
     public function ginecologia(){
-        return view('generico.especialidades.ginecologia');
+        $doctors = Doctor::with('specialty')
+                    ->whereHas('specialty', function ($query) {
+                        $query->where('nombre', 'ginecologia');
+                    })
+                    ->get();
+        return view('generico.especialidades.ginecologia', compact('doctors'));   
     }
 
     public function medicina_general(){
-        return view('generico.especialidades.medicina_general');
+        $doctors = Doctor::with('specialty')
+                    ->whereHas('specialty', function ($query) {
+                        $query->where('nombre', 'Medicina general');
+                    })
+                    ->get();
+        return view('generico.especialidades.medicina_general', compact('doctors'));   
     }
     
     public function odontologia(){
-        return view('generico.especialidades.odontologia');  
+        $doctors = Doctor::with('specialty')
+                    ->whereHas('specialty', function ($query) {
+                        $query->where('nombre', 'odontologia');
+                    })
+                    ->get();
+        return view('generico.especialidades.odontologia', compact('doctors'));    
     }
     
     public function oftalmologia(){
-        return view('generico.especialidades.oftalmologia');
+        $doctors = Doctor::with('specialty')
+                    ->whereHas('specialty', function ($query) {
+                        $query->where('nombre', 'oftalmologia');
+                    })
+                    ->get();
+        return view('generico.especialidades.oftalmologia', compact('doctors'));   
     }
 }
