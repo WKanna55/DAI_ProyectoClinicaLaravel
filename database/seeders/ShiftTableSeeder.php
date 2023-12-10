@@ -30,7 +30,7 @@ class ShiftTableSeeder extends Seeder
         $shift3 = new Shift;
         $shift3->disponible = 1;
         $shift3->doctor_id = 1;
-        $shift3->fecha = '2023-12-11';
+        $shift3->fecha = '2023-12-09';
         $shift3->schedule_id = 3;
         $shift3->save();
 
@@ -65,7 +65,7 @@ class ShiftTableSeeder extends Seeder
         $shift8 = new Shift;
         $shift8->disponible = 1;
         $shift8->doctor_id = 1;
-        $shift8->fecha = '2023-12-11';
+        $shift8->fecha = '2023-12-09';
         $shift8->schedule_id = 8;
         $shift8->save();
 
@@ -100,7 +100,7 @@ class ShiftTableSeeder extends Seeder
         $shift13 = new Shift;
         $shift13->disponible = 1;
         $shift13->doctor_id = 1;
-        $shift13->fecha = '2023-12-11';
+        $shift13->fecha = '2023-12-09';
         $shift13->schedule_id = 13;
         $shift13->save();
 
@@ -121,11 +121,14 @@ class ShiftTableSeeder extends Seeder
         $shift16 = new Shift;
         $shift16->disponible = 1;
         $shift16->doctor_id = 1;
-        $shift16->fecha = '2023-12-11';
+        $shift16->fecha = '2023-12-09';
         $shift16->schedule_id = 16;
         $shift16->save();
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> ribeyro
         $shift17 = new Shift;
         $shift17->disponible = 0;
         $shift17->doctor_id = 1;
