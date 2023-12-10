@@ -18,23 +18,25 @@ class DoctorController extends Controller
     public function citas() {
         $user = Auth::user();
         $doctor = $user->Doctor;
-        
-        //citas del doctor para el día hoy
+    
+        // Citas del doctor para el día de hoy
         $fechaActual = now()->toDateString();
-        $citasHoy = Appointment::join('shifts', 'appointments.shift_id', '=', 'shifts.id')
+        $citasHoy = $doctor->Appointment()
+            ->join('shifts', 'appointments.shift_id', '=', 'shifts.id')
             ->join('schedules', 'shifts.schedule_id', '=', 'schedules.id')
             ->join('patients', 'appointments.patient_id', '=', 'patients.id')
-            ->whereDate('shifts.fecha', '=', $fechaActual)
+            ->whereDate('shifts.fecha', $fechaActual)
             ->select(
                 'shifts.fecha',
                 'schedules.horario',  
                 'appointments.id',
                 'patients.nombres',
-                'patients.apellidos'
+                'patients.apellidos',
+                'appointments.condicion'
             )
             ->orderBy('schedules.horario')
             ->get();
-    
+        
         return view('doctor.doctor', ['doctor' => $doctor, 'citasHoy' => $citasHoy]);
     }
     
