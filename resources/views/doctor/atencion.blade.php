@@ -154,8 +154,7 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="alergias" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->alergias}}@endif
-                    </textarea>
+                    <textarea class="form-control" name="alergias" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->alergias}}@endif</textarea>
                   </div>
                 </div>
               </div>
@@ -168,7 +167,7 @@
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <textarea class="form-control" name="operAnteriores" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->operAnteriores}}@endif                    </textarea>
+                    <textarea class="form-control" name="operAnteriores" id="accordionContentOne" rows="2" >@if($appointment->condicion == 'finalizado'){{$diagnostico[0]->operAnteriores}}@endif</textarea>
                   </div>
                 </div>
               </div>

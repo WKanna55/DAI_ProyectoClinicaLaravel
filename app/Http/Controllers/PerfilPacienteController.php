@@ -17,20 +17,20 @@ class PerfilPacienteController extends Controller
         $patients = Patient::where('user_id', $user_id)->get();
         $patient = $patients[0];
 
-        $cita = Appointment::where('patient_id', $patient->id)
-                ->where('condicion', 'pendiente')
-                ->with('doctor.specialty', 'shift.schedule')
-                ->get();
+        $citas = Appointment::where('patient_id', $patient->id)
+            ->where('condicion', 'pendiente')
+            ->with('doctor.specialty', 'shift.schedule')
+            ->get()
+            ->sortBy(function ($cita) {
+                return $cita->shift->schedule->horario;
+            });
 
         $cita_historial = Appointment::where('patient_id', $patient->id)
-                ->where('condicion', 'finalizado')
-                ->with('doctor.specialty', 'shift.schedule', 'diagnosis')
-                ->get();
+            ->where('condicion', 'finalizado')
+            ->with('doctor.specialty', 'shift.schedule', 'diagnosis')
+            ->get();
 
-                //dd($cita_historial);
-        return view('paciente.perfilPaciente', compact('patient', 'cita', 'cita_historial'));
-
-
+        return view('paciente.perfilPaciente', compact('patient', 'citas', 'cita_historial'));
     }
 
     //public function citas() {

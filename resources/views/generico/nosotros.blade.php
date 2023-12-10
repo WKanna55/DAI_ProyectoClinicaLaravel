@@ -6,25 +6,19 @@
         <div class="container-fluid align-items-center parallax-nosotros">
           <div class="container-fluid" style="height: 50px"></div>
           <div class="container nosotros">
-            <h1 class="mb-10 titulo" style="font-size: 4em">
+            <h1 class="mb-10 titulo text-center" style="font-size: 4em; margin-bottom: 20px">
               <strong>Bienvenido</strong>
             </h1>
-            <h2 class="text-light" style="font-size: 3em; margin-bottom: 100px">
-              a nuestra Clínica
+            <h2 class="titulo text-center" style="font-size: 3em; margin-bottom: 100px;">
+              a Tecsana
             </h2>
 
             <div class="row row-cols-1 row-cols-lg-2">
               <div class="d-flex">
-                <div class="d-flex align-items-center" style="margin-right: 30px;">
-                  <img
-                    src="assets/img/index/especialidades_icon/heart-pulse.svg"
-                    class="card-img-top icon-especializacion"
-                    style="width: 100px; height: 100px"
-                  />
-                </div>
+                
                 <div>
                   <h5 class="titulo" style="font-size: 1.5em">
-                    X años siendo parte de tu vida
+                    18 años siendo parte de tu vida
                   </h5>
                   <div class="card-body">
                     <p class="card-text" style="font-size: 1.2em">
@@ -39,13 +33,7 @@
                 </div>
               </div>
               <div class="d-flex">
-                <div class="d-flex align-items-center" style="margin-right: 30px">
-                  <img
-                    src=" assets/img/index/especialidades_icon/heart-pulse.svg"
-                    class="card-img-top icon-especializacion"
-                    style="width: 100px; height: 100px"
-                  />
-                </div>
+                
                 <div>
                   <h5 class="titulo" style="font-size: 1.5em">
                     ¡Nos renovamos para ti!
@@ -68,18 +56,16 @@
 
 
       <!-- Visión y Misión -->
-      <section class="">
-        <div class="container nosotros align-items-center ">
+      <section class="mt-2">
+        <div class="container nosotros align-items-center">
           <div class="row">
             
             <div class="col-lg-6 col-12 order-lg-1 order-sm-1">
               <div class="row">
-                <h2 class="titulo" style="font-size: 3em; margin-bottom: 50px">
-                  Somos la primera clínica...
-                </h2>
+                
                 <div>
-                  <h5 class="titulo" style="font-size: 1.5em">
-                    Nuestra Misión
+                  <h5 class="titulo" style="font-size: 3em">
+                    Misión
                   </h5>
                   <div class="card-body">
                     <p class="card-text" style="font-size: 1.2em; margin-bottom: 20px">
@@ -90,8 +76,8 @@
                   </div>
                 </div>
                 <div>
-                  <h5 class="titulo" style="font-size: 1.5em; margin-top: 20px">
-                    Nuesta Visión
+                  <h5 class="titulo" style="font-size: 3em; margin-top: 0px">
+                    Visión
                   </h5>
                   <div class="card-body">
                     <p class="card-text" style="font-size: 1.2em">
@@ -117,7 +103,7 @@
 
 
       <!-- Historia -->
-      <section class="">
+      <section class="mb-5">
         
         <div class="container nosotros align-items-center">
           <div class="row">
@@ -131,20 +117,13 @@
             </div>
 
             <div class="col-lg-6 col-12 order-lg-2 order-sm-1">
-              <div class="row">
-                <h2 class="titulo" style="font-size: 3em; margin-bottom: 50px">
+              <div class="row align-items-center">
+                <h2 class="titulo" style="font-size: 3em; margin-bottom: 20px; margin-top: 5px">
                   Nuestra Historia Médica
                 </h2>
-                <div class="card-body">
-                  <p class="card-text" style="font-size: 1.2em; margin-bottom: 20px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, laboriosam autem! Provident sint, 
-                    harum quas iure dolorem facilis esse dolores dolorum modi! Eos maxime id culpa praesentium eveniet voluptatum et. 
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt ut voluptatem harum sit amet illum qui magnam. 
-                    Dolorum consectetur commodi, omnis, delectus ipsum totam, fuga aliquid quis optio quasi cumque?. Lorem ipsum dolor 
-                    sit amet consectetur adipisicing elit. Debitis vel odit consequuntur, rem, assumenda, quos dolores possimus esse obcaecati 
-                    voluptatibus nostrum perferendis. Commodi mollitia dolorem libero iure in quae aliquid. Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Quidem in recusandae velit! Soluta inventore magni incidunt vel dolore fugiat, ex quam quas unde deleniti iste  
-                    distinctio. Ut et blanditiis laboriosam!
+                <div class="" style="padding: 0px 0px px 10px">
+                  <p class="card-text" style="font-size: 1.2em; ">
+                    Hace 18 años, en 2005, nació la clínica Tecsana, fundada por la Dra. Ana Gómez con la misión de proporcionar atención médica de calidad. Inicialmente modesta, la clínica ha experimentado un notable crecimiento en infraestructura, servicios y especialidades médicas. Comprometida con la innovación y la comunidad, Tecsana se enorgullece de su legado de atención excepcional y se compromete a seguir siendo un recurso vital para la salud en los años venideros.
                   </p>
                 </div>
               </div>

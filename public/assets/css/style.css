@@ -77,6 +77,31 @@ Nueva seccion: index
     color: white;
     padding-top: 23px;
 }
+
+@media screen and (max-width: 450px){
+    .logo-brand{
+        width: 30px;
+        margin-right: 8px;
+        height: 30px;
+    }
+    .navbrand-text{
+        color: white;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .logo-brand{
+        width: 20px;
+        margin-right: 5px;
+        height: 20px;
+    }
+    .navbrand-text{
+        color: white;
+        font-size: 15px;
+    }
+}
+
 .btn-pers{
     background-color: var(--celeste);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -288,6 +313,16 @@ Nueva seccion: Login
     padding-top: 23px;
     font-weight: bold;
     font-size: 18px;
+}
+
+.btn.auth{
+    background-color: var(--azul);
+    color: var(--blanco);
+}
+
+.btn.auth:hover{
+    background-color: var(--celeste-oscuro);
+    color: black;
 }
 
 /*
@@ -750,7 +785,7 @@ Seccion de estilos de la interfaz de Nosotros
 /* Bienvenida */
 
 .parallax-nosotros {
-    background: linear-gradient(to right, #b9b9b9cd, hsla(249, 85%, 79%, 0.637)), url(..assets/img/index/clinica.jpg);
+    background: linear-gradient(to top, var(--celeste-blanco), var(--blanco));
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -949,8 +984,8 @@ Seccion: atencion
 
 
 .step-circle{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
      /* Puedes cambiar el color según tus preferencias */
     display: inline-block;
@@ -967,3 +1002,80 @@ Seccion: atencion
 }
 
 /*_______________________________________________________*/
+
+
+/* Pagos interfaces nuevas*/
+
+/* pago exitoso*/
+
+.card.pago{
+    border-radius: 25px;
+    background-color: #DFE5F2;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.card-img-top.pago{
+    width: 40%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pago-cont{
+    padding-top: 12em;
+    padding-bottom: 12em;
+    background: linear-gradient(var(--celeste), var(--celeste-claro));
+}
+
+@media screen and (max-width: 600px){
+    .card.pago{
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 380px){
+    .card-img-top.pago{
+        width: 30%;
+    }
+    .pago-cont{
+        padding-top: 6em;
+        padding-bottom: 6em;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .card.pago{
+        width: 100%;
+    }
+    .card-img-top.pago{
+        width: 70%;
+    }
+}
+/* pago exitoso*/
+
+/* Pagos interfaces nuevas*/
+
+
+
+.cmp {
+    color: var(--celeste-oscuro);
+}
+
+.m-comentario {
+    margin-top: 1rem;
+}
+
+.bg-comentario {
+    background-color: var(--celeste-oscuro)!important;
+}
+
+.bg-footer {
+    background-color: var(--azul);
+}
