@@ -48,7 +48,7 @@
             <div class="col-md-6">
                 <a href="{{ route('medicina_general')}}" class="d-flex align-items-center text-dark text-decoration-none rounded p-3 specialty-card">
                     <img src="assets/img/iconos/cirgen-icon.png" alt="Icono de Cirugía General" class="mr-3" width="60">
-                    <span class="h5">Cirugía General</span>
+                    <span class="h5">Medicina General</span>
                 </a>
             </div>
     
