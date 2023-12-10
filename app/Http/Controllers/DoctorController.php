@@ -91,6 +91,7 @@ class DoctorController extends Controller
         $cita = Appointment::find($appointment_id);
 
         $patient = Patient::find($cita->patient_id);
+        $patient_telefono = $patient->telefono;
 
         $doctor = Doctor::find($cita->doctor_id);
 
@@ -114,7 +115,7 @@ class DoctorController extends Controller
 
             $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
             $data = [
-                "chatId" => "51".$patient->telefono."c.us",
+                "chatId" => "51".$patient_telefono."@c.us",
                 "message" =>  'Hola *'.$patient->nombres.' '.$patient->apellidos.'*,
 Tu cita médica con el *Dr. '.$doctor->nombres.' '.$doctor->apellidos.'* en Clinica Tecsana ha finalizado✅.
 *Detalles:*
@@ -152,7 +153,7 @@ Si tienes alguna pregunta o necesitas más información, no dudes en contactarno
 
             $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
             $data = [
-                "chatId" => "51".$patient->telefono."c.us",
+                "chatId" => "51".$patient_telefono."@c.us",
                 "message" =>  'Hola *'.$patient->nombres.' '.$patient->apellidos.'*,
 Tu cita médica con el *Dr. '.$doctor->nombres.' '.$doctor->apellidos.'* en Clinica Tecsana ha sido actualizada✅.
 *Nuevos Detalles:*
