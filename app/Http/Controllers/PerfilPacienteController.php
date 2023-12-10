@@ -41,6 +41,16 @@ class PerfilPacienteController extends Controller
 
     public function update(Request $request) {
 
+        $request->validate([
+            'dni' => 'required|digits:8',
+            'nombres' => 'required|string',
+            'apellidos' => 'required|string',
+            'telefono' => 'required|string',
+            'direccion' => 'required|string',
+            'email' => 'required|email',
+            'fecha_nacimiento' => 'required|date',
+        ]);
+
         $patient = Patient::findOrFail($request->id);
         $user = $patient->user;
         
