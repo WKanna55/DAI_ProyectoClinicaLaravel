@@ -17,26 +17,30 @@ class AgendarCitaController extends Controller
         $especialidades = Specialty::all();
         return view('paciente.agendar_especialidad', compact('especialidades'));
     }
-
+ 
     public function showDoctores(Request $request){
+        // Validar que se haya seleccionado una especialidad
+        $request->validate([
+            'specialty_id' => 'required|exists:specialties,id',
+        ]);
+    
         $especialidad_id = $request->input('specialty_id');
-        $doctores  = Doctor::where('specialty_id', $especialidad_id)->get();
+    
+        // Resto de la lógica para obtener doctores
+        $doctores = Doctor::where('specialty_id', $especialidad_id)->get();
+    
+        if ($doctores->isEmpty()) {
+            // Si no hay doctores disponibles para la especialidad seleccionada
+            return back()->withInput()->withErrors(['specialty_id' => 'No hay doctores disponibles para la especialidad seleccionada.']);
+        }
+    
         return view('paciente.agendar_doctor', compact('doctores'));
     }
     
     public function showFechas(Request $request){
+         // Validar que se haya seleccionado una fecha
+        
         $doctor_id = $request->input('doctor_id');
-        //$fechas = Shift::where('doctor_id', $doctor_id)->where('disponible', 1)
-        //->select('fecha', 'doctor_id')->distinct()->get();
-
-        #$fechas = Shift::where('doctor_id', $doctor_id)
-        #    ->where('disponible', 1)
-        #    ->whereDate('fecha', '>=', now()->toDateString()) // Filtra fechas mayores o iguales al día actual
-        #    ->orderBy('fecha', 'asc') // Ordena las fechas de mayor a menor
-        #    ->select('fecha', 'doctor_id')
-        #    ->distinct()
-        #    ->get();
-
         $fechaInicio = now()->subDay(); // Primero día del mes actual
         $fechaFin = now()->addDays(30); // Último día del mes actual
 
@@ -53,18 +57,33 @@ class AgendarCitaController extends Controller
     }
 
     public function showHorarios(Request $request){
-        $fecha = $request->input('fecha');
-        $id_doctor = $request->input('id_doctor');
-        $doctor = Doctor::find($id_doctor);
+        // Validar que se haya seleccionado una fecha
+        $request->validate([
+            'fecha' => 'required|date',
+            'id_doctor' => 'required|exists:doctors,id',
+        ]);
+    
+        // Verificar si se ha seleccionado una fecha
+        if ($request->filled('fecha')) {
+            $fecha = $request->input('fecha');
+            $id_doctor = $request->input('id_doctor');
+            $doctor = Doctor::find($id_doctor);
+            
+            // Resto de la lógica para obtener horarios
+            $horarios = Shift::where('fecha', $fecha)->where('doctor_id', $id_doctor)->where('disponible', 1)
+                ->join('schedules', 'schedule_id', '=', 'schedules.id')
+                ->select('schedules.horario', 'doctor_id', 'schedule_id', 'shifts.id')->get();
+            
+            // Retornar la vista correspondiente
+            return view('paciente.agendar_horario', compact('horarios', 'doctor'));
+        } else {
+            // Si no se ha seleccionado una fecha, permanecer en la misma vista
+            return redirect()->route('showFechas')->withInput()->withErrors(['fecha' => 'Por favor, selecciona una fecha.']);
+            return redirect()->route('agendar_fecha')->withErrors(['fecha' => 'Por favor, selecciona una fecha.']);
 
-        //dd($id_doctor);
-        //$turno = Shift::where('fecha', $fecha)->get();
-        //dd($turno);
-        
-        $horarios = Shift::where('fecha', $fecha)->where('doctor_id', $id_doctor)->where('disponible', 1)
-            ->join('schedules', 'schedule_id', '=', 'schedules.id')
-            ->select('schedules.horario', 'doctor_id', 'schedule_id', 'shifts.id')->get();
-        //dd($horarios);
-        return view('paciente.agendar_horario', compact('horarios', 'doctor'));
+        }
     }
 }
+
+
+
