@@ -16,6 +16,14 @@
 
     </div>
 </main>
-
+<script>
+    // Redirige a otraVista después de que la página se recargue
+    setTimeout(() => {
+        window.onload = function() {
+        window.location.href="{{ route('home') }}";
+        };
+    }, 5000);
+    
+</script>
 
 @endsection
