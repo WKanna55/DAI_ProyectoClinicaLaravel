@@ -25,7 +25,7 @@
        <div class="container">
           <div class="row">
             <div class="col-lg-10 col-xl-7 mx-auto">
-              <h3 class="display-4">Iniciar sesion</h3>
+              <h3 class="display-4">Iniciar sesión</h3>
               <p class="text-muted mb-4">Por favor ingrese su DNI y contraseña</p>
               <form action="{{route('login')}}" method="POST">
                 @csrf
