@@ -122,66 +122,83 @@ class PagoController extends Controller
     }
 
     public function cancel(Request $request) {
-        return 'Se ha cancelado el proceso de pago';
+        return view('paciente.pago_cancelado');
     }
 
     public function aviso() {
+        // Verificar si la sesión existe
+        if (session()->has('cita')) {
+            // Recuperar datos de la sesión
+            $condicion = session('cita')['condicion'];
+            $user_id = session('cita')['user_id'];
+            $patient_id = session('cita')['patient_id'];
+            $doctor_id = session('cita')['doctor_id'];
+            $shift_id = session('cita')['shift_id'];
+            $telefono = session('cita')['telefono'];
+            $nombres = session('cita')['nombres'];
+            $apellidos = session('cita')['apellidos'];
+            $fechaFormateada = session('cita')['fechaFormateada'];
+            $hora = session('cita')['hora'];
+            $consultorio = session('cita')['consultorio'];
+            $doctorNombres = session('cita')['doctorNombres'];
+            $doctorApellidos = session('cita')['doctorApellidos'];
+            $especialidad = session('cita')['especialidad'];
+    
+            // Crear registros solo si la sesión está presente
+            $cita = new Appointment();
+            $cita->condicion = $condicion;
+            $cita->patient_id = $patient_id;
+            $cita->doctor_id = $doctor_id;
+            $cita->shift_id = $shift_id;
+            $cita->save();
+    
+            $payment = new Payment();
+            $cita_id = $cita->id;
+            $monto = session('cita')['monto'];
+            $payment->monto = $monto;
+            $payment->appointment_id = $cita_id;
+            $payment->save();
+    
+            $shift = Shift::find($shift_id);
+            $shift->disponible = 0;
+            $shift->save();
+            
 
-        $condicion = session('cita')['condicion'];
-        $user_id = session('cita')['user_id'];
-        $patient_id = session('cita')['patient_id'];
-        $doctor_id = session('cita')['doctor_id'];
-        $shift_id = session('cita')['shift_id'];
-        $telefono = session('cita')['telefono'];
-        $nombres = session('cita')['nombres'];
-        $apellidos = session('cita')['apellidos'];
-        $fechaFormateada = session('cita')['fechaFormateada'];
-        $hora = session('cita')['hora'];
-        $consultorio = session('cita')['consultorio'];
-        $doctorNombres = session('cita')['doctorNombres'];
-        $doctorApellidos = session('cita')['doctorApellidos'];
-        $especialidad = session('cita')['especialidad'];
+            // Conexion a la green api para enviar informacion
 
-        $cita = New Appointment();
-        $cita->condicion = $condicion;
-        $cita->patient_id = $patient_id;
-        $cita->doctor_id = $doctor_id;
-        $cita->shift_id = $shift_id;
-        $cita->save();
+            $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
+            $data = [
+                // "51999999999@c.us",
+                // "51".$persona->celular."@c.us",
+                // "title" => "Clinica Vida", 
+                "chatId" => "51967660693"."@c.us",
+                "message" =>  'Estimado(a) *'.strtoupper($nombres).' '.strtoupper($apellidos).'*, se confirma el registro de su cita para el dia 🗓️ *'.strtoupper($fechaFormateada).'* en el horario 🕒  *'.strtoupper($hora).'*'. ' para la especialidad de *'. strtoupper($especialidad).'* con el doctor 👨‍⚕️ *'.strtoupper($doctorNombres).' '.strtoupper($doctorApellidos).'*, en el consultorio'. ' *'.strtoupper($consultorio).'* '.'recuerda presentarte con tiempo a tus citas.'
+            ];
 
-        $payment = new Payment();
-        $cita_id = $cita->id;
-        $monto = session('cita')['monto'];
-        $payment->monto = $monto;
-        $payment->appointment_id = $cita_id;
-        $payment->save();
+            $options = array(
+                'http' => array(
+                    'method'  => 'POST',
+                    'content' => json_encode($data),
+                    'header' =>  "Content-Type: application/json\r\n" .
+                        "Accept: application/json\r\n"
+                )
+            );
 
-        $shift = Shift::find($shift_id);
-        $shift->disponible = 0;
-        $shift->save();
+            $context  = stream_context_create($options);
+            $result = file_get_contents($url, false, $context);
 
-        // Conexion a la green api para enviar informacion
+            // Limpiar la sesión después de crear los registros
+            session()->forget('cita');
+    
+            return view('paciente.pago_exitoso');
+        } else {
+            // La sesión no está presente, realizar alguna acción de manejo de error
+            return redirect()->route('home'); // Reemplaza 'ruta_del_error' con la ruta real
+        }
 
-        $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
-        $data = [
-            // "51999999999@c.us",
-            // "51".$persona->celular."@c.us",
-            // "title" => "Clinica Vida", 
-            "chatId" => "51967660693"."@c.us",
-            "message" =>  'Estimado(a) *'.strtoupper($nombres).' '.strtoupper($apellidos).'*, se confirma el registro de su cita para el dia 🗓️ *'.strtoupper($fechaFormateada).'* en el horario 🕒  *'.strtoupper($hora).'*'. ' para la especialidad de *'. strtoupper($especialidad).'* con el doctor 👨‍⚕️ *'.strtoupper($doctorNombres).' '.strtoupper($doctorApellidos).'*, en el consultorio'. ' *'.strtoupper($consultorio).'* '.'recuerda presentarte con tiempo a tus citas.'
-        ];
+        
 
-        $options = array(
-            'http' => array(
-                'method'  => 'POST',
-                'content' => json_encode($data),
-                'header' =>  "Content-Type: application/json\r\n" .
-                    "Accept: application/json\r\n"
-            )
-        );
-
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
+        
 
         return view('paciente.pago_exitoso');
 
