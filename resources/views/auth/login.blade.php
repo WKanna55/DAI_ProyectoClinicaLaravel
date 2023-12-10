@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col-lg-10 col-xl-7 mx-auto">
               <h3 class="display-4">Iniciar sesion</h3>
-              <p class="text-muted mb-4">Porfavor ingrese su DNI y contraseña</p>
+              <p class="text-muted mb-4">Por favor ingrese su DNI y contraseña</p>
               <form action="{{route('login')}}" method="POST">
                 @csrf
                 <div class="form-group mb-3">
@@ -36,7 +36,7 @@
                     <input id="inputPassword" type="password" placeholder="Contraseña" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" name="password">
                 </div>
                 <input type="submit" class="btn auth btn-block text-uppercase mb-2 rounded-pill shadow-sm" value="Iniciar Sesión">
-                <div class="text-center d-flex justify-content-between mt-4"><p>¿No tiene una cuenta? <a href=" {{ route('reg') }}" class="font-italic text-muted"> 
+                <div class="text-center d-flex justify-content-between mt-4"><p>¿No tienes una cuenta? <a href=" {{ route('reg') }}" class="font-italic text-muted"> 
                         <u>Registrate</u></a></p></div>
               </form>
             </div>

@@ -162,14 +162,14 @@
 
     @yield('content')
 
-    <footer class="bg-dark text-center text-white">
+    <footer class="bg-footer text-center text-white">
       <!-- Grid container -->
       <div class="container p-4">
 
         <!-- Section: Text -->
         <section class="mb-4">
           <p>
-            Presentamos con orgullo la clinica Tecsana, un referente destacado en servicios de salud 
+            Presentamos con orgullo la clínica Tecsana, un referente destacado en servicios de salud 
             en la hermosa ciudad de Arequipa; desde el año 2005, nos dedicamos apasionadamente a atender 
             las necesidades de nuestra comunidad.
           </p>
@@ -182,7 +182,7 @@
           <div class="row justify-content-center align-items-center">
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Ubicanos en</h5>
+              <h5 class="text-uppercase">Ubícanos en</h5>
               <ul class="list-unstyled mb-0">
                 <li>
                   <p>José Luis Bustamante y Rivero <br> Arequipa - Peru</p>
@@ -193,7 +193,7 @@
           
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Escribenos o llamanos:</h5>
+              <h5 class="text-uppercase">Escríbenos o llámanos:</h5>
 
               <ul class="list-unstyled mb-0">
                 <li>
@@ -212,7 +212,7 @@
       <!-- Grid container -->
     
       <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <div class="text-center p-3 bg-footer">
         © 2023 Copyright Clínica Tecsana. Todos los derechos reservados.
       </div>
       <!-- Copyright -->
