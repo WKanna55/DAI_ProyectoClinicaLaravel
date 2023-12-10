@@ -86,21 +86,21 @@ class RegisterController extends Controller
         $user = new User();
             $user->dni = $request->input('dni');
             $user->password = $request->input('password');
-            $user->rol_id = 1;
+            $user->role_id = 1;
             $user->save();
 
-            $userId = $user->id;
+        $userId = $user->id;
 
-            $patient = new Patient();
-            $patient->user_id = $userId;
-            $patient->nombres = $request->input('nombres');
-            $patient->apellidos = $request->input('apellidos');
-            $patient->telefono = $request->input('telefono');
-            $patient->email = $request->input('email');
-            $patient->direccion = $request->input('direccion');
-            $patient->fecha_nacimiento = $request->input('fecha');
-            $patient->save();
+        $patient = new Patient();
+        $patient->user_id = $userId; 
+        $patient->nombres = $request->input('nombres');
+        $patient->apellidos = $request->input('apellidos');
+        $patient->telefono = $request->input('telefono');
+        $patient->email = $request->input('email');
+        $patient->direccion = $request->input('direccion');
+        $patient->fecha_nacimiento = $request->input('fecha');
+        $patient->save();
 
-            return redirect()->route('home');
+        return redirect()->route('login');
     }
 }

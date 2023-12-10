@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Doctor;
+use App\Models\Patient;
 use App\Models\Schedule;
 use App\Models\Shift;
 use App\Models\Specialty;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AgendarCitaController extends Controller
 {
@@ -23,13 +26,45 @@ class AgendarCitaController extends Controller
     
     public function showFechas(Request $request){
         $doctor_id = $request->input('doctor_id');
-        $fechas = Shift::where('doctor_id', $doctor_id)->select('fecha')->distinct()->get();
+        //$fechas = Shift::where('doctor_id', $doctor_id)->where('disponible', 1)
+        //->select('fecha', 'doctor_id')->distinct()->get();
+
+        #$fechas = Shift::where('doctor_id', $doctor_id)
+        #    ->where('disponible', 1)
+        #    ->whereDate('fecha', '>=', now()->toDateString()) // Filtra fechas mayores o iguales al día actual
+        #    ->orderBy('fecha', 'asc') // Ordena las fechas de mayor a menor
+        #    ->select('fecha', 'doctor_id')
+        #    ->distinct()
+        #    ->get();
+
+        $fechaInicio = now()->subDay(); // Primero día del mes actual
+        $fechaFin = now()->addDays(30); // Último día del mes actual
+
+        $fechas = Shift::where('doctor_id', $doctor_id)
+            ->where('disponible', 1)
+            ->whereDate('fecha', '>=', now()->toDateString()) // Filtra fechas mayores o iguales al día actual
+            ->whereBetween('fecha', [$fechaInicio, $fechaFin]) // Filtra por el rango de fechas del mes actual
+            ->orderBy('fecha', 'asc')
+            ->select('fecha', 'doctor_id')
+            ->distinct()
+            ->get();
+        
         return view('paciente.agendar_fecha', compact('fechas'));
     }
 
     public function showHorarios(Request $request){
-        $horario_id = $request->input('schedule_id');
-        $horarios = Schedule::where('id', $horario_id)->get();
-        return view('paciente.agendar_horario', compact('horarios'));
+        $fecha = $request->input('fecha');
+        $id_doctor = $request->input('id_doctor');
+        $doctor = Doctor::find($id_doctor);
+
+        //dd($id_doctor);
+        //$turno = Shift::where('fecha', $fecha)->get();
+        //dd($turno);
+        
+        $horarios = Shift::where('fecha', $fecha)->where('doctor_id', $id_doctor)->where('disponible', 1)
+            ->join('schedules', 'schedule_id', '=', 'schedules.id')
+            ->select('schedules.horario', 'doctor_id', 'schedule_id', 'shifts.id')->get();
+        //dd($horarios);
+        return view('paciente.agendar_horario', compact('horarios', 'doctor'));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use MongoDB\Laravel\Eloquent\Model;
 use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
@@ -25,7 +26,7 @@ class Patient extends Model
     }
 
 
-    public function Appoitnment()
+    public function Appointment()
     {
         return $this->hasMany(Appointment::class);
     }

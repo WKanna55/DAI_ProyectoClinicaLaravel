@@ -15,7 +15,7 @@ Seccion: pagina raiz-base
     --azul: #1b4965;
     --celeste-blanco: #cae9ff;
     --celeste-oscuro: #5fa8d3;
-
+    --blanco: #fff;
 }
 
 
@@ -77,6 +77,31 @@ Nueva seccion: index
     color: white;
     padding-top: 23px;
 }
+
+@media screen and (max-width: 450px){
+    .logo-brand{
+        width: 30px;
+        margin-right: 8px;
+        height: 30px;
+    }
+    .navbrand-text{
+        color: white;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .logo-brand{
+        width: 20px;
+        margin-right: 5px;
+        height: 20px;
+    }
+    .navbrand-text{
+        color: white;
+        font-size: 15px;
+    }
+}
+
 .btn-pers{
     background-color: var(--celeste);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -222,9 +247,14 @@ Nueva seccion: index
 }
 
 .card.bg-user{
-    background-color: var(--celeste);
+    background-color: var(--azul);
+    
 }
 
+.card.bg-user-red{
+    background-color: red;
+    
+}
 
 /*
 
@@ -580,9 +610,15 @@ Seccion de estilos del perfil de Paciente
     flex-wrap: wrap;
     padding: 1.5rem 2rem;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    background-color: #fff;
+    background-color: var(--blanco);
     border-radius: 15px;
     width: 100%;
+    justify-content: space-between;
+}
+
+.perfil-usuario-citas-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .seccion-perfil-usuario .perfil-usuario-bio {
@@ -606,19 +642,18 @@ Seccion de estilos del perfil de Paciente
 }
 
 .boton-editar {
-    position: absolute;
+    
     top: 20rem;
     right: 1rem;
     border: 0;
     border-radius: 8px;
     padding: 10px 10px;
-    background-color: rgba(32, 128, 3, 0.445);
+    background-color: rgba(40, 197, 61, 0.445);
     color: #050505;
     cursor: pointer;
 }
 
 .boton-historial-paciente{
-    position: absolute;
     top: 25rem;
     right: 1rem;
     border: 0;
@@ -682,6 +717,15 @@ Seccion: Doctor
 .card-blue:hover {
     background-color: var(--azul);
     color: var(--celeste-blanco);
+    cursor: pointer;
+}
+
+.card-red{
+    background-color: red;
+}
+
+.card-red:hover {
+    cursor: pointer;
 }
 
 .container.doctor{
@@ -733,6 +777,32 @@ Seccion: atencion
 
 
 
+
+
+/* Administrador */
+
+.bienvenido {
+    height: 100%;
+}
+
+.bienvenido-card {
+    background-color: var(--celeste-blanco);
+}
+
+.derivacion:hover {
+    text-decoration: none;
+}
+
+.derivacion-card-body {
+    background-color: var(--celeste-blanco);
+}
+
+.derivacion-card-body:hover {
+    border: none;
+    background-color: var(--celeste-oscuro);
+    color: var(--blanco);
+    transition: ease 0.2s;
+}
 /*--  Interfaz agendar_especialidad.blade.php  --*/
 
 
@@ -878,8 +948,8 @@ Seccion: atencion
 
 
 .step-circle{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
      /* Puedes cambiar el color según tus preferencias */
     display: inline-block;
@@ -896,3 +966,62 @@ Seccion: atencion
 }
 
 /*_______________________________________________________*/
+
+
+/* Pagos interfaces nuevas*/
+
+/* pago exitoso*/
+
+.card.pago{
+    border-radius: 25px;
+    background-color: #DFE5F2;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.card-img-top.pago{
+    width: 40%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pago-cont{
+    padding-top: 12em;
+    padding-bottom: 12em;
+    background: linear-gradient(var(--celeste), var(--celeste-claro));
+}
+
+@media screen and (max-width: 600px){
+    .card.pago{
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 380px){
+    .card-img-top.pago{
+        width: 30%;
+    }
+    .pago-cont{
+        padding-top: 6em;
+        padding-bottom: 6em;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .card.pago{
+        width: 100%;
+    }
+    .card-img-top.pago{
+        width: 70%;
+    }
+}
+/* pago exitoso*/
+
+/* Pagos interfaces nuevas*/
