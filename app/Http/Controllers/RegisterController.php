@@ -101,6 +101,6 @@ class RegisterController extends Controller
         $patient->fecha_nacimiento = $request->input('fecha');
         $patient->save();
 
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 }

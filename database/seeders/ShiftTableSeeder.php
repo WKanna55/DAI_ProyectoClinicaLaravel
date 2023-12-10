@@ -125,6 +125,10 @@ class ShiftTableSeeder extends Seeder
         $shift16->schedule_id = 16;
         $shift16->save();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ribeyro
         $shift17 = new Shift;
         $shift17->disponible = 0;
         $shift17->doctor_id = 1;

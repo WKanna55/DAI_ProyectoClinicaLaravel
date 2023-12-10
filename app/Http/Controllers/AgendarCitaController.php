@@ -26,9 +26,28 @@ class AgendarCitaController extends Controller
     
     public function showFechas(Request $request){
         $doctor_id = $request->input('doctor_id');
-        //$fechas = Shift::where('doctor_id', $doctor_id)->select('fecha')->distinct()->get();
-        $fechas = Shift::where('doctor_id', $doctor_id)->where('disponible', 1)
-        ->select('fecha', 'doctor_id')->distinct()->get();
+        //$fechas = Shift::where('doctor_id', $doctor_id)->where('disponible', 1)
+        //->select('fecha', 'doctor_id')->distinct()->get();
+
+        #$fechas = Shift::where('doctor_id', $doctor_id)
+        #    ->where('disponible', 1)
+        #    ->whereDate('fecha', '>=', now()->toDateString()) // Filtra fechas mayores o iguales al día actual
+        #    ->orderBy('fecha', 'asc') // Ordena las fechas de mayor a menor
+        #    ->select('fecha', 'doctor_id')
+        #    ->distinct()
+        #    ->get();
+
+        $fechaInicio = now()->subDay(); // Primero día del mes actual
+        $fechaFin = now()->addDays(30); // Último día del mes actual
+
+        $fechas = Shift::where('doctor_id', $doctor_id)
+            ->where('disponible', 1)
+            ->whereDate('fecha', '>=', now()->toDateString()) // Filtra fechas mayores o iguales al día actual
+            ->whereBetween('fecha', [$fechaInicio, $fechaFin]) // Filtra por el rango de fechas del mes actual
+            ->orderBy('fecha', 'asc')
+            ->select('fecha', 'doctor_id')
+            ->distinct()
+            ->get();
         
         return view('paciente.agendar_fecha', compact('fechas'));
     }
