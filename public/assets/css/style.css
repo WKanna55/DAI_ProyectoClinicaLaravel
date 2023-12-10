@@ -541,7 +541,8 @@ Seccion de estilos del perfil de Paciente
     position: relative;
     width: 90%;
     height: 17rem;
-    background-image: linear-gradient(45deg, #3cf8ff, #317FFF);
+    /*background-image: linear-gradient(45deg, #1b4965, rgb(236, 236, 236));*/
+    background-color: #5fa8d3;
     border-radius: 20px;
 }
 
@@ -631,6 +632,12 @@ Seccion de estilos del perfil de Paciente
     justify-content: space-between;
 }
 
+.card.cita{
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid rgb(184, 184, 184);
+}
+
 .seccion-perfil-usuario .perfil-usuario-bio {
     margin-bottom: 1.25rem;
     text-align: center;
@@ -652,26 +659,40 @@ Seccion de estilos del perfil de Paciente
 }
 
 .boton-editar {
-    
     top: 20rem;
     right: 1rem;
     border: 0;
     border-radius: 8px;
     padding: 10px 10px;
-    background-color: rgba(40, 197, 61, 0.445);
-    color: #050505;
+    background-color: #5fa8d3;
+    color: #ffffff;
     cursor: pointer;
 }
 
 .boton-historial-paciente{
-    top: 25rem;
+    top: 20rem;
     right: 1rem;
     border: 0;
     border-radius: 8px;
     padding: 10px 10px;
-    background-color: rgba(43, 122, 240, 0.445);
-    color: #050505;
+    background-color: #5fa8d3;
+    color: #ffffff; 
     cursor: pointer;
+    text-decoration: none;
+}
+
+
+.btn-agendar-cita {
+    width: 200px;
+}
+
+.btn-agendar-cita:hover{
+        color: white;
+        text-decoration: none;
+}
+
+.text-decoration-none {
+    text-decoration: none;
 }
 
 .perfil-usuario-citas{
@@ -716,6 +737,11 @@ Seccion de estilos del perfil de Paciente
         margin-left: 1rem;
         margin-top: 0;
     }
+}
+
+.confirmar-cambios-perfil{
+    background-color: #1b4965;
+    color: #FFFFFF;
 }
 
 
