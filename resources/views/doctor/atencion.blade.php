@@ -6,7 +6,7 @@
 <div class="container-t">
   <!-- historial -->
   <div class="d-grid justify-content-end mt-4 mr-4">
-    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button class="btn btn-his historial" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Historial
     </button>
   </div>
@@ -217,9 +217,9 @@
               </div>
               <div class="d-flex justify-content-end">
                 @if($appointment->condicion == 'pendiente')
-                  <button type="submit" class="btn btn-primary">Enviar</button>
+                  <button type="submit" class="btn btn-his historial">Enviar</button>
                 @elseif($appointment->condicion == 'finalizado')
-                  <button type="submit" class="btn btn-warning">Actualizar</button>
+                  <button type="submit" class="btn btn-act actualizar">Actualizar</button>
                 @endif
               </div>
             </form>

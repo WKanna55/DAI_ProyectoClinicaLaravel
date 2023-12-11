@@ -98,8 +98,10 @@ Route::get('pago/cancel', [PagoController::class, 'cancel'])->name('paypal_cance
 
 Route::get('/admin', [AdminController::class, 'show'])->name('admin'); // muestra pagina de inicio de admin
 
-
 Route::get('/admin/list', [AdminController::class, 'citas'])->name('citasAdmin'); // muestra citas
 
-Route::get('/admin/agendar', [AdminController::class, 'agendar'])->name('agendaAdmin'); // agenda citas
+Route::get('/admin/agenda', [AdminController::class, 'showAgendar'])->name('agendaAdmin');// agenda citas
 
+Route::post('/admin/agenda', [AdminController::class, 'agendar'])->name('buscar_paciente');
+
+Route::delete('/admin/destroy', [AdminController::class, 'destroy'])->name('admin.destroy');
