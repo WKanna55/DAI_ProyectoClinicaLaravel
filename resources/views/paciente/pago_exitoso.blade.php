@@ -9,7 +9,7 @@
             <div class="card pago">
                 <img src="{{ asset('assets/img/pago_exitoso.png')}}" class="card-img-top pago" alt="pago exitoso">
                 <div class="card-body">
-                  <h5 class="card-title">Pago Exitoso</h5>
+                    <h1 class="card-title"><strong>Pago Exitoso</strong></h1>
                   <p class="card-text">Su pago fue exitoso, se registro su cita con exito, esperamos verlo pronto.</p>
                   @if(auth()->user()->role_id == 1)
                   <a href="{{ route('perfilPaciente') }}" class="btn btn-primary">Ver citas</a>

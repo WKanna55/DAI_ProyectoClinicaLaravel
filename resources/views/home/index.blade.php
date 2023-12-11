@@ -101,8 +101,8 @@
         <h1 class="text-center mb-5 text-light">Comentarios de nuestros pacientes</h1>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
         <div class="col mb-4">
-          <div class="card bg-user align-items-center ">
-            <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
+          <div class="card align-items-center bg-comentario">
+            <img src="assets/img/index/user.svg" class=" user-icon m-comentario" alt="...">
             <h5 class="text-white">Carlos Nuñez</h5>
             <div class="card-body bg-light">
               <p class="card-text">
@@ -118,8 +118,8 @@
           </div>
         </div>
         <div class="col mb-4">
-          <div class="card bg-user align-items-center ">
-            <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
+          <div class="card align-items-center bg-comentario">
+            <img src="assets/img/index/user.svg" class=" user-icon m-comentario" alt="...">
             <h5 class="text-white">Lisbeth Torres</h5>
             <div class="card-body bg-light">
               <p class="card-text">
@@ -132,8 +132,8 @@
           </div>
         </div>
         <div class="col mb-4">
-          <div class="card bg-user align-items-center ">
-            <img src="assets/img/index/user.svg" class=" user-icon" alt="...">
+          <div class="card align-items-center bg-comentario">
+            <img src="assets/img/index/user.svg" class=" user-icon m-comentario" alt="...">
             <h5 class="text-white">Renata Lazo</h5>
             <div class="card-body bg-light">
               <p class="card-text">

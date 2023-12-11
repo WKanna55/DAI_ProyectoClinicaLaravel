@@ -309,6 +309,16 @@ Nueva seccion: Login
     font-size: 18px;
 }
 
+.btn.auth{
+    background-color: var(--azul);
+    color: var(--blanco);
+}
+
+.btn.auth:hover{
+    background-color: var(--celeste-oscuro);
+    color: black;
+}
+
 /*
 
 Nueva seccion: registro
@@ -533,7 +543,8 @@ Seccion de estilos del perfil de Paciente
     position: relative;
     width: 90%;
     height: 17rem;
-    background-image: linear-gradient(45deg, #3cf8ff, #317FFF);
+    /*background-image: linear-gradient(45deg, #1b4965, rgb(236, 236, 236));*/
+    background-color: #5fa8d3;
     border-radius: 20px;
 }
 
@@ -623,6 +634,12 @@ Seccion de estilos del perfil de Paciente
     justify-content: space-between;
 }
 
+.card.cita{
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid rgb(184, 184, 184);
+}
+
 .seccion-perfil-usuario .perfil-usuario-bio {
     margin-bottom: 1.25rem;
     text-align: center;
@@ -644,26 +661,40 @@ Seccion de estilos del perfil de Paciente
 }
 
 .boton-editar {
-    
     top: 20rem;
     right: 1rem;
     border: 0;
     border-radius: 8px;
     padding: 10px 10px;
-    background-color: rgba(40, 197, 61, 0.445);
-    color: #050505;
+    background-color: #5fa8d3;
+    color: #ffffff;
     cursor: pointer;
 }
 
 .boton-historial-paciente{
-    top: 25rem;
+    top: 20rem;
     right: 1rem;
     border: 0;
     border-radius: 8px;
     padding: 10px 10px;
-    background-color: rgba(43, 122, 240, 0.445);
-    color: #050505;
+    background-color: #5fa8d3;
+    color: #ffffff; 
     cursor: pointer;
+    text-decoration: none;
+}
+
+
+.btn-agendar-cita {
+    width: 200px;
+}
+
+.btn-agendar-cita:hover{
+        color: white;
+        text-decoration: none;
+}
+
+.text-decoration-none {
+    text-decoration: none;
 }
 
 .perfil-usuario-citas{
@@ -710,6 +741,11 @@ Seccion de estilos del perfil de Paciente
     }
 }
 
+.confirmar-cambios-perfil{
+    background-color: #1b4965;
+    color: #FFFFFF;
+}
+
 
 /* 
 
@@ -752,7 +788,7 @@ Seccion de estilos de la interfaz de Nosotros
 /* Bienvenida */
 
 .parallax-nosotros {
-    background: linear-gradient(to right, #b9b9b9cd, hsla(249, 85%, 79%, 0.637)), url(..assets/img/index/clinica.jpg);
+    background: linear-gradient(to top, var(--celeste-blanco), var(--blanco));
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -815,8 +851,6 @@ Seccion: atencion
     transition: ease 0.2s;
 }
 /*--  Interfaz agendar_especialidad.blade.php  --*/
-
-
 
 
 .main_agendar_especialidad{
@@ -955,17 +989,19 @@ Seccion: atencion
   }
 }
 
-/*_______________________________________________________*/
+
+/*______________________________________________________*/
 
 
 .step-circle{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
      /* Puedes cambiar el color según tus preferencias */
+    background-color: #5fa8d3; 
     display: inline-block;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 18px;
+    margin-left: 18px;
 }
 
 
@@ -974,6 +1010,10 @@ Seccion: atencion
     padding-bottom: 8rem;
     padding-left: 25%; /* 10 * 0.25rem = 2.5rem */
     padding-right: 25%; /* 10 * 0.25rem = 2.5rem */
+}
+
+.btn.btn-info {
+    background-color: #5fa8d3; 
 }
 
 /*_______________________________________________________*/
@@ -985,17 +1025,27 @@ Seccion: atencion
 
 .card.pago{
     border-radius: 25px;
-    background-color: #DFE5F2;
+    background-color: #fff;
     width: 70%;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding-top: 2em;
     padding-bottom: 2em;
+    margin-top: -7em;
+    margin-bottom: -7em;
+    border: 2px solid #5fa8d3;
 }
 
+.btn-verc {
+    background-color: #5fa8d3; 
+    color: #fff; 
+   border:10px solid #5fa8d3
+   
+  }
+
 .card-img-top.pago{
-    width: 40%;
+    width: 30%;
     height: auto;
     align-items: center;
     justify-content: center;
@@ -1005,8 +1055,10 @@ Seccion: atencion
 .pago-cont{
     padding-top: 12em;
     padding-bottom: 12em;
-    background: linear-gradient(var(--celeste), var(--celeste-claro));
+    background: white;
 }
+
+
 
 @media screen and (max-width: 600px){
     .card.pago{
@@ -1033,6 +1085,36 @@ Seccion: atencion
         width: 70%;
     }
 }
+
+/* cambiar a dropdown en navbar */
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+  }
+  .text-white {
+    color: white; 
+  }
+    
+
+
+
 /* pago exitoso*/
 
 /* Pagos interfaces nuevas*/
+
+.cmp {
+    color: var(--celeste-oscuro);
+}
+
+.m-comentario {
+    margin-top: 1rem;
+}
+
+.bg-comentario {
+    background-color: var(--celeste-oscuro)!important;
+}
+
+.bg-footer {
+    background-color: var(--azul);
+}
+

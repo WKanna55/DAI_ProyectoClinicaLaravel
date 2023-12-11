@@ -56,8 +56,8 @@
 
 
       <!-- Visión y Misión -->
-      <section class="">
-        <div class="container nosotros align-items-center ">
+      <section class="mt-2">
+        <div class="container nosotros align-items-center">
           <div class="row">
             
             <div class="col-lg-6 col-12 order-lg-1 order-sm-1">
@@ -103,7 +103,7 @@
 
 
       <!-- Historia -->
-      <section class="">
+      <section class="mb-5">
         
         <div class="container nosotros align-items-center">
           <div class="row">
@@ -118,11 +118,11 @@
 
             <div class="col-lg-6 col-12 order-lg-2 order-sm-1">
               <div class="row align-items-center">
-                <h2 class="titulo" style="font-size: 3em; margin-bottom: 20px">
+                <h2 class="titulo" style="font-size: 3em; margin-bottom: 20px; margin-top: 5px">
                   Nuestra Historia Médica
                 </h2>
-                <div class="card-body">
-                  <p class="card-text" style="font-size: 1.2em; margin-bottom: 20px">
+                <div class="" style="padding: 0px 0px px 10px">
+                  <p class="card-text" style="font-size: 1.2em; ">
                     Hace 18 años, en 2005, nació la clínica Tecsana, fundada por la Dra. Ana Gómez con la misión de proporcionar atención médica de calidad. Inicialmente modesta, la clínica ha experimentado un notable crecimiento en infraestructura, servicios y especialidades médicas. Comprometida con la innovación y la comunidad, Tecsana se enorgullece de su legado de atención excepcional y se compromete a seguir siendo un recurso vital para la salud en los años venideros.
                   </p>
                 </div>
