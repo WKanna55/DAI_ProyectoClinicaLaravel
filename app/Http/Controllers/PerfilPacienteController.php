@@ -40,22 +40,23 @@ class PerfilPacienteController extends Controller
     //}
 
     public function update(Request $request) {
-
         $request->validate([
             'dni' => 'required|digits:8',
             'nombres' => 'required|string',
             'apellidos' => 'required|string',
-            'telefono' => 'required|string',
+            'telefono' => 'required|numeric|digits:9',
             'direccion' => 'required|string',
             'email' => 'required|email',
             'fecha_nacimiento' => 'required|date',
         ]);
-
+    
         $patient = Patient::findOrFail($request->id);
         $user = $patient->user;
-        
-        $patient->update; $user->update([
+        $user->update([
             'dni' => $request->input('dni'),
+        ]);
+    
+        $patient->update([
             'nombres' => $request->input('nombres'),
             'apellidos' => $request->input('apellidos'),
             'telefono' => $request->input('telefono'),
@@ -63,7 +64,7 @@ class PerfilPacienteController extends Controller
             'email' => $request->input('email'),
             'fecha_nacimiento' => $request->input('fecha_nacimiento'),
         ]);
-
+    
         return redirect()->route('perfilPaciente');
     }
 

@@ -79,7 +79,6 @@ class AgendarCitaController extends Controller
         } else {
             // Si no se ha seleccionado una fecha, permanecer en la misma vista
             return redirect()->route('showFechas')->withInput()->withErrors(['fecha' => 'Por favor, selecciona una fecha.']);
-            return redirect()->route('agendar_fecha')->withErrors(['fecha' => 'Por favor, selecciona una fecha.']);
 
         }
     }

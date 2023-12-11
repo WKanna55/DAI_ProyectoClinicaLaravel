@@ -17,7 +17,7 @@
             <div class="perfil-usuario-footer">
                 
                     <ul class="lista-datos">
-                        <li><i class="icono fas fa-id-card"></i> DNI: {{$patient->user->dni}}</li>
+                        <li><i class="icono fas fa-id-card"></i>{{$patient->user->dni}}</li>
                         <li><i class="icono fas fa-phone-alt"></i>{{$patient->telefono}}</li>
                         <li><i class="icono fas fa-envelope"></i>{{$patient->email}}</li>
                         <li><i class="icono fas fa-calendar-alt"></i>{{$patient->fecha_nacimiento}}</li>
@@ -43,10 +43,10 @@
 
                 <div class="container-fluid perfil-usuario-citas-main">
                   <div class="perfil-usuario-cita row gap-3 ml-2">
-                  @if(count(($cita)) == 0)
+                  @if(count(($citas)) == 0)
                   <p class="text-center mt-4 mb-4 pr-5">No tiene citas pendientes</p>
                   @else
-                    @foreach ($cita as $c)
+                    @foreach ($citas as $c)
                     <div class="card cita col-lg-5 col-12 order-lg-2 order-sm-1">
                       <div class="card-body">
                         <h5 class="card-title">{{$c->doctor->specialty->nombre}}</h5>
@@ -107,7 +107,7 @@
                               </div>
                               <input type="hidden" name="id" value={{$patient->id}}>
                               <div class="modal-footer">
-                                <input type="submit" class="btn bg-secondary confirmar-cambios-perfil" value="Confirmar cambios"></input>
+                                <input type="submit" class="btn bg-secondary confirmar-cambios-perfil text-light" value="Confirmar cambios"></input>
                               </div>  
                             </form>
                           </div>
