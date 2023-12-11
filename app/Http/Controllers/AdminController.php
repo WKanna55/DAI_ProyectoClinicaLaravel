@@ -7,6 +7,7 @@ use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Patient;
 use App\Models\Shift;
+use App\Models\Specialty;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -28,8 +29,10 @@ class AdminController extends Controller
         $dni = $request->input('dni');
         $user = User::where('dni', $dni)->get();
         $paciente = Patient::where('user_id', $user[0]->id)->get();
-        session(['admin'=>['paciente_id'=>$paciente]]);
-        return view('admin.citas');
+        session(['admin'=>['paciente_id'=>$paciente[0]]]);
+        $especialidades = Specialty::all();
+        return view('paciente.agendar_especialidad', compact('especialidades'));
+        
     }
 
     public function citas(Request $request) {

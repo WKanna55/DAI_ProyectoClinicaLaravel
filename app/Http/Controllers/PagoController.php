@@ -27,9 +27,25 @@ class PagoController extends Controller
 
         // Para pasar info
         $condicion = 'pendiente';
+        $rol_id= Auth::user()->role_id;
+        if ($rol_id == 1) {
+            $user_id = Auth::user()->id;
+            $patient = Patient::where('user_id', $user_id)->get();
+        }
+        else {
+
+            $paciente_id = session('admin')['paciente_id'];
+            
+            $patient = Patient::where('id', $paciente_id->id)->get();
+            // dd($patient);
+
+        }
+
+
+
+
+
         
-        $user_id = Auth::user()->id;
-        $patient = Patient::where('user_id', $user_id)->get();
         $patient_id = $patient[0]->id;
         $telefono = $patient[0]->telefono;
         $nombres = $patient[0]->nombres;
@@ -56,7 +72,6 @@ class PagoController extends Controller
         $monto = $request->input('precio');
 
         session(['cita' => ['condicion' => $condicion,
-                            'user_id' => $user_id,
                             'patient_id' => $patient_id,
                             'telefono' => $telefono,
                             'doctor_id' => $doctor_id,
@@ -131,7 +146,6 @@ class PagoController extends Controller
         if (session()->has('cita')) {
             // Recuperar datos de la sesión
             $condicion = session('cita')['condicion'];
-            $user_id = session('cita')['user_id'];
             $patient_id = session('cita')['patient_id'];
             $doctor_id = session('cita')['doctor_id'];
             $shift_id = session('cita')['shift_id'];
@@ -190,6 +204,10 @@ class PagoController extends Controller
     
             return view('paciente.pago_exitoso');
         } else {
+            if (session()->has('admin')) {
+                session()->forget('admin');
+                return redirect()->route('admin'); 
+            }
             // La sesión no está presente, realizar alguna acción de manejo de error
             return redirect()->route('home'); // Reemplaza 'ruta_del_error' con la ruta real
         }

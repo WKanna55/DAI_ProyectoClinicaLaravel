@@ -28,8 +28,15 @@
               <div class="card-body derivacion-card-body">
                 <h5 class="card-title fw-semibold">Agendar Cita</h5>
                 <p class="card-text">Agenda de cita conociendo el id del paciente. En caso no cuente con id, puede crearlo en la interfaz principal.</p>
-                <input name="dni" type="text" placeholder="DNI">
-                <input  type="submit" value="Buscar">
+                
+                
+                <div class="input-group mb-3">
+                  <input type="text" name="dni" class="form-control" placeholder="DNI" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <input class="btn btn-admi admin " type="submit" value="Buscar">
+                  </div>
+                </div>
+                
               </div>
             </div>
           </form>

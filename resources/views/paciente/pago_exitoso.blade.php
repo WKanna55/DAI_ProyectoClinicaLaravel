@@ -11,20 +11,16 @@
                 <div class="card-body">
                   <h5 class="card-title">Pago Exitoso</h5>
                   <p class="card-text">Su pago fue exitoso, se registro su cita con exito, esperamos verlo pronto.</p>
+                  @if(auth()->user()->role_id == 1)
                   <a href="{{ route('perfilPaciente') }}" class="btn btn-primary">Ver citas</a>
+                  @elseif(auth()->user()->role_id == 3)
+                  <a href="{{ route('admin') }}" class="btn btn-admi admin">Finalizar</a>
+                  @endif
                 </div>
             </div>
         </div>
     </div>
 </main>
-<script>
-    // Redirige a otraVista después de que la página se recargue
-    setTimeout(() => {
-        window.onload = function() {
-        window.location.href="{{ route('home') }}";
-        };
-    }, 5000);
-    
-</script>
+
 
 @endsection
