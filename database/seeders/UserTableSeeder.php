@@ -26,7 +26,7 @@ class UserTableSeeder extends Seeder
         $paciente = new Patient;
         $paciente->nombres = "Roberto";
         $paciente->apellidos = "Martinez";
-        $paciente->telefono = "999888777";
+        $paciente->telefono = "989987993";
         $paciente->direccion = "Arequipa, JLBR av EEUU N312";
         $paciente->email = "rmartinez12@gmail.com";
         $paciente->fecha_nacimiento = "2000-01-12";
