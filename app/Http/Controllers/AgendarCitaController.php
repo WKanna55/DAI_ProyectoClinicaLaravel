@@ -38,11 +38,10 @@ class AgendarCitaController extends Controller
     }
     
     public function showFechas(Request $request){
-         // Validar que se haya seleccionado una fecha
-        
+
         $doctor_id = $request->input('doctor_id');
-        $fechaInicio = now()->subDay(); // Primero día del mes actual
-        $fechaFin = now()->addDays(30); // Último día del mes actual
+        $fechaInicio = now()->subDay(); // fecha actual
+        $fechaFin = now()->addDays(13); // ultima fecha tres dias despues de la fecha actual
 
         $fechas = Shift::where('doctor_id', $doctor_id)
             ->where('disponible', 1)
@@ -79,7 +78,6 @@ class AgendarCitaController extends Controller
         } else {
             // Si no se ha seleccionado una fecha, permanecer en la misma vista
             return redirect()->route('showFechas')->withInput()->withErrors(['fecha' => 'Por favor, selecciona una fecha.']);
-
         }
     }
 }
