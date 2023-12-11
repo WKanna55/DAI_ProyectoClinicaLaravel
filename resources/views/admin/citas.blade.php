@@ -2,74 +2,51 @@
 @section('content')
 
 <main>
-    <div class="container-fluid mt-5 mb-5 ">
-      <div class="row d-flex flex-column justify-content-center align-items-center">
-  
-        <div class="col-2 texto admin mb-5">
-          <h2>Administrador</h2>
-        </div>
-        dd($appointment)
-        <div class="col-10">
-            <div class="card admin">
-  
-                <div class="table-responsive admin">
-                  <table class="table">
-                    <thead class="">
-                      <tr class="">
-                        <th class="col-1">ID</th>
-                        <th class="col-2">Nombre</th>
-                        <th class="col-2">Apellido</th>
-                        <th class="col-2">Especialidad</th>
-                        <th class="col-2">Doctor</th>
-                        <th class="col-2">Horario</th>
-                        <th class="col-1">Opcion</th>
-                      </tr>
-                    </thead>
-                    <tbody class="">
-    
-                      <tr class="">
-                        <td class="col-1">1</td>
-                        <td class="col-2">Juan Miguel</td>
-                        <td class="col-2">Gomez Torres</td>
-                        <td class="col-2">Cardiologia</td>
-                        <td class="col-2">Jose Fernandez parrillo</td>
-                        <td class="col-2">10:00 - 10:30</td>
-                        <td class="col-1">
-                          <a href=""><i class="bi bi-trash trash-icon"></i></a>
-                        </td>
-                      </tr>
-    
-                      <tr class="">
-                        <td class="col-1">1</td>
-                        <td class="col-2">Juan Miguel</td>
-                        <td class="col-2">Gomez Torres</td>
-                        <td class="col-2">Cardiologia</td>
-                        <td class="col-2">Jose Fernandez parrillo</td>
-                        <td class="col-2">10:00 - 10:30</td>
-                        <td class="col-1">
-                          <a href=""><i class="bi bi-trash trash-icon"></i></a>
-                        </td>
-                      </tr>
-    
-                      <tr class="">
-                        <td class="col-1">1</td>
-                        <td class="col-2">Juan Miguel</td>
-                        <td class="col-2">Gomez Torres</td>
-                        <td class="col-2">Cardiologia</td>
-                        <td class="col-2">Jose Fernandez parrillo</td>
-                        <td class="col-2">10:00 - 10:30</td>
-                        <td class="col-1">
-                          <a href=""><i class="bi bi-trash trash-icon"></i></a>
-                        </td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
+  <div class="container mt-5">
+      <h2>Registro de Citas</h2>
+
+      <!-- Formulario -->
+      <form action="" method="POST">
+          @csrf
+
+          <!-- Seleccionar Especialidad -->
+          <div class="form-group">
+              <label for="especialidad">Seleccionar Especialidad:</label>
+              <select class="form-control" id="especialidad" name="especialidad">
+                  <!-- Aquí puedes iterar sobre tus especialidades desde la base de datos -->
+                  <option value="1">Especialidad 1</option>
+                  <option value="2">Especialidad 2</option>
+                  <!-- ... -->
+              </select>
+          </div>
+
+          <!-- Seleccionar Médico -->
+          <div class="form-group">
+              <label for="medico">Seleccionar Médico:</label>
+              <select class="form-control" id="medico" name="medico">
+                  <!-- Aquí puedes iterar sobre tus médicos desde la base de datos -->
+                  <option value="1">Dr. Médico 1</option>
+                  <option value="2">Dr. Médico 2</option>
+                  <!-- ... -->
+              </select>
+          </div>
+
+          <!-- Seleccionar Fecha -->
+          <div class="form-group">
+              <label for="fecha">Seleccionar Fecha:</label>
+              <input type="date" class="form-control" id="fecha" name="fecha">
+          </div>
+
+          <!-- Seleccionar Hora -->
+          <div class="form-group">
+              <label for="hora">Seleccionar Hora:</label>
+              <input type="time" class="form-control" id="hora" name="hora">
+          </div>
+
+          <!-- Botón de Enviar -->
+          <button type="submit" class="btn btn-primary">Registrar Cita</button>
+      </form>
+  </div>
   </main>
 
 @endsection

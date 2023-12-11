@@ -246,15 +246,9 @@ Nueva seccion: index
     margin: 10px;
 }
 
-.card.bg-user{
-    background-color: var(--azul);
-    
-}
 
-.card.bg-user-red{
-    background-color: red;
-    
-}
+
+
 
 /*
 
@@ -370,7 +364,15 @@ Nueva seccion: administrador
 .trash-icon{
     font-size: 16px;
 }
-
+.btn-admi.admin{
+    background-color: var(--azul);
+    color: var(--blanco);
+    
+}
+/* .center-admin {
+    display: flex;
+    align-items: center;
+  } */
 
 
 /* tabla con scroll admin inicio*/
@@ -714,14 +716,15 @@ Seccion de estilos del perfil de Paciente
 Seccion: Doctor
 
 */
-.card-blue:hover {
+.card.bg-user{
     background-color: var(--azul);
-    color: var(--celeste-blanco);
-    cursor: pointer;
+    color: var(--blanco);
+    
 }
-
-.card-red{
-    background-color: red;
+.card.bg-user-red{
+    background-color: var(--celeste-oscuro);
+    color: var(--blanco);
+    
 }
 
 .card-red:hover {
@@ -772,6 +775,14 @@ Seccion: atencion
     overflow-y: auto;
     height: 400px;
     width: 100%;
+}
+.btn-his.historial{
+    background-color: var(--azul);
+    color: var(--blanco);
+}
+.btn-act.actualizar{
+    background-color: var(--celeste-oscuro);
+    color: var(--blanco);
 }
 /* tabla con scroll atencion fin*/
 

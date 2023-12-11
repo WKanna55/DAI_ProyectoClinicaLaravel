@@ -27,6 +27,7 @@ class PagoController extends Controller
 
         // Para pasar info
         $condicion = 'pendiente';
+        
         $user_id = Auth::user()->id;
         $patient = Patient::where('user_id', $user_id)->get();
         $patient_id = $patient[0]->id;

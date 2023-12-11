@@ -29,7 +29,7 @@
                             </div>
                         @elseif ($cita->condicion == 'finalizado')
                             <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
-                                <div class="card card-red align-items-center bg-user-red p-3">
+                                <div class="card card-finalizado align-items-center bg-user-red p-3">
                                     <h6 class="text-white">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
                                     <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->horario }}</p>
                                 </div>

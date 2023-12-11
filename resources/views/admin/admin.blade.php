@@ -22,14 +22,17 @@
       <div class="container col-4">
         <div class="container d-flex flex-column gap-5">
 
-          <a class="derivacion" href="{{route('citasAdmin')}}">
+          <form class="derivacion" method="post" action="{{route('buscar_paciente')}}">
+            @csrf
             <div class="card derivacion-card">
               <div class="card-body derivacion-card-body">
                 <h5 class="card-title fw-semibold">Agendar Cita</h5>
                 <p class="card-text">Agenda de cita conociendo el id del paciente. En caso no cuente con id, puede crearlo en la interfaz principal.</p>
+                <input name="dni" type="text" placeholder="DNI">
+                <input  type="submit" value="Buscar">
               </div>
             </div>
-          </a>
+          </form>
           
           <a class="derivacion" href="{{route('citasAdmin')}} ">
             <div class="card derivacion-card">

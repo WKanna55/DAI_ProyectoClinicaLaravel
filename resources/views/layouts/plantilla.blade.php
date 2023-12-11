@@ -76,7 +76,7 @@
             
               <a class="navbar-brand" href="{{ route('home')}}">
                 <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <img src="{{asset('assets/img/Recurso.svg')}}" class="logo-brand" alt="">
                   <p class="navbrand-text">Clínica Tecsana</p>
                 </div>
               
@@ -109,7 +109,7 @@
             <div class="container-fluid">
               <a class="navbar-brand" href="{{ route('citas')}}">
                 <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <img src="{{asset('assets/img/Recurso.svg')}}" class="logo-brand" alt="">
                   <p class="navbrand-text">Clínica Tecsana</p>
                 </div>
               </a>
@@ -134,7 +134,7 @@
             <div class="container-fluid">
               <a class="navbar-brand" href="{{ route('adminShow')}}">
                 <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <img src="{{asset('assets/img/Recurso.svg')}}" class="logo-brand" alt="">
                   <p class="navbrand-text">Clínica Tecsana</p>
                 </div>
               </a>
