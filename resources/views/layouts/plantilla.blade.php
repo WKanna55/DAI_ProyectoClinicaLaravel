@@ -107,7 +107,7 @@
             </div>
           </nav>
 
-        @elseif(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+        @elseif(auth()->user()->role_id == 2)
           <nav class="navbar principal navbar-expand-lg">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{ route('citas')}}">
@@ -135,7 +135,7 @@
 
           <nav class="navbar principal navbar-expand-lg">
             <div class="container-fluid">
-              <a class="navbar-brand" href="{{ route('adminShow')}}">
+              <a class="navbar-brand" href="{{ route('admin')}}">
                 <div class="d-flex justify-content-center align-items-center navbrand-pers">
                   <img src="{{asset('assets/img/Recurso.svg')}}" class="logo-brand" alt="">
                   <p class="navbrand-text">Clínica Tecsana</p>

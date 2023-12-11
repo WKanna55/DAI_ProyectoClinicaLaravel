@@ -30,7 +30,7 @@
                     </div>
                 @enderror
                 <input type="hidden" name="id_doctor" id="iddoctor" value="{{ $horarios[0]->doctor_id }}">
-                <h2 class="pt-5 text-center">{{ $doctor->Specialty->costo }}</h2>
+                <h2 class="pt-5 text-center">S/. {{ $doctor->Specialty->costo }}</h2>
                 <input type="hidden" name="precio" value="1">
                 <div class="pt-5 text-center">
                     <input type="submit" class="btn btn-info"

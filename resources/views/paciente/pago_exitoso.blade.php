@@ -12,7 +12,7 @@
                     <h1 class="card-title"><strong>Pago Exitoso</strong></h1>
                   <p class="card-text">Su pago fue exitoso, se registro su cita con exito, esperamos verlo pronto.</p>
                   @if(auth()->user()->role_id == 1)
-                  <a href="{{ route('perfilPaciente') }}" class="btn btn-primary">Ver citas</a>
+                  <a href="{{ route('perfilPaciente') }}" class="btn btn-admi admin">Ver citas</a>
                   @elseif(auth()->user()->role_id == 3)
                   <a href="{{ route('admin') }}" class="btn btn-admi admin">Finalizar</a>
                   @endif
