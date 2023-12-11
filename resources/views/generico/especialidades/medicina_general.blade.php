@@ -89,48 +89,21 @@
           <div class="col-md-12 ">
             <h2 class="titulo-azul mb-4 mt-5 text-center">Staff Médico</h2>
           </div>
+          @foreach ($doctors as $doctor)
           <div class="col-12 col-md-4 justify-content-center">
             <div class="card img-especialidad" style="width: 15rem">
               <img
-                src="assets/img/Doctores/doctor4.webp.jpg"
+                src="{{asset('assets/img/doctor/' . $doctor->img_source)}}"
                 class="card-img-top img-fluid-especialidad"
-                alt="..."
+                alt="imagen de doctor"
               />
               <div class="card-body">
-                <h5 class="titulo-azul">Dr. Medina</h5>
-                <p class="card-text">Especialidad: Medicina general</p>
-                <p class="card-text">CPM:XXXXXX</p>
+                <h5 class="titulo-azul">Dr. {{$doctor->nombres}} {{$doctor->apellidos}}</h5>
+                <p class="card-text cmp">CMP: {{$doctor->CMP}}</p>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-4 justify-content-center">
-            <div class="card img-especialidad" style="width: 15rem">
-              <img
-                src="assets/img/Doctores/doctora4.webp"
-                class="card-img-top img-fluid-especialidad"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="titulo-azul">Dra. Manrrique</h5>
-                <p class="card-text">Especialidad: Medicina general</p>
-                <p class="card-text">CPM:XXXXXX</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 justify-content-center">
-            <div class="card img-especialidad" style="width: 15rem">
-              <img
-                src="assets/img/Doctores/doctor3.webp"
-                class="card-img-top img-fluid-especialidad"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="titulo-azul">Dr. Torres</h5>
-                <p class="card-text">Especialidad: Medicina general</p>
-                <p class="card-text">CPM:XXXXXX</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </main>

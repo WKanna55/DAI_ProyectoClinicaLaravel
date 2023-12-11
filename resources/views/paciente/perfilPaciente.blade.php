@@ -6,29 +6,18 @@
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
                     <input type="file" id="seleccionarImagen" style="display: none;">
-                    <img src="fotoperfil.png" alt="Avatar">
-                    <button type="button" class="boton-avatar" onclick="document.getElementById('seleccionarImagen').click();">
-                        <i class="far fa-image"></i>
-                    </button>
+                    <img src="assets/img/index/user.svg" alt="Avatar">
                 </div>
-                <div>
-                    <input type="file" id="seleccionarFondo" style="display: none;">
-                    <button type="button" class="boton-portada" onclick="document.getElementById('seleccionarFondo').click();">
-                        <i class="far fa-image"></i> Cambiar fondo
-                    </button>
-                </div>                
             </div>
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
                 <h3 class="titulo"> {{$patient->nombres}} {{$patient->apellidos}}</h3>
-                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div class="perfil-usuario-footer">
                 
                     <ul class="lista-datos">
-                        <li><i class="icono fas fa-id-card"></i> DNI: {{$patient->user->dni}}</li>
+                        <li><i class="icono fas fa-id-card"></i>{{$patient->user->dni}}</li>
                         <li><i class="icono fas fa-phone-alt"></i>{{$patient->telefono}}</li>
                         <li><i class="icono fas fa-envelope"></i>{{$patient->email}}</li>
                         <li><i class="icono fas fa-calendar-alt"></i>{{$patient->fecha_nacimiento}}</li>
@@ -36,33 +25,40 @@
                     </ul>
                   <div> 
                     <button class="boton-editar" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                      <i class="far fa-edit">Editar</i> 
+                      Editar
                     </button>
                   </div>
             </div>
 
             <div class="perfil-usuario-citas">
-                <div class="container-fluid perfil-usuario-citas-header mb-5 mt-3">
+                <div class="container-fluid perfil-usuario-citas-header">
                   <h3 class="titulo">Citas</h3>
-                  <button class="boton-historial-paciente" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                    <i class="far fa-eye">Historial</i> 
+                  <button class="boton-historial-paciente float-end me-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    Historial
                   </button>
+                  <a href="{{ route('showEspecialidad') }}" class="boton-historial-paciente float-end btn-agendar-cita text-center">
+                    Agendar Cita
+                  </a>
                 </div>
 
                 <div class="container-fluid perfil-usuario-citas-main">
-                    <div class="perfil-usuario-cita row gap-3 ml-5">
-                        @foreach ($citas as $c)
-                            <div class="card col-5 card-cita">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $c->doctor->specialty->nombre }}</h5>
-                                    <p class="card-text">Dr: {{ $c->doctor->nombres }} {{ $c->doctor->apellidos }}</p>
-                                    <p class="card-text">Consultorio: {{ $c->doctor->consultorio }}</p>
-                                    <p class="card-text">{{ $c->shift->fecha }}</p>
-                                    <p class="card-text">{{ $c->shift->schedule->horario }}</p>
-                                </div>
-                            </div>
-                        @endforeach
+                  <div class="perfil-usuario-cita row gap-3 ml-2">
+                  @if(count(($citas)) == 0)
+                  <p class="text-center mt-4 mb-4 pr-5">No tiene citas pendientes</p>
+                  @else
+                    @foreach ($citas as $c)
+                    <div class="card cita col-lg-5 col-12 order-lg-2 order-sm-1">
+                      <div class="card-body">
+                        <h5 class="card-title">{{$c->doctor->specialty->nombre}}</h5>
+                        <p class="card-text">Dr: {{$c->doctor->nombres}} {{$c->doctor->apellidos}}</p>
+                        <p class="card-text">Consultorio: {{$c->doctor->consultorio}}</p>
+                        <p class="card-text">{{$c->shift->fecha}}</p>
+                        <p class="card-text">{{$c->shift->schedule->horario}}</p>
+                      </div>
                     </div>
+                    @endforeach
+                  @endif
+                  </div>
                 </div>
                 
             </div>
@@ -111,8 +107,8 @@
                               </div>
                               <input type="hidden" name="id" value={{$patient->id}}>
                               <div class="modal-footer">
-                                <input type="submit" class="btn btn-primary" value="Confirmar cambios"></input>
-                              </div>
+                                <input type="submit" class="btn bg-secondary confirmar-cambios-perfil text-light" value="Confirmar cambios"></input>
+                              </div>  
                             </form>
                           </div>
                         </div>

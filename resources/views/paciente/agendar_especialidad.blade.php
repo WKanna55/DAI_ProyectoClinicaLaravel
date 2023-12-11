@@ -6,7 +6,7 @@
         <div class="container-agedar custom-px-10">
             <h1 class="text-center">Reserva tu Cita</h1>
             <div class="text-center mt-5">
-                <div class="step-circle bg-danger"></div>
+                <div class="step-circle"></div>
                 <div class="step-circle bg-secondary"></div>
                 <div class="step-circle bg-secondary"></div>
                 <div class="step-circle bg-secondary"></div>
@@ -21,7 +21,7 @@
                     @endforeach
                 </select>
                 <div class="pt-5 pb-3 text-center">
-                    <input class="btn btn-primary" type="submit" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" value="Siguiente">
+                    <input class="btn btn-info" type="submit" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" value="Siguiente"></input>
                 </div>
             </form>
         </div>
