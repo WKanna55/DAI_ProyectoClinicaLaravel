@@ -8,6 +8,7 @@ use App\Models\Patient;
 use App\Models\Schedule;
 use App\Models\Shift;
 use App\Models\Specialty;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,17 +65,28 @@ class AgendarCitaController extends Controller
     
         // Verificar si se ha seleccionado una fecha
         if ($request->filled('fecha')) {
+            $horaActual = Carbon::now();
+            
             $fecha = $request->input('fecha');
             $id_doctor = $request->input('id_doctor');
             $doctor = Doctor::find($id_doctor);
             
             // Resto de la lógica para obtener horarios
-            $horarios = Shift::where('fecha', $fecha)->where('doctor_id', $id_doctor)->where('disponible', 1)
-                ->join('schedules', 'schedule_id', '=', 'schedules.id')
-                ->select('schedules.horario', 'doctor_id', 'schedule_id', 'shifts.id')->get();
+            $horarios = Shift::where('fecha', $fecha)
+            ->where('doctor_id', $id_doctor)
+            ->where('disponible', 1)
+            ->join('schedules', 'schedule_id', '=', 'schedules.id')
+            ->select('schedules.horario', 'doctor_id', 'schedule_id', 'shifts.id');
+
+            // Aplicar filtro de hora solo para el día actual
+            if ($fecha === $horaActual->toDateString()) {
+                $horarios->whereTime('schedules.horario', '>=', $horaActual->toTimeString());
+            }
+        
+            $horarios = $horarios->get();
             
             // Retornar la vista correspondiente
-            return view('paciente.agendar_horario', compact('horarios', 'doctor'));
+            return view('paciente.agendar_horario', compact('horarios', 'doctor', 'horaActual'));
         } else {
             // Si no se ha seleccionado una fecha, permanecer en la misma vista
             return redirect()->route('showFechas')->withInput()->withErrors(['fecha' => 'Por favor, selecciona una fecha.']);
