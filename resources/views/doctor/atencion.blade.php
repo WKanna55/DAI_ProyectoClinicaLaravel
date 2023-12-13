@@ -65,9 +65,9 @@
           <div class="card-body">
             <h3 class="card-title">Paciente</h3>
   
-            <div class="icon-container">
-              <i class="bi bi-person-square"></i>
-            </div>
+
+              
+
 
                 <div class="row mb-2">
                   <label for="nombre" class="col-sm-3 col-form-label col-form-label-sm">Nombre</label>

@@ -25,12 +25,14 @@
                     <thead class="">
                       <tr class="">
                         <th class="col-1">ID</th>
-                        <th class="col-2">Nombre</th>
-                        <th class="col-2">Apellido</th>
-                        <th class="col-2">Especialidad</th>
+                        <th class="col-2">Paciente</th>
+                        <th class="col-2">DNI paciente</th>
                         <th class="col-2">Doctor</th>
-                        <th class="col-2">Horario</th>
-                        <th class="col-2">Condicion</th>
+                        <th class="col-1">Especialidad</th>
+                        
+                        <th class="col-2">Fecha</th>
+                        <th class="col-1">Horario</th>
+                        <th class="col-1">Condicion</th>
                         <th class="col-1">Opcion</th>
                       </tr>
                     </thead>
@@ -39,12 +41,14 @@
                     @foreach($patient as $info)
                         <tr class="">
                             <td class="col-1">{{$info->id}}</td>
-                            <td class="col-2">{{$info->Patient->nombres}}</td>
-                            <td class="col-2">{{$info->Patient->apellidos}}</td>
-                            <td class="col-2">{{$info->Doctor->Specialty->nombre}}</td>
+                            <td class="col-2">{{$info->Patient->nombres}} {{$info->Patient->apellidos}}</td>
+                            <td class="col-2">{{$info->Patient->User->dni}}</td>
                             <td class="col-2">{{$info->Doctor->nombres}} {{$info->Doctor->apellidos}}</td>
-                            <td class="col-2">{{$info->Shift->Schedule->horario}}</td>
-                            <td class="col-2">{{$info->condicion}}</td>
+                            <td class="col-1">{{$info->Doctor->Specialty->nombre}}</td>
+                            
+                            <td class="col-2">{{$info->Shift->fecha}}</td>
+                            <td class="col-1">{{$info->Shift->Schedule->horario}}</td>
+                            <td class="col-1">{{$info->condicion}}</td>
                             <td class="col-1">
                               @if($info->condicion == 'pendiente')
                                 <a href="#" data-toggle="modal" data-target="#deleteModal{{$info->id}}">

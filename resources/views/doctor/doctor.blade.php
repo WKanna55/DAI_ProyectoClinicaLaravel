@@ -22,16 +22,16 @@
                     @foreach ($citasHoy as $cita)
                         @if ($cita->condicion == 'pendiente')
                             <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
-                                <div class="card card-blue align-items-center bg-user p-3">
-                                    <h6 class="text-white">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
-                                    <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->horario }}</p>
+                                <div class="card card-blue align-items-center bg-user-azul p-3">
+                                    <h6 class="">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
+                                    <p class="m-0"><i class="bi bi-clock pr-2"></i>{{ $cita->horario }}</p>
                                 </div>
                             </div>
                         @elseif ($cita->condicion == 'finalizado')
                             <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
-                                <div class="card card-finalizado align-items-center bg-user-red p-3">
-                                    <h6 class="text-white">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
-                                    <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->horario }}</p>
+                                <div class="card card-finalizado align-items-center bg-user-celeste p-3">
+                                    <h6 class="">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
+                                    <p class="m-0"><i class="bi bi-clock pr-2"></i>{{ $cita->horario }}</p>
                                 </div>
                             </div>
                         @endif

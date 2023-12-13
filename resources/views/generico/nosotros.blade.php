@@ -91,7 +91,7 @@
 
             <div class="col-lg-6 col-12 order-lg-2 order-sm-2">
               <img
-              src="assets/img/index/comentarios-bg.jpg"
+              src="{{asset('assets/img/index/mision-vision.jpg')}}"
               class="card-img-top icon-especializacion"
               style="width:100%; height:100% "
               />
@@ -110,7 +110,7 @@
 
             <div class="col-lg-6 col-12 order-lg-1 order-sm-2">
               <img
-              src="assets/img/index/comentarios-bg.jpg"
+              src="{{asset('assets/img/index/historia.jpg')}}"
               class="card-img-top icon-especializacion"
               style="width:100%; height:100%; margin-right:50px"
               />
@@ -118,7 +118,7 @@
 
             <div class="col-lg-6 col-12 order-lg-2 order-sm-1">
               <div class="row align-items-center">
-                <h2 class="titulo" style="font-size: 3em; margin-bottom: 20px; margin-top: 5px">
+                <h2 class="titulo" style="font-size: 3em; margin-bottom: 20px; margin-top: 24px">
                   Nuestra Historia Médica
                 </h2>
                 <div class="" style="padding: 0px 0px px 10px">

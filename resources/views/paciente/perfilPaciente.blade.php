@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="container-fluid perfil-usuario-citas-main">
-                  <div class="perfil-usuario-cita row gap-3 ml-2">
+                  <div class="perfil-usuario-cita row gap-3 justify-content-center">
                   @if(count(($citas)) == 0)
                   <p class="text-center mt-4 mb-4 pr-5">No tiene citas pendientes</p>
                   @else

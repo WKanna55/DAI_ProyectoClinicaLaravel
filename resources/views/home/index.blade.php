@@ -13,17 +13,17 @@
               atención personalizada y de calidad.
             </p>
           </div>
-          <img src="assets/img/index/carrusel/carr1.jpeg" class="d-block w-100 img-carr" alt="img1">
+          <img src="{{asset('assets/img/index/carrusel/carr1.jpeg')}}" class="d-block w-100 img-carr" alt="img1">
         </div>
         <div class="carousel-item">
           <div class="sobreponer-carr texto-sobrepuesto">
-            <h2>¡No te pierdas la promocion!</h2>
-            <img src="assets/img/index/promocion.png" class="img-z-carr" alt="">
+            <h2>¡No te pierdas promociones!</h2>
+            <img src="{{asset('assets/img/index/promocion.jpg')}}" class="img-z-carr" alt="">
           </div>
-          <img src="assets/img/index/carrusel/carr2.jpg" class="d-block w-100 img-carr" alt="img2">
+          <img src="{{asset('assets/img/index/carrusel/carr2.jpg')}}" class="d-block w-100 img-carr" alt="img2">
         </div>
         <div class="carousel-item">
-          <img src="assets/img/index/carrusel/carr3.jpg" class="d-block w-100 img-carr" alt="img3">
+          <img src="{{asset('assets/img/index/carrusel/carr3.jpg')}}" class="d-block w-100 img-carr" alt="img3">
         </div>
       </div>
       <div class="sobreponer d-flex">

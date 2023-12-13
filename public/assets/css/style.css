@@ -170,8 +170,19 @@ Nueva seccion: index
     color: white;
 }
 .img-z-carr{
-    width: 250px;
+    width: 400px;
     margin: 20px;
+}
+
+@media screen and (max-width: 800px){
+    .img-z-carr{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 450px){
+    .img-z-carr{
+        width: 200px;
+    }
 }
 
 
@@ -752,15 +763,25 @@ Seccion de estilos del perfil de Paciente
 Seccion: Doctor
 
 */
-.card.bg-user{
+.card.bg-user-azul{
     background-color: var(--azul);
     color: var(--blanco);
     
 }
-.card.bg-user-red{
+.card.bg-user-azul:hover{
+    background-color: var(--celeste); 
+    color: black;
+    cursor: pointer;
+}
+
+.card.bg-user-celeste{
     background-color: var(--celeste-oscuro);
-    color: var(--blanco);
-    
+    color: var(--blanco); 
+}
+.card.bg-user-celeste:hover{
+    background-color: var(--celeste-blanco);
+    color: black;
+    cursor: pointer;
 }
 
 .card-red:hover {
