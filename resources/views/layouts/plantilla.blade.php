@@ -76,7 +76,7 @@
             
               <a class="navbar-brand" href="{{ route('home')}}">
                 <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <img src="{{asset('assets/img/Recurso.svg')}}" class="logo-brand" alt="">
                   <p class="navbrand-text">Clínica Tecsana</p>
                 </div>
               
@@ -93,23 +93,26 @@
                   <li class="nav-item principal">
                     <a class="nav-link principal" href="{{ route('especialidades') }}">Especialidades</a>
                   </li>
-                  <li class="nav-item">
-                    <a role="button" class="btn lb btn-pers green btn-lg" href="{{ route('perfilPaciente') }}">Perfil</a>
-                  </li>
-                  <li class="nav-item">
-                    <a role="button" class="btn lb btn-pers btn-lg" href="{{ route('logout') }}">Cerrar sesión</a>
-                  </li>
+                  <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle btn-transparent" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                    <i class="bi bi-person-circle fs-3 text-white"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                      <li><a class="dropdown-item" href="{{ route('perfilPaciente') }}">Perfil</a></li>
+                      <li><a class="dropdown-item" href="{{ route('logout') }}">Cerrar sesión</a></li>
+                      </ul>
+                  </div>
                 </ul>
               </div>
             </div>
           </nav>
 
-        @elseif(auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+        @elseif(auth()->user()->role_id == 2)
           <nav class="navbar principal navbar-expand-lg">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{ route('citas')}}">
                 <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <img src="{{asset('assets/img/Recurso.svg')}}" class="logo-brand" alt="">
                   <p class="navbrand-text">Clínica Tecsana</p>
                 </div>
               </a>
@@ -132,9 +135,9 @@
 
           <nav class="navbar principal navbar-expand-lg">
             <div class="container-fluid">
-              <a class="navbar-brand" href="{{ route('adminShow')}}">
+              <a class="navbar-brand" href="{{ route('admin')}}">
                 <div class="d-flex justify-content-center align-items-center navbrand-pers">
-                  <img src="assets/img/Recurso.svg" class="logo-brand" alt="">
+                  <img src="{{asset('assets/img/Recurso.svg')}}" class="logo-brand" alt="">
                   <p class="navbrand-text">Clínica Tecsana</p>
                 </div>
               </a>

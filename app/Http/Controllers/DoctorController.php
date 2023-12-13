@@ -106,7 +106,7 @@ class DoctorController extends Controller
             $diagnostico->valoracion = $request->input('valoracion');
             $diagnostico->receta = $request->input('receta');
             $tel = $patient->telefono;
-            dd($tel);
+            //dd($tel);
             $diagnostico->appointment_id = $appointment_id;
             $diagnostico->save();
 

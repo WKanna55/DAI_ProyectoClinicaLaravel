@@ -25,20 +25,19 @@
        <div class="container">
           <div class="row">
             <div class="col-lg-10 col-xl-7 mx-auto">
-              <h3 class="display-4">Iniciar sesion</h3>
+              <h3 class="display-4">Iniciar sesión</h3>
               <p class="text-muted mb-4">Por favor ingrese su DNI y contraseña</p>
               <form action="{{route('login')}}" method="POST">
                 @csrf
                 <div class="form-group mb-3">
                     <input id="inputEmail" type="text" placeholder="DNI" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" name="dni">
                 </div>
-                <div class="form-group mb-3">
+                <div class="form-group mb-4">
                     <input id="inputPassword" type="password" placeholder="Contraseña" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" name="password">
                 </div>
-
-                <input type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" value="Iniciar Sesión">
+                <input type="submit" class="btn auth btn-block text-uppercase mb-2 rounded-pill shadow-sm" value="Iniciar Sesión">
                 <div class="text-center d-flex justify-content-between mt-4"><p>¿No tienes una cuenta? <a href=" {{ route('reg') }}" class="font-italic text-muted"> 
-                        <u>Regístrate</u></a></p></div>
+                        <u>Registrate</u></a></p></div>
               </form>
             </div>
           </div>

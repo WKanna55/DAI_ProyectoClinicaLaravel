@@ -7,7 +7,7 @@
         <h2 class="text-center p-2 mt-3">Dr. {{ $doctor->nombres }} {{ $doctor->apellidos }}</h2>
         <div class="container-sm mx-auto text-center p-2">
             <label for="fotoInput" class="cursor-pointer">
-                <img id="fotoPreview" style="max-width: 30%" src="{{assets('asset/img/doctor/'. $doctor->img_source)}}" alt="Foto de doctor">
+                <img id="fotoPreview" style="max-width: 50%" src="{{asset('assets/img/doctor/'. $doctor->img_source)}}" alt="Foto de doctor">
             </label>
         </div>
     </section>
@@ -29,7 +29,7 @@
                             </div>
                         @elseif ($cita->condicion == 'finalizado')
                             <div class="col mb-3" onclick="seleccionarCita('{{ $cita->id }}')">
-                                <div class="card card-red align-items-center bg-user-red p-3">
+                                <div class="card card-finalizado align-items-center bg-user-red p-3">
                                     <h6 class="text-white">{{ $cita->nombres }} {{ $cita->apellidos }}</h6>
                                     <p class="m-0"><i class="bi bi-clock pr-2 text-white"></i>{{ $cita->horario }}</p>
                                 </div>

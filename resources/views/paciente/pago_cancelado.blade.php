@@ -11,7 +11,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Pago Cancelado</h5>
                   <p class="card-text">Su pago fue rechazado, la cita no se registro, intente de otro metodo.</p>
-                  <a href="{{ route('home') }}" class="btn btn-primary">Inicio</a>
+                  @if(auth()->user()->role_id == 1)
+                  <a href="{{ route('perfilPaciente') }}" class="btn btn-primary">Ver citas</a>
+                  @elseif(auth()->user()->role_id == 3)
+                  <a href="{{ route('admin') }}" class="btn btn-admi admin">Finalizar</a>
+                  @endif
+                  
                 </div>
             </div>
         </div>
