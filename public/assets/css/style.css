@@ -253,7 +253,6 @@ Nueva seccion: index
 
 .card.bg-user-red{
     background-color: red;
-    
 }
 
 /*
@@ -1042,4 +1041,9 @@ Seccion: atencion
 
 .bg-footer {
     background-color: var(--azul);
+}
+
+
+.card-cita {
+    background-color: #317FFF;
 }

@@ -52,8 +52,8 @@
                 <div class="container-fluid perfil-usuario-citas-main">
                     <div class="perfil-usuario-cita row gap-3 ml-5">
                         @foreach ($citas as $c)
-                            <div class="card col-5 card-cita">
-                                <div class="card-body">
+                            <div class="card col-5 p-0">
+                                <div class="card-body card-cita">
                                     <h5 class="card-title">{{ $c->doctor->specialty->nombre }}</h5>
                                     <p class="card-text">Dr: {{ $c->doctor->nombres }} {{ $c->doctor->apellidos }}</p>
                                     <p class="card-text">Consultorio: {{ $c->doctor->consultorio }}</p>

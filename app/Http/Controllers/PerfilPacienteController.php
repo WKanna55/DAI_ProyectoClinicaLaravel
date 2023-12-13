@@ -41,6 +41,8 @@ class PerfilPacienteController extends Controller
     public function update(Request $request) {
 
         $patient = Patient::findOrFail($request->id);
+        dd($request);
+
         $patient->update([
             'dni' => $request->input('dni'),
             'nombres' => $request->input('nombres'),

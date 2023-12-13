@@ -39,6 +39,7 @@ class PagoController extends Controller
         $doctorNombres = Doctor::find($doctor_id)['nombres'];
         $doctorApellidos = Doctor::find($doctor_id)['apellidos'];
         $shift_id = $request->input('id_shift');
+        dd($shift_id);  
         $fecha = Shift::find($shift_id)['fecha'];
         $consultorio = Doctor::find($doctor_id)['consultorio'];
 

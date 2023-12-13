@@ -7,7 +7,7 @@
         <h2 class="text-center p-2 mt-3">Dr. {{ $doctor->nombres }} {{ $doctor->apellidos }}</h2>
         <div class="container-sm mx-auto text-center p-2">
             <label for="fotoInput" class="cursor-pointer">
-                <img id="fotoPreview" style="max-width: 30%" src="" alt="Foto de doctor">
+                <img id="fotoPreview" style="max-width: 30%" src="{{assets('asset/img/doctor/'. $doctor->img_source)}}" alt="Foto de doctor">
             </label>
         </div>
     </section>
