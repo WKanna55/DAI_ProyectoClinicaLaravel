@@ -51,7 +51,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 01 --------------------
         $user3 = new User;
-        $user3->dni = "23232323";
+        $user3->dni = "20202020";
         $user3->password = "123456789";
         $user3->role_id = 2;
         $user3->save();
@@ -68,7 +68,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 02 --------------------
         $user2 = new User;
-        $user2->dni = "12121212";
+        $user2->dni = "21212121";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -85,7 +85,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 03 --------------------
         $user2 = new User;
-        $user2->dni = "20202020";
+        $user2->dni = "22222222";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -105,7 +105,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 04 --------------------
         $user2 = new User;
-        $user2->dni = "21212121";
+        $user2->dni = "23232323";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -122,7 +122,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 05 --------------------
         $user2 = new User;
-        $user2->dni = "22222222";
+        $user2->dni = "24242424";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -139,7 +139,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 06 --------------------
         $user2 = new User;
-        $user2->dni = "23232323";
+        $user2->dni = "25252525";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -158,14 +158,14 @@ class UserTableSeeder extends Seeder
 
         // Doctor 07 --------------------
         $user2 = new User;
-        $user2->dni = "24242424";
+        $user2->dni = "26262626";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
 
         $doctor = new Doctor;
         $doctor->nombres = "Jose";
-        $doctor->apellidos = "Manrrique";
+        $doctor->apellidos = "Manrique";
         $doctor->CMP = 8183;
         $doctor->consultorio = "D01";
         $doctor->img_source = "doctor7.webp";
@@ -175,14 +175,14 @@ class UserTableSeeder extends Seeder
 
         // Doctor 08 --------------------
         $user2 = new User;
-        $user2->dni = "25252525";
+        $user2->dni = "27272727";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
 
         $doctor = new Doctor;
         $doctor->nombres = "Karina";
-        $doctor->apellidos = "LLanos";
+        $doctor->apellidos = "Llanos";
         $doctor->CMP = 8184;
         $doctor->consultorio = "D02";
         $doctor->img_source = "doctor8.webp";
@@ -192,7 +192,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 09 --------------------
         $user2 = new User;
-        $user2->dni = "26262626";
+        $user2->dni = "28282828";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -211,7 +211,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 10 --------------------
         $user2 = new User;
-        $user2->dni = "27272727";
+        $user2->dni = "29292929";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -228,7 +228,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 11 --------------------
         $user2 = new User;
-        $user2->dni = "28282828";
+        $user2->dni = "30303030";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -245,7 +245,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 12 --------------------
         $user2 = new User;
-        $user2->dni = "29292929";
+        $user2->dni = "31313131";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -264,7 +264,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 13 --------------------
         $user2 = new User;
-        $user2->dni = "30303030";
+        $user2->dni = "32323232";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -281,7 +281,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 14 --------------------
         $user2 = new User;
-        $user2->dni = "31313131";
+        $user2->dni = "33333333";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -298,7 +298,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 15 --------------------
         $user2 = new User;
-        $user2->dni = "32323232";
+        $user2->dni = "34343434";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -317,7 +317,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 16 --------------------
         $user2 = new User;
-        $user2->dni = "33333333";
+        $user2->dni = "35353535";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -334,7 +334,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 17 --------------------
         $user2 = new User;
-        $user2->dni = "34343434";
+        $user2->dni = "36363636";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
@@ -351,7 +351,7 @@ class UserTableSeeder extends Seeder
 
         // Doctor 18 --------------------
         $user2 = new User;
-        $user2->dni = "35353535";
+        $user2->dni = "37373737";
         $user2->password = "123456789";
         $user2->role_id = 2;
         $user2->save();
