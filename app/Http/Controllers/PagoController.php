@@ -188,8 +188,9 @@ class PagoController extends Controller
             
 
             // Conexion a la green api para enviar informacion
+            $url = 'https://api.green-api.com/waInstance7103885620/sendMessage/b2dcada662bf497d942730f650bf0c335e72b3a3444f4b9f93';
 
-            $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
+            //$url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
             $data = [
                 "chatId" => "51".$telefono."@c.us",
                 "message" =>  'Estimado(a) *'.strtoupper($nombres).' '.strtoupper($apellidos).'*, se confirma el registro de su cita para el dia 🗓️ *'.strtoupper($fechaFormateada).'* en el horario 🕒  *'.strtoupper($hora).'*'. ' para la especialidad de *'. strtoupper($especialidad).'* con el doctor 👨‍⚕️ *'.strtoupper($doctorNombres).' '.strtoupper($doctorApellidos).'*, en el consultorio'. ' *'.strtoupper($consultorio).'* '.'recuerda presentarte con tiempo a tus citas.'

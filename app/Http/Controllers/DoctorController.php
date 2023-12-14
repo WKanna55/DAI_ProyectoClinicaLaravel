@@ -113,8 +113,10 @@ class DoctorController extends Controller
             $appointment_update = Appointment::find($appointment_id);
             $appointment_update->condicion = "finalizado";
             $appointment_update->save();
+            
+            $url = 'https://api.green-api.com/waInstance7103885620/sendMessage/b2dcada662bf497d942730f650bf0c335e72b3a3444f4b9f93';
 
-            $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
+            //$url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
             $data = [
                 "chatId" => "51".$patient_telefono."@c.us",
                 "message" =>  'Hola *'.$patient->nombres.' '.$patient->apellidos.'*,
@@ -152,7 +154,9 @@ Si tienes alguna pregunta o necesitas más información, no dudes en contactarno
             $diagnostico_update->receta = $request->input('receta');
             $diagnostico_update->save();
 
-            $url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
+            $url = 'https://api.green-api.com/waInstance7103885620/sendMessage/b2dcada662bf497d942730f650bf0c335e72b3a3444f4b9f93';
+
+            //$url = 'https://api.green-api.com/waInstance7103884220/SendMessage/2d9c7260f7104a38bc298c10a1dd3189d890484d331040e0ba';
             $data = [
                 "chatId" => "51".$patient_telefono."@c.us",
                 "message" =>  'Hola *'.$patient->nombres.' '.$patient->apellidos.'*,
